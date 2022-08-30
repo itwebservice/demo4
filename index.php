@@ -42,8 +42,8 @@ $date1 = str_replace('-', '/', $date);
             <div class="row">
                 <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
                     <div class="main-booking-counter">
-                        <h6 class="main-booking-subtitle">World's leading tour and travels template</h6>
-                        <h1 class="main-booking-title">Tour Package booking now!</h1>
+                        <h6 class="main-booking-subtitle">WORLD'S LEADING TOUR AND TRAVELS SERVICE PROVIDER</h6>
+                        <h1 class="main-booking-title">Best travel services with us!</h1>
                         <p class="main-booking-discription">Experience the various exciting tour and travel packages and Make hotel reservations, find vacation packages, search cheap hotels and events</p>
                         <div class="main-booking-place">
                             <ul class="main-booking-place-list">
@@ -345,7 +345,7 @@ $date1 = str_replace('-', '/', $date);
                     <div class="t-package-style-line"></div>
                     <div class="t-package-style"></div>
                 </div>
-                <p class="t-package-discription section-discription">World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
+                <p class="t-package-discription section-discription">Explore popular domestic & international destinations with our company.</p>
             </div>
             <div class="t-package-list">
                 <div class="row">
@@ -586,13 +586,13 @@ $date1 = str_replace('-', '/', $date);
     <div class="container">
         <div class="t-cities-content">
             <div class="t-package-header">
-                <h2 class="t-package-title section-title">Popular <span>Cities</span></h2>
+                <h2 class="t-package-title section-title">Popular <span>Destinations</span></h2>
                 <div class="section-title-line text-center">
                     <div class="t-package-style"></div>
                     <div class="t-package-style-line"></div>
                     <div class="t-package-style"></div>
                 </div>
-                <p class="t-package-discription section-discription">World's leading Hotel Booking website,Over 30,000 Hotel rooms worldwide. Book Hotel rooms and enjoy your holidays with distinctive experience</p>
+                <p class="t-package-discription section-discription">Find Best deals for Tour Packages, Hotels, Holidays, Flights world wide. Visit these top destinations.</p>
             </div>
             <div class="t-cities-list">
                 <div class="row">
@@ -681,13 +681,13 @@ $date1 = str_replace('-', '/', $date);
     <div class="container">
         <div class="t-hotels-content">
             <div class="t-package-header">
-                <h2 class="t-package-title section-title">Hotels <span>booking open now! </span></h2>
+                <h2 class="t-package-title section-title">Explore <span>Popular hotels</span></h2>
                 <div class="section-title-line text-center">
                     <div class="t-package-style"></div>
                     <div class="t-package-style-line"></div>
                     <div class="t-package-style"></div>
                 </div>
-                <p class="t-package-discription section-discription">World's leading Hotel Booking website,Over 30,000 Hotel rooms worldwide. Book Hotel rooms and enjoy your holidays with distinctive experience</p>
+                <p class="t-package-discription section-discription">Explore world wide popular hotels across the world.</p>
             </div>
             <div class="row">
                 <div class="col col-12 col-md-12 col-lg-4 col-xl-4">
@@ -799,8 +799,8 @@ $date1 = str_replace('-', '/', $date);
                 <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
                     <div class="deals-contact">
                         <h6 class="deals-subtitle">Get in touch with us</h6>
-                        <h2 class="deals-title">Get best travel deals</h2>
-                        <p class="deals-discription">Get best travel deals for hotels, holidays, trains.Donec eget odio a nunc lacinia rhoncus. Vivamus dignissim magna quis nisl fermentum porttitor. Maecenas venenatis mattis dui at pharetra.Nullam rutrum odio eu viverra accumsan. Nam orci elit, scelerisque eget dui non, sagittis tristique metus. Fusce nec nulla dapibus, fringilla nulla eu, vehicula odio. </p>
+                        <h2 class="deals-title">Our Introduction</h2>
+                        <p class="deals-discription">Our company that offers travel related services around the world. We provide travel services for Domestic and International and deal with in the most professional and efficient manner with immediate response and best service. Our Well Experienced tourism professionals serve tourists better as per their convenience.</p>
                         <!--<h5 class="deals-helpline">Help line: +001 21745 12345</h5>-->
                         <div class="deals-book-btns">
                             <a href="#" class="btn">ABOUT US</a>
@@ -824,13 +824,13 @@ $date1 = str_replace('-', '/', $date);
     <div class="container">
         <div class="events-content">
             <div class="t-package-header">
-                <h2 class="t-package-title section-title">Top <span>Events</span> in this month</h2>
+                <h2 class="t-package-title section-title">Explore all <span>Destination</span> Tours</h2>
                 <div class="section-title-line text-center">
                     <div class="t-package-style"></div>
                     <div class="t-package-style-line"></div>
                     <div class="t-package-style"></div>
                 </div>
-                <p class="t-package-discription section-discription">World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages and enjoy your holidays with distinctive experience</p>
+                <p class="t-package-discription section-discription">Search all inbuld domestic & international packages using our filter</p>
             </div>
             <div class="events-table">
                 <div class="events-table-input">
@@ -992,13 +992,13 @@ $date1 = str_replace('-', '/', $date);
     <div class="container">
         <div class="sight-content">
             <div class="t-package-header">
-                <h2 class="t-package-title section-title">Top <span> Sight Seeing</span> in this month</h2>
+                <h2 class="t-package-title section-title">Best <span> Sight Seeings</span> experiences</h2>
                 <div class="section-title-line text-center">
                     <div class="t-package-style"></div>
                     <div class="t-package-style-line"></div>
                     <div class="t-package-style"></div>
                 </div>
-                <p class="t-package-discription section-discription">World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages and enjoy your holidays with distinctive experience</p>
+                <p class="t-package-discription section-discription">Find best deals of sightseeing you should explore in your life.</p>
             </div>
         </div>
         <div class="row">
@@ -1088,13 +1088,13 @@ $date1 = str_replace('-', '/', $date);
     <div class="container">
         <div class="branding-content">
             <div class="t-package-header">
-                <h2 class="t-package-title section-title">Top <span>Branding</span> for this month</h2>
+                <h2 class="t-package-title section-title">Our <span>Blog</span> </h2>
                 <div class="section-title-line text-center">
                     <div class="t-package-style"></div>
                     <div class="t-package-style-line"></div>
                     <div class="t-package-style"></div>
                 </div>
-                <p class="t-package-discription section-discription">World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages and enjoy your holidays with distinctive experience</p>
+                <p class="t-package-discription section-discription">We explore the world and write our experiences so customer have better experience in their tours.</p>
             </div>
             <div class="row">
                 <div class="col col-12 col-md-12 col-lg-4 col-xl-4">
@@ -1355,24 +1355,36 @@ $date1 = str_replace('-', '/', $date);
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 col-xl-6">
                     <div class="mobile-app-details">
-                        <h2 class="mobile-app-title">Travel your plan now!</h2>
+                        <h2 class="mobile-app-title">Why Choose Us</h2>
                         <p class="mobile-app-discription">World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages and enjoy your holidays with <br class="d-none d-lg-block"> distinctive experience</p>
                         <ul class="mobile-details-list">
                             <li class="mobile-details-item">
                                 <i class="fa fa-check"></i>
-                                Easy Hotel Booking
+                                + 1000 Happy Customers
                             </li>
                             <li class="mobile-details-item">
                                 <i class="fa fa-check"></i>
-                                Tour and Travel Packages
+                                +500 Premium Tours
                             </li>
                             <li class="mobile-details-item">
                                 <i class="fa fa-check"></i>
-                                Package Reviews and Ratings
+                                Affordable Price
                             </li>
                             <li class="mobile-details-item">
                                 <i class="fa fa-check"></i>
-                                Manage your Bookings, Enquiry and Reviews
+                                Easy booking with us
+                            </li>
+                            <li class="mobile-details-item">
+                                <i class="fa fa-check"></i>
+                                Flexible payment terms
+                            </li>
+                            <li class="mobile-details-item">
+                                <i class="fa fa-check"></i>
+                                VIP transport option
+                            </li>
+                            <li class="mobile-details-item">
+                                <i class="fa fa-check"></i>
+                                List of amazing destinations tour to explore
                             </li>
                         </ul>
                         <!-- <div class="mobile-app-imgs">
@@ -1406,8 +1418,8 @@ $date1 = str_replace('-', '/', $date);
                                     <img src="images/tips1.png" alt="" class="img-fluid w-100">
                                 </div>
                                 <div class="tips-points-details">
-                                    <h5 class="tips-details-title">Carry your passport</h5>
-                                    <p class="tips-detalis-discription mb-0">Aliquam pretium id justo eget tristique. Aenean feugiat.</p>
+                                    <h5 class="tips-details-title">Carry your documents</h5>
+                                    <p class="tips-detalis-discription mb-0">Carry your required document like Passport, ID proof etc.</p>
                                 </div>
                             </div>
                             <div class="tips-points-item">
@@ -1415,8 +1427,8 @@ $date1 = str_replace('-', '/', $date);
                                     <img src="images/tips2.png" alt="" class="img-fluid w-100">
                                 </div>
                                 <div class="tips-points-details">
-                                    <h5 class="tips-details-title">Register with your embassy</h5>
-                                    <p class="tips-detalis-discription mb-0">Mauris efficitur, ante sit amet rhoncus malesuada, orci justo.</p>
+                                    <h5 class="tips-details-title">knowledge of destination</h5>
+                                    <p class="tips-detalis-discription mb-0">Be prepare about the dstination, distance, route</p>
                                 </div>
                             </div>
                             <div class="tips-points-item">
@@ -1425,7 +1437,7 @@ $date1 = str_replace('-', '/', $date);
                                 </div>
                                 <div class="tips-points-details">
                                     <h5 class="tips-details-title">Always have local cash</h5>
-                                    <p class="tips-detalis-discription mb-0">Donec et placerat ante. Etiam et velit in massa.</p>
+                                    <p class="tips-detalis-discription mb-0">Carry the destination currency</p>
                                 </div>
                             </div>
 

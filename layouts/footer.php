@@ -134,40 +134,40 @@
                     </div>
                     <div class="col col-12 col-md-6 col-lg-3 col-xl-3">
                         <div class="t-footer-contact-list">
-                            <h5 class="t-footer-contact-title">Support & HELP</h5>
+                            <h5 class="t-footer-contact-title">Important Links</h5>
                             <div class="t-footer-help">
                                 <ul class="t-footr-help-list">
                                     <li class="t-footer-help-item">
-                                        <a href="#" class="t-footer-help-link t-footer-contact-discription">About Us</a>
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>about.php" class="t-footer-help-link t-footer-contact-discription">About Us</a>
                                     </li>
                                     <li class="t-footer-help-item">
-                                        <a href="#" class="t-footer-help-link t-footer-contact-discription">Feedbacks</a>
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>award.php" class="t-footer-help-link t-footer-contact-discription">Awards</a>
                                     </li>
                                     <li class="t-footer-help-item">
-                                        <a href="#" class="t-footer-help-link t-footer-contact-discription">Use Cases</a>
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>blog.php" class="t-footer-help-link t-footer-contact-discription">Travel Blog</a>
                                     </li>
                                     <li class="t-footer-help-item">
-                                        <a href="#" class="t-footer-help-link t-footer-contact-discription">Discount</a>
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>refund-policy.php" class="t-footer-help-link t-footer-contact-discription">Refund Policy</a>
                                     </li>
                                     <li class="t-footer-help-item">
-                                        <a href="#" class="t-footer-help-link t-footer-contact-discription">Branding Offers </a>
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>terms-conditions.php" class="t-footer-help-link t-footer-contact-discription">Terms of Use</a>
                                     </li>
                                 </ul>
                                 <ul class="t-footr-help-list">
                                     <li class="t-footer-help-item mr-0">
-                                        <a href="#" class="t-footer-help-link t-footer-contact-discription">FAQ</a>
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>careers.php" class="t-footer-help-link t-footer-contact-discription">Career</a>
                                     </li>
                                     <li class="t-footer-help-item mr-0">
-                                        <a href="#" class="t-footer-help-link t-footer-contact-discription">Blog </a>
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>gallery.php" class="t-footer-help-link t-footer-contact-discription">Gallery</a>
                                     </li>
                                     <li class="t-footer-help-item mr-0">
-                                        <a href="#" class="t-footer-help-link t-footer-contact-discription">Advertise us</a>
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>testimonials.php" class="t-footer-help-link t-footer-contact-discription">Testimonials</a>
                                     </li>
                                     <li class="t-footer-help-item mr-0">
-                                        <a href="#" class="t-footer-help-link t-footer-contact-discription">Vacations</a>
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>privacy-policy.php" class="t-footer-help-link t-footer-contact-discription">Privacy Policy</a>
                                     </li>
                                     <li class="t-footer-help-item mr-0">
-                                        <a href="#" class="t-footer-help-link t-footer-contact-discription">Contact Us</a>
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>cancellation-policy.php" class="t-footer-help-link t-footer-contact-discription">Cancellation Policy</a>
                                     </li>
                                 </ul>
                             </div>

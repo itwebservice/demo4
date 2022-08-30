@@ -12,7 +12,7 @@ $cached_array = json_decode(file_get_contents('https://' . $_SERVER['SERVER_NAME
 
 // LOCAL Cache file readingc
 
-// $cached_array = json_decode(file_get_contents('http://'.$_SERVER['SERVER_NAME'] . '/b2c-theme-1/crm/view/b2c_cache.php'));
+//$cached_array = json_decode(file_get_contents('http://'.$_SERVER['SERVER_NAME'] . '/demo4/crm/view/b2c_cache.php'));
 
  
 
