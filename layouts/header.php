@@ -6,13 +6,14 @@ include "get_cache_currencies.php";
 
 include "array_column.php";
 
+
 // LIVE Cache file reading
 
-$cached_array = json_decode(file_get_contents('https://' . $_SERVER['SERVER_NAME'] . '/crm/view/b2c_cache.php'));
+//$cached_array = json_decode(file_get_contents('https://' . $_SERVER['SERVER_NAME'] . '/crm/view/b2c_cache.php'));
 
 // LOCAL Cache file readingc
 
-//$cached_array = json_decode(file_get_contents('http://'.$_SERVER['SERVER_NAME'] . '/demo4/crm/view/b2c_cache.php'));
+$cached_array = json_decode(file_get_contents('http://'.$_SERVER['SERVER_NAME'] . '/demo4/crm/view/b2c_cache.php'));
 
  
 
@@ -277,7 +278,7 @@ foreach ($int_dest_id_arr as $int_id) {
 
                 <span class="staticText d-inline"><span style="text-transform: lowercase;"> Helpline :</span> <?= $cached_array[0]->company_profile_data[0]->contact_no ?></span>
 
-                <a href="mailto:test@itwebservices.co" class="header-mail-link d-inline ml-2"><?= $cached_array[0]->company_profile_data[0]->email_id ?></a>
+                <a href="mailto:<?= $cached_array[0]->company_profile_data[0]->email_id ?>" class="header-mail-link d-inline ml-2"><?= $cached_array[0]->company_profile_data[0]->email_id ?></a>
               </div>
 
 
@@ -554,7 +555,7 @@ foreach ($int_dest_id_arr as $int_id) {
 
                   </li>
                   <li class="header-btn">
-                    <a class="btn header-offer-btn" href="<?= BASE_URL_B2C . 'offers.php' ?>">Offers</a>
+                    <a class="btn header-offer-btn" href="<?= BASE_URL_B2C . 'offers.php' ?>">OFFERS</a>
                   </li>
                 </ul>
 

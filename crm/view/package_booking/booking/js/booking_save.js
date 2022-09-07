@@ -607,7 +607,7 @@ $(function () {
 				 	return false; 
 				}
 	        }else if(payment_mode=="Credit Note" && credit_amount == ''){
-				error_msg_alert("You don't have Credit Note Amount");
+				error_msg_alert("Credit Note Balance is not available");
 				return false;
 			}
 	        if(parseFloat(payment_amount)>parseFloat(net_total)){

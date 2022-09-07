@@ -28,8 +28,8 @@ $localIP = getHostByName(getHostName());
 
 // Create connection
 $servername = "localhost";
-$username = "itourscloud_demo4_u";
-$password = "B$%^X;[i?!M";
+$username = "root";
+$password = "";
 $db_name = "itourscloud_demo4";
 global $conn;
 $conn = new mysqli($servername, $username, $password, $db_name);

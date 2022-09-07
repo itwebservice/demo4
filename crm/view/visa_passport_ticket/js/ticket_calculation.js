@@ -61,7 +61,7 @@ function get_auto_values(booking_date, sub_total, payment_mode, service_charge, 
             if ($('#' + markup).val() == '') $('#' + markup).val(parseInt(0).toFixed(2));
         }
         else {
-            console.log(service_amount);
+            // console.log(service_amount);
             var markup_cost = calculate_charges(markup_amount_rules_array, type, basic_amount, service_amount);
             markup_cost = (markup_cost == '' || typeof markup_cost === NaN || markup_cost === undefined) ? parseFloat(0).toFixed(2) : parseFloat(markup_cost).toFixed(2);
             

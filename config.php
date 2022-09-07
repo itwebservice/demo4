@@ -20,13 +20,14 @@ $localIP = getHostByName(getHostName());
 
 // Create connection
 $servername = "localhost";
-$username = "itourscloud_demo4_u";
-$password = "B$%^X;[i?!M";
+$username = "root";
+$password = "";
 $db_name = "itourscloud_demo4";
 global $connection;
 $connection = new mysqli($servername, $username, $password, $db_name);
 
 define('BASE_URL', 'http://localhost/demo4/crm/');
+define('BASE_URL_API', 'http://localhost/demo4/frontendAPI/public/api');
 define('BASE_URL_B2C', 'http://localhost/demo4/');
 mysqli_query($connection,"SET SESSION sql_mode = ''");
 // mysqli_set_charset($connection,'utf8');

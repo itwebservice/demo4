@@ -10,7 +10,7 @@ function get_auto_values(
 	discount,
 	change = false
 ) {
-	const rules = get_other_rules('Visa', booking_date);
+    const rules = get_other_rules('Visa', booking_date);
 	var basic_amount = $('#' + sub_total).val();
 	var payment_mode = $('#' + payment_mode).val();
 	var markup_amount = $('#' + markup).val();
@@ -23,15 +23,12 @@ function get_auto_values(
 	if (charges_flag === 'true') {
 		var service_charge_result = rules && rules.filter((rule) => rule['rule_for'] === '1');
 		var markup_amount_result = rules && rules.filter((rule) => rule['rule_for'] === '2');
-
 		/////////////////Service charge Start/////////////////
 		var rules_array = get_charges_on_conditions(service_charge_result, basic_amount, payment_mode, type);
-
 		if (parseInt(rules_array.length) === 0) {
 			if ($('#' + service_charge).val() == '') $('#' + service_charge).val(parseInt(0).toFixed(2));
 		}
 		else {
-
 			var service_charge1 = calculate_charges(rules_array, type, basic_amount, 0);
 			service_charge1 =
 
@@ -39,21 +36,21 @@ function get_auto_values(
 					typeof service_charge1 === NaN ||
 					service_charge1 === undefined ? parseFloat(0).toFixed(2) :
 					parseFloat(service_charge1).toFixed(2);
+				if (change && Number($('#' + service_charge).val() != service_charge1) && Number($('#' + service_charge).val()) != 0) {
 
-			if (change && $('#' + service_charge).val() != service_charge1) {
-				$('#div_show_msg').vi_confirm_box({
-					message: "<span style='font-size:20px;'>As per the Business rule Service Charge should be <b>" + service_charge1 + "</b> but the same has been altered by you with <b>" + $('#' + service_charge).val() + " </b>, Click on Yes to accept the Business Rule Service Charge.</span>",
-					callback: function (result) {
-						if (result == 'yes') {
-							$('#' + service_charge).val(service_charge1);
-							$('#' + service_charge).trigger('change');
+					$('#vi_confirm_box').vi_confirm_box({
+						message: "<span style='font-size:20px'>As per the Business rule Service Charge should be <b>" + service_charge1 + "</b> but the same has been altered by you with <b>" + $('#' + service_charge).val() + "</b> , Click on Yes to accept the Business Rule Service Charge.</span>",
+						callback: function (result) {
+							if (result == 'yes') {
+								$('#' + service_charge).val(service_charge1);
+								$('#' + service_charge).trigger('change');
+							}
 						}
-					}
-				});
-			} else {
-				$('#' + service_charge).val(service_charge1);
-				$('#' + service_charge).trigger('change');
-			}
+					});
+				} else {
+					$('#' + service_charge).val(service_charge1);
+				}
+
 			$('#hotel_sc').val(rules_array[0].ledger_id);
 		}
 		if (rules_array.length && rules_array[0].type === 'Automatic')

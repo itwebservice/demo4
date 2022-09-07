@@ -119,19 +119,26 @@
             </div> -->
             <div class="t-footer-contact">
                 <div class="row">
+                <div class="col col-12 col-md-6 col-lg-3 col-xl-3">
+                        <div class="t-footer-contact-list">
+                            <h5 class="t-footer-contact-title">Address & Contact Info</h5>
+                            <p class="t-footer-contact-discription mb-2"><?= $Apigeneral->app_address ?></p>
+                            <h5 class="t-footer-contact-title mb-0">Phone: <?= $Apigeneral->app_contact_no ?></h5>
+                        </div>
+                    </div>
                     <div class="col col-12 col-md-6 col-lg-3 col-xl-3">
                         <div class="t-footer-contact-list">
                             <h5 class="t-footer-contact-title">Holiday Tour & Travels</h5>
-                            <p class="t-footer-contact-discription">World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
+                            <ul class="t-footr-help-list">
+                                <?php foreach($Apifooter as $footer) { ?>   
+                                <li class="t-footer-help-item">
+                                        <a href="#" onclick="get_tours_data('<?= $footer->dest_id ?>','1')" class="t-footer-help-link t-footer-contact-discription"><?= $footer->package_name ?></a>
+                                    </li>
+                                   <?php } ?> 
+                                </ul>
                         </div>
                     </div>
-                    <div class="col col-12 col-md-6 col-lg-3 col-xl-3">
-                        <div class="t-footer-contact-list">
-                            <h5 class="t-footer-contact-title">Address & Contact Info</h5>
-                            <p class="t-footer-contact-discription mb-2">28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A. Landmark : Next To Airport</p>
-                            <h5 class="t-footer-contact-title mb-0">Phone: +101-1231-1231</h5>
-                        </div>
-                    </div>
+                   
                     <div class="col col-12 col-md-6 col-lg-3 col-xl-3">
                         <div class="t-footer-contact-list">
                             <h5 class="t-footer-contact-title">Important Links</h5>
@@ -179,27 +186,32 @@
                             <p class="t-footer-contact-discription mb-2">Join the thousands of other There are many variations of passages of Lorem Ipsum available</p>
                             <ul class="t-footer-social-list">
                                 <li class="t-footer-social-item">
-                                    <a href="#" class="t-footer-social-link">
+                                    <a href="<?= $Apisocial->fb ?>" class="t-footer-social-link">
                                         <i class="fa fa-facebook" aria-hidden="true"></i>
                                     </a>
                                 </li>
                                 <li class="t-footer-social-item">
-                                    <a href="#" class="t-footer-social-link">
-                                        <i class="fa fa-google-plus" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="t-footer-social-item">
-                                    <a href="#" class="t-footer-social-link">
-                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="t-footer-social-item">
-                                    <a href="#" class="t-footer-social-link">
+                                    <a href="<?= $Apisocial->li ?>" class="t-footer-social-link">
                                         <i class="fa fa-linkedin" aria-hidden="true"></i>
                                     </a>
                                 </li>
                                 <li class="t-footer-social-item">
-                                    <a href="#" class="t-footer-social-link">
+                                    <a href="<?= $Apisocial->tw ?>" class="t-footer-social-link">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="t-footer-social-item">
+                                    <a href="<?= $Apisocial->wa ?>" class="t-footer-social-link">
+                                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="t-footer-social-item">
+                                    <a href="<?= $Apisocial->inst ?>" class="t-footer-social-link">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="t-footer-social-item">
+                                    <a href="<?= $Apisocial->yu ?>" class="t-footer-social-link">
                                         <i class="fa fa-youtube" aria-hidden="true"></i>
                                     </a>
                                 </li>
@@ -212,7 +224,7 @@
     </div>
 </footer>
 <div class="copiright-content">
-    <p class="copiright-discription">Copyrights © 2022 Company Name. All Rights Reserved</p>
+    <p class="copiright-discription">Copyrights © 2022 <?= $Apigeneral->app_name ?>. All Rights Reserved</p>
 </div>
 <!-- Footer End -->
 

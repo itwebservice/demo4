@@ -781,10 +781,8 @@ function foo(tableID, quot_table_id, rowCounts) {
 
 	if (tableID == 'tbl_package_hotel_master' || tableID == 'tbl_package_hotel_master_dynamic_update') {
 		// new edits
-		var prefix =
+		var prefix = (tableID == 'tbl_package_hotel_master_dynamic_update') ? '_d' : '';
 
-			tableID == 'tbl_package_tour_quotation_dynamic_plane_update' ? '_d' :
-				'';
 		row.cells[0].childNodes[0].setAttribute('id', 'chk_dest' + prefix + foo.counter);
 		row.cells[2].childNodes[0].setAttribute('id', 'city_name' + prefix + foo.counter);
 		row.cells[3].childNodes[0].setAttribute('id', 'hotel_name' + prefix + foo.counter);
@@ -906,7 +904,7 @@ function foo(tableID, quot_table_id, rowCounts) {
 		row.cells[2].childNodes[0].setAttribute('id', 'title-1' + foo.counter);
 		row.cells[3].childNodes[0].setAttribute('id', 'coupon_code-1' + foo.counter);
 		row.cells[4].childNodes[0].setAttribute('id', 'amount_in-1' + foo.counter);
-		row.cells[5].childNodes[0].setAttribute('id', 'amount-1' + foo.counter);
+		row.cells[5].childNodetbl_package_tour_transports[0].setAttribute('id', 'amount-1' + foo.counter);
 		row.cells[6].childNodes[0].setAttribute('id', 'valid_date-1' + foo.counter);
 		// dynamic_date(row.cells[5].childNodes[0].id);
 		jQuery(row.cells[6].childNodes[0])
@@ -1313,7 +1311,7 @@ function foo(tableID, quot_table_id, rowCounts) {
 		}
 		else {
 			var function_name = "get_excursion_update_amount(id);";
-			var function_name1 = "excursion_amount_calculate(id,'1');calculate_exc_expense('" + tableID + "','1')";
+			var function_name1 = "excursion_amount_calculate(id,'1');calculate_exc_expense('" + tableID + "','1');get_auto_values('balance_date1','exc_issue_amount1','payment_mode','service_charge1','markup1','update','true','service_charge');";
 		}
 
 		row.cells[0].childNodes[0].setAttribute('id', 'chk_exc' + prefix + current_counter);
@@ -2134,6 +2132,7 @@ function foo(tableID, quot_table_id, rowCounts) {
 
 			row.cells[8].childNodes[0].removeAttributeNode(row.cells[8].childNodes[0].attributes[i]);
 		row.cells[8].childNodes[0].setAttribute('id', 'issue_date' + prefix + foo.counter);
+		row.cells[8].childNodes[0].title = 'Issue Date';
 		row.cells[8].childNodes[0].placeholder = 'Issue Date';
 		var today = new Date();
 		var dd = today.getDate();
@@ -2154,6 +2153,7 @@ function foo(tableID, quot_table_id, rowCounts) {
 			row.cells[9].childNodes[0].removeAttributeNode(row.cells[9].childNodes[0].attributes[i]);
 		row.cells[9].childNodes[0].setAttribute('id', 'expiry_date' + prefix + foo.counter);
 		row.cells[9].childNodes[0].placeholder = 'Expiry Date';
+		row.cells[9].childNodes[0].title = 'Expiry Date';
 		var today = new Date();
 		var dd = today.getDate();
 		var mm = today.getMonth() + 1; //January is 0!
@@ -2296,8 +2296,9 @@ function foo(tableID, quot_table_id, rowCounts) {
 		for (var i = row.cells[8].childNodes[0].attributes.length; i-- > 0;)
 			row.cells[8].childNodes[0].removeAttributeNode(row.cells[8].childNodes[0].attributes[i]);
 		row.cells[8].childNodes[0].setAttribute('id', 'date_of_journey' + prefix + foo.counter);
-		row.cells[8].childNodes[0].setAttribute('style', 'width:100px');
-		row.cells[8].childNodes[0].placeholder = 'Journey Date';
+		row.cells[8].childNodes[0].setAttribute('style', 'width:150px');
+		row.cells[8].childNodes[0].setAttribute('title', 'Journey Date & Time');
+		row.cells[8].childNodes[0].placeholder = 'Journey Date & Time';
 		var today = new Date();
 		var dd = today.getDate();
 		var mm = today.getMonth() + 1; //January is 0!
@@ -2309,7 +2310,7 @@ function foo(tableID, quot_table_id, rowCounts) {
 		if (mm < 10) {
 			mm = '0' + mm;
 		}
-		var today = dd + '-' + mm + '-' + yyyy + ' 00:00:00';
+		var today = dd + '-' + mm + '-' + yyyy + ' 00:00';
 		row.cells[8].childNodes[0].value = today;
 		dynamic_datetime(row.cells[8].childNodes[0].id);
 		row.cells[9].childNodes[0].setAttribute('id', 'reporting_time' + foo.counter);

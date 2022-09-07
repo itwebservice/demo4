@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include 'api.php';
 
 //Include header
 
@@ -97,7 +97,7 @@ include 'layouts/header.php';
 
         <div class="ts-section-subtitle-content">
 
-            <h2 class="ts-section-subtitle">Services</h2>
+            <h2 class="ts-section-subtitle">OUR SERVICES</h2>
 
             <span class="ts-section-subtitle-icon"><img src="images/traveler.png" alt="traveler" classimg-fluid=""></span>
 

@@ -361,3 +361,27 @@ Stack trace:
 #1 /home/itourscloud/public_html/B2CTheme/view/tours/tours-listing.php(682): mysqlQuery(NULL)
 #2 {main}
   thrown in /home/itourscloud/public_html/B2CTheme/config.php on line 105
+[01-Sep-2022 18:40:08 Asia/Kolkata] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home/itourscloud/public_html/demo4/config.php:106
+Stack trace:
+#0 /home/itourscloud/public_html/demo4/config.php(106): mysqli_query(Object(mysqli), '')
+#1 /home/itourscloud/public_html/demo4/view/tours/tours-listing.php(682): mysqlQuery(NULL)
+#2 {main}
+  thrown in /home/itourscloud/public_html/demo4/config.php on line 106
+[01-Sep-2022 18:40:35 Asia/Kolkata] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home/itourscloud/public_html/demo4/config.php:106
+Stack trace:
+#0 /home/itourscloud/public_html/demo4/config.php(106): mysqli_query(Object(mysqli), '')
+#1 /home/itourscloud/public_html/demo4/view/tours/tours-listing.php(682): mysqlQuery(NULL)
+#2 {main}
+  thrown in /home/itourscloud/public_html/demo4/config.php on line 106
+[01-Sep-2022 18:40:43 Asia/Kolkata] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home/itourscloud/public_html/demo4/config.php:106
+Stack trace:
+#0 /home/itourscloud/public_html/demo4/config.php(106): mysqli_query(Object(mysqli), '')
+#1 /home/itourscloud/public_html/demo4/view/tours/tours-listing.php(682): mysqlQuery(NULL)
+#2 {main}
+  thrown in /home/itourscloud/public_html/demo4/config.php on line 106
+[01-Sep-2022 18:40:46 Asia/Kolkata] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home/itourscloud/public_html/demo4/config.php:106
+Stack trace:
+#0 /home/itourscloud/public_html/demo4/config.php(106): mysqli_query(Object(mysqli), '')
+#1 /home/itourscloud/public_html/demo4/view/tours/tours-listing.php(682): mysqlQuery(NULL)
+#2 {main}
+  thrown in /home/itourscloud/public_html/demo4/config.php on line 106

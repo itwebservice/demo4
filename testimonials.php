@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include 'api.php';
 
 //Include header
 
@@ -163,7 +163,7 @@ $b2c_testm = $cached_array[0]->cms_data[4];
 
                                 <p class="ts-customer-testimonial-description"><?=$testm[$testm_count]->testm ?></p>
 
-                                <ul class="ts-rating-list">
+                                <!-- <ul class="ts-rating-list">
 
                                     <li class="ts-rating-item">
 
@@ -195,7 +195,7 @@ $b2c_testm = $cached_array[0]->cms_data[4];
 
                                     </li>
 
-                                </ul>
+                                </ul> -->
 
                             </div>
 

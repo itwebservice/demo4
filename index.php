@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include "api.php";
 
 
 
@@ -21,21 +21,14 @@ $date1 = str_replace('-', '/', $date);
 <!-- Main Booking Section Start -->
 <section class="main-booking-section">
     <div class="main-booking-slider owl-carousel">
-        <div class="main-booking-slide item">
-            <div class="main-booking-slide-img">
-                <img src="images/booking.jpg" alt="booking" class="w-100 img-fluid">
+        <?php foreach ($Apibanner as $banner) { ?>
+            <div class="main-booking-slide item">
+                <div class="main-booking-slide-img">
+                    <img src="crm/<?= substr($banner->image_url, 9) ?>" alt="booking" class="w-100 img-fluid">
+                </div>
             </div>
-        </div>
-        <div class="main-booking-slide item">
-            <div class="main-booking-slide-img">
-                <img src="images/booking.jpg" alt="booking" class="w-100 img-fluid">
-            </div>
-        </div>
-        <div class="main-booking-slide item">
-            <div class="main-booking-slide-img">
-                <img src="images/booking.jpg" alt="booking" class="w-100 img-fluid">
-            </div>
-        </div>
+        <?php } ?>
+
     </div>
     <div class="main-booking-content">
         <div class="container">
@@ -49,7 +42,7 @@ $date1 = str_replace('-', '/', $date);
                             <ul class="main-booking-place-list">
                                 <div class="booking-place">
                                     <li class="booking-place-item">
-                                        <a href="#" class="booking-place-link">
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>view/tours/tours-listing.php" class="booking-place-link">
                                             <img src="images/tour.png" alt="" class="img-fluid">
                                             Tour
                                         </a>
@@ -63,13 +56,13 @@ $date1 = str_replace('-', '/', $date);
                                 </div>
                                 <div class="booking-place">
                                     <li class="booking-place-item">
-                                        <a href="#" class="booking-place-link">
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>view/transfer/transfer-listing.php" class="booking-place-link">
                                             <img src="images/car.png" alt="" class="img-fluid">
                                             Car
                                         </a>
                                     </li>
                                     <li class="booking-place-item">
-                                        <a href="#" class="booking-place-link">
+                                        <a target="_blank" href="<?=BASE_URL_B2C?>view/hotel/hotel-listing.php" class="booking-place-link">
                                             <img src="images/hotel.png" alt="" class="img-fluid">
                                             Hotel
                                         </a>
@@ -349,229 +342,58 @@ $date1 = str_replace('-', '/', $date);
             </div>
             <div class="t-package-list">
                 <div class="row">
+                    <?php foreach ($Apipackage as $package) {
+                        $package_name = $package->package_name;
 
-                    <div class="col col-12 col-md-6 col-lg-4 col-xl-4">
-                        <div class="t-package-card">
-                            <div class="t-package-offer">
-                                <img src="images/band.png" alt="" class="img-fluid w-100">
-                            </div>
-                            <div class="t-package-img">
-                                <img src="images/rio.png" alt="" class="img-fluid">
-                                <div class="t-package-card-btn">
-                                    <span class="t-package-card-price btn">599 $</span>
-                                    <a href="#" class="btn btn-primary">View More</a>
+                        $package_fname = str_replace(' ', '_', $package_name);
+
+                        $file_name = 'package_tours/' . $package_fname . '-' . $package->package_id . '.php';
+                    ?>
+                        <div class="col col-12 col-md-6 col-lg-4 col-xl-4">
+                            <div class="t-package-card">
+                                <a href="<?= $file_name ?>">
+                                    <div class="t-package-offer">
+                                        <img src="images/band.png" alt="" class="img-fluid w-100">
+                                    </div>
+                                    <div class="t-package-img">
+                                        <img src="<?= $package->main_img_url ?>" alt="" class="img-fluid">
+                                        <div class="t-package-card-btn">
+                                            <span class="t-package-card-price btn"><?= !empty($package->tariff) ? $package->tariff->cadult : '0.00' ?> </span>
+                                            <a href="<?= $file_name ?>" class="btn btn-primary">View More</a>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="t-package-card-body">
+                                    <h6 class="t-package-card-title"><?= $package->package_name ?><span>(<?= $package->destination->dest_name ?>)</span></h6>
+                                    <ul class="t-package-body-img">
+                                        <li class="t-package-img-item">
+                                            <span class="t-package-img-link">
+                                                <img src="images/clock.png" alt="" class="img-fluid">
+                                            </span>
+                                        </li>
+                                        <li class="t-package-img-item">
+                                            <span class="t-package-img-link">
+                                                <img src="images/info.png" alt="" class="img-fluid">
+                                            </span>
+                                        </li>
+                                        <li class="t-package-img-item">
+                                            <span class="t-package-img-link">
+                                                <img src="images/price.png" alt="" class="img-fluid">
+                                            </span>
+                                        </li>
+                                        <li class="t-package-img-item">
+                                            <span class="t-package-img-link">
+                                                <img src="images/map.png" alt="" class="img-fluid">
+                                            </span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="t-package-card-body">
-                                <h6 class="t-package-card-title">Rio de Janeiro <span>(Brazil)</span></h6>
-                                <ul class="t-package-body-img">
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/clock.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/info.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/price.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/map.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col col-12 col-md-6 col-lg-4 col-xl-4">
-                        <div class="t-package-card">
-                            <div class="t-package-offer">
-                                <img src="images/band1.png" alt="" class="img-fluid w-100">
-                            </div>
-                            <div class="t-package-img">
-                                <img src="images/paris.png" alt="" class="img-fluid">
-                                <div class="t-package-card-btn">
-                                    <span class="t-package-card-price btn">599 $</span>
-                                    <a href="#" class="btn btn-primary">View More</a>
-                                </div>
-                            </div>
-                            <div class="t-package-card-body">
-                                <h6 class="t-package-card-title">Paris <span>(England)</span></h6>
-                                <ul class="t-package-body-img">
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/clock.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/info.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/price.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/map.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-12 col-md-6 col-lg-4 col-xl-4">
-                        <div class="t-package-card">
-                            <div class="t-package-img">
-                                <img src="images/india.png" alt="" class="img-fluid">
-                                <div class="t-package-card-btn">
-                                    <span class="t-package-card-price btn">599 $</span>
-                                    <a href="#" class="btn btn-primary">View More</a>
-                                </div>
-                            </div>
-                            <div class="t-package-card-body">
-                                <h6 class="t-package-card-title">sauth india<span>(india)</span></h6>
-                                <ul class="t-package-body-img">
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/clock.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/info.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/price.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/map.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-12 col-md-6 col-lg-4 col-xl-4">
-                        <div class="t-package-card">
-                            <div class="t-package-img">
-                                <img src="images/taj.png" alt="" class="img-fluid">
-                                <div class="t-package-card-btn">
-                                    <span class="t-package-card-price btn">599 $</span>
-                                    <a href="#" class="btn btn-primary">View More</a>
-                                </div>
-                            </div>
-                            <div class="t-package-card-body">
-                                <h6 class="t-package-card-title">the great wall<span>(China)</span></h6>
-                                <ul class="t-package-body-img">
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/clock.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/info.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/price.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/map.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-12 col-md-6 col-lg-4 col-xl-4">
-                        <div class="t-package-card">
-                            <div class="t-package-img">
-                                <img src="images/island.png" alt="" class="img-fluid">
-                                <div class="t-package-card-btn">
-                                    <span class="t-package-card-price btn">599 $</span>
-                                    <a href="#" class="btn btn-primary">View More</a>
-                                </div>
-                            </div>
-                            <div class="t-package-card-body">
-                                <h6 class="t-package-card-title">nail Esland<span>(Andaman)</span></h6>
-                                <ul class="t-package-body-img">
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/clock.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/info.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/price.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/map.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-12 col-md-6 col-lg-4 col-xl-4">
-                        <div class="t-package-card">
-                            <div class="t-package-img">
-                                <img src="images/boolun.png" alt="" class="img-fluid">
-                                <div class="t-package-card-btn">
-                                    <span class="t-package-card-price btn">599 $</span>
-                                    <a href="#" class="btn btn-primary">View More</a>
-                                </div>
-                            </div>
-                            <div class="t-package-card-body">
-                                <h6 class="t-package-card-title">Mauritius<span>(indiana)</span></h6>
-                                <ul class="t-package-body-img">
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/clock.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/info.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/price.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                    <li class="t-package-img-item">
-                                        <span class="t-package-img-link">
-                                            <img src="images/map.png" alt="" class="img-fluid">
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
+
+
+
 
                 </div>
             </div>
@@ -596,75 +418,99 @@ $date1 = str_replace('-', '/', $date);
             </div>
             <div class="t-cities-list">
                 <div class="row">
-
                     <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
+                        <a href="#" onclick="get_tours_data('<?= $Apidestination[0]->dest_id ?>','1')">
                         <div class="t-cities-card">
                             <div class="t-cities-img">
-                                <img src="images/europe.jpg" alt="" class="img-fluid">
+                                <img src="<?= $Apidestination[0]->gallery_images[5]->image_url; ?>" alt="" class="img-fluid">
                                 <div class="t-cities-details">
-                                    <h4 class="t-cities-title">Europe</h4>
+                                    <h4 class="t-cities-title"><?= $Apidestination[0]->dest_name ?></h4>
                                     <div class="t-cities-subtitle">
-                                        <h5 class="mb-0">12 Packages</h5>
-                                        <span>Starting from $2400</span>
+                                        <!-- <h5 class="mb-0"><?= $Apidestination[0]->total_packages ?> Packages</h5> -->
+                                        <!-- <span>Starting from $2400</span> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
                         <div class="row">
-                            <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                                <div class="t-cities-card t-cities-small-card">
-                                    <div class="t-cities-img">
-                                        <img src="images/dubai.jpg" alt="" class="img-fluid w-100">
-                                        <div class="t-cities-details">
-                                            <h4 class="t-cities-title">Dubai</h4>
-                                            <div class="t-cities-subtitle t-cities-london">
-                                                <span>Starting from $2400</span>
+                            <?php if (!empty($Apidestination[1])) { ?>
+                                <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
+                                    <a href="#" onclick="get_tours_data('<?= $Apidestination[1]->dest_id ?>','1')">
+                                        <div class="t-cities-card t-cities-small-card">
+                                            <div class="t-cities-img">
+                                                <img src="<?= $Apidestination[1]->gallery_images[5]->image_url; ?>" alt="" class="img-fluid w-100">
+                                                <div class="t-cities-details">
+                                                    <h4 class="t-cities-title"><?= $Apidestination[1]->dest_name ?></h4>
+                                                    <div class="t-cities-subtitle t-cities-london">
+                                                        <!-- <span><?= $Apidestination[1]->total_packages ?> Packages</span> -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                                <div class="t-cities-card t-cities-small-card">
-                                    <div class="t-cities-img">
-                                        <img src="images/india_2.jpg" alt="" class="img-fluid w-100">
-                                        <div class="t-cities-details">
-                                            <h4 class="t-cities-title">india</h4>
-                                            <div class="t-cities-subtitle t-cities-london">
-                                                <span>Starting from $2400</span>
+                            <?php } ?>
+                            <?php if (!empty($Apidestination[2])) { ?>
+
+                                <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
+                                    <a href="#" onclick="get_tours_data('<?= $Apidestination[2]->dest_id ?>','1')">
+                                        <div class="t-cities-card t-cities-small-card">
+                                            <div class="t-cities-img">
+                                                <img src="<?= $Apidestination[2]->gallery_images[5]->image_url; ?>" alt="" class="img-fluid w-100">
+                                                <div class="t-cities-details">
+                                                    <h4 class="t-cities-title"><?= $Apidestination[2]->dest_name ?></h4>
+                                                    <div class="t-cities-subtitle t-cities-london">
+                                                        <!-- <span><?= $Apidestination[2]->total_packages ?> Packages</span> -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                                <div class="t-cities-card t-cities-small-card">
-                                    <div class="t-cities-img">
-                                        <img src="images/usa.jpg" alt="" class="img-fluid w-100">
-                                        <div class="t-cities-details">
-                                            <h4 class="t-cities-title">Usa</h4>
-                                            <div class="t-cities-subtitle t-cities-london">
-                                                <span>Starting from $2400</span>
+                            <?php } ?>
+                            <?php if (!empty($Apidestination[3])) { ?>
+
+                                <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
+                                    <a href="#" onclick="get_tours_data('<?= $Apidestination[3]->dest_id ?>','1')">
+                                        <div class="t-cities-card t-cities-small-card">
+                                            <div class="t-cities-img">
+                                                <img src="<?= $Apidestination[3]->gallery_images[5]->image_url; ?>" alt="" class="img-fluid w-100">
+                                                <div class="t-cities-details">
+                                                    <h4 class="t-cities-title"><?= $Apidestination[3]->dest_name ?></h4>
+                                                    <div class="t-cities-subtitle t-cities-london">
+                                                        <!-- <span><?= $Apidestination[3]->total_packages ?> Packages</span> -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                                <div class="t-cities-card t-cities-small-card">
-                                    <div class="t-cities-img">
-                                        <img src="images/london.jpg" alt="" class="img-fluid w-100">
-                                        <div class="t-cities-details">
-                                            <h4 class="t-cities-title">London</h4>
-                                            <div class="t-cities-subtitle t-cities-london">
-                                                <span>Starting from $2400</span>
+                            <?php } ?>
+                            <?php if (!empty($Apidestination[4])) { ?>
+
+                                <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
+                                    <a href="#" onclick="get_tours_data('<?= $Apidestination[4]->dest_id ?>','1')">
+                                        <div class="t-cities-card t-cities-small-card">
+                                            <div class="t-cities-img">
+                                                <img src="<?= $Apidestination[4]->gallery_images[5]->image_url; ?>" alt="" class="img-fluid w-100">
+                                                <div class="t-cities-details">
+                                                    <h4 class="t-cities-title"><?= $Apidestination[4]->dest_name ?></h4>
+                                                    <div class="t-cities-subtitle t-cities-london">
+                                                        <!-- <span><?= $Apidestination[4]->total_packages ?> Packages</span> -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </div>
+                            <?php } ?>
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -690,99 +536,43 @@ $date1 = str_replace('-', '/', $date);
                 <p class="t-package-discription section-discription">Explore world wide popular hotels across the world.</p>
             </div>
             <div class="row">
-                <div class="col col-12 col-md-12 col-lg-4 col-xl-4">
-                    <div class="t-hotels-card">
+                <?php foreach ($Apihotel as $hotel) { ?>
+                    <div class="col col-12 col-md-12 col-lg-4 col-xl-4">
+                        <div class="t-hotels-card">
+                    <a href="#" onclick="get_tours_data('<?= $hotel->city_id ?>','3','<?= $hotel->hotel_id ?>')">  
                         <div class="t-hotels-img">
-                            <img src="images/chola.jpg" alt="" class="img-fluid w-100">
-                            <div class="t-hotels-ticket">
-                                Available Tickets: 42
+                                <img src="<?= file_exists('crm/'.substr($hotel->hotel_image->hotel_pic_url, 11)) ? 'crm/'.substr($hotel->hotel_image->hotel_pic_url, 11) : 'images/hotel_general.png'?>" alt="" class="img-fluid w-100">
+                                <div class="t-hotels-ticket">
+                                    <?= $hotel->rating_star ?>
+                                </div>
                             </div>
-                        </div>
-                        <div class="t-hotels-card-body">
-                            <h5 class="t-hotels-title">GTC Grand Chola</h5>
-                            <div class="t-hotels-reviw">
-                                <ul class="t-hotels-reviw-list">
-                                    <li class="t-hotels-reviw-item">
-                                        City: illunois,united states
-                                        <div class="t-hotels-reviw-rating">
+                            </a>
+                            <div class="t-hotels-card-body">
+                            <a href="#" onclick="get_tours_data('<?= $hotel->city_id ?>','3','<?= $hotel->hotel_id ?>')">   <h5 class="t-hotels-title"><?= $hotel->hotel_name ?></h5> </a>
+                                <div class="t-hotels-reviw">
+                                    <ul class="t-hotels-reviw-list">
+                                        <li class="t-hotels-reviw-item">
+                                            <?= substr($hotel->amenities, 0, 200) ?> <br>
+                                            <b> <?= $hotel->hotel_city->city_name ?>,<?= $hotel->country ?></b>
+                                            <!-- <div class="t-hotels-reviw-rating">
                                             <span>Rating:</span>
                                             <i class="fa fa-star ms-3" aria-hidden="true"></i>
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        </div>
-                                    </li>
-                                    <li class="t-hotels-price">
+                                        </div> -->
+                                        </li>
+                                        <!-- <li class="t-hotels-price">
                                         <span>$420</span>
-                                    </li>
-                                </ul>
+                                    </li> -->
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col col-12 col-md-12 col-lg-4 col-xl-4">
-                    <div class="t-hotels-card">
-                        <div class="t-hotels-img">
-                            <img src="images/resorts.jpg" alt="" class="img-fluid w-100">
-                            <div class="t-hotels-ticket">
-                                Available Tickets: 520
-                            </div>
-                        </div>
-                        <div class="t-hotels-card-body">
-                            <h5 class="t-hotels-title">Taaj Grand Resorts</h5>
-                            <div class="t-hotels-reviw">
-                                <ul class="t-hotels-reviw-list">
-                                    <li class="t-hotels-reviw-item">
-                                        City: illunois,united states
-                                        <div class="t-hotels-reviw-rating">
-                                            <span>Rating:</span>
-                                            <i class="fa fa-star ms-3" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        </div>
-                                    </li>
-                                    <li class="t-hotels-price">
-                                        <span>$540</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-md-12 col-lg-4 col-xl-4">
-                    <div class="t-hotels-card">
-                        <div class="t-hotels-img">
-                            <img src="images/hotels.jpg" alt="" class="img-fluid w-100">
-                            <div class="t-hotels-ticket">
-                                Available Tickets: 92
-                            </div>
-                        </div>
-                        <div class="t-hotels-card-body">
-                            <h5 class="t-hotels-title">Keep Grand Hotels</h5>
-                            <div class="t-hotels-reviw">
-                                <ul class="t-hotels-reviw-list">
-                                    <li class="t-hotels-reviw-item">
-                                        City: illunois,united states
-                                        <div class="t-hotels-reviw-rating">
-                                            <span>Rating:</span>
-                                            <i class="fa fa-star ms-3" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        </div>
-                                    </li>
-                                    <li class="t-hotels-price">
-                                        <span>$380</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
+
 
             </div>
         </div>
@@ -803,14 +593,14 @@ $date1 = str_replace('-', '/', $date);
                         <p class="deals-discription">Our company that offers travel related services around the world. We provide travel services for Domestic and International and deal with in the most professional and efficient manner with immediate response and best service. Our Well Experienced tourism professionals serve tourists better as per their convenience.</p>
                         <!--<h5 class="deals-helpline">Help line: +001 21745 12345</h5>-->
                         <div class="deals-book-btns">
-                            <a href="#" class="btn">ABOUT US</a>
-                            <a href="#" class="btn">CONTACT NOW</a>
+                            <a href="about.php" class="btn">ABOUT US</a>
+                            <a href="contact.php" class="btn">CONTACT NOW</a>
                         </div>
                     </div>
                 </div>
                 <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
                     <div class="deals-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/CxHZAm_B0UU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/CxHZAm_B0UU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -834,150 +624,47 @@ $date1 = str_replace('-', '/', $date);
             </div>
             <div class="events-table">
                 <div class="events-table-input">
-                    <input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Search Event Name.." title="Type in a name">
+                    <input type="text" id="myInput" class="form-control" onkeyup="filterSearch()" placeholder="Search Event Name.." title="Type in a name">
                 </div>
                 <table id="myTable" class="table events-table-start">
                     <thead>
                         <tr>
                             <th scope="col" class="text-center">#</th>
                             <th scope="col">Event Name</th>
-                            <th scope="col" class="table-hader-title">Date</th>
-                            <th scope="col" class="table-hader-title">Time</th>
+                            <th scope="col" class="table-hader-title">Days</th>
+                            <th scope="col" class="table-hader-title">Nights</th>
                             <th scope="col" class="table-hader-title">Location</th>
                             <th scope="col">Book</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="events-body">
-                            <td class="events-place-ruting">1</td>
-                            <td class="bob">
-                                <img src="images/iplace-1.jpg" alt="" class="img-fluid events-place-img">
-                                <a href="#" class="events-place-name">Taj Mahal,Agra, India</a>
-                            </td>
-                            <td class="events-place-ruting table-routing">16.12.2016</td>
-                            <td class="events-place-ruting table-routing">10.00 PM</td>
-                            <td class="events-place-ruting table-routing">Australia</td>
-                            <td>
-                                <a href="#" class="btn events-place-book">Book Now</a>
-                            </td>
-                        </tr>
-                        <tr class="events-body">
-                            <td class="events-place-ruting">2</td>
-                            <td class="bob">
-                                <img src="images/iplace-2.jpg" alt="" class="img-fluid events-place-img">
-                                <a href="#" class="events-place-name">Salesforce Summer, Dubai</a>
-                            </td>
-                            <td class="events-place-ruting table-routing">16.12.2016</td>
-                            <td class="events-place-ruting table-routing">10.00 PM</td>
-                            <td class="events-place-ruting table-routing">Dubai</td>
-                            <td>
-                                <a href="#" class="btn events-place-book">Book Now</a>
-                            </td>
-                        </tr>
-                        <tr class="events-body">
-                            <td class="events-place-ruting">3</td>
-                            <td class="bob">
-                                <img src="images/iplace-3.jpg" alt="" class="img-fluid events-place-img">
-                                <a href="#" class="events-place-name">God Towers, TOKYO, JAPAN</a>
-                            </td>
-                            <td class="events-place-ruting table-routing">16.12.2016</td>
-                            <td class="events-place-ruting table-routing">10.00 PM</td>
-                            <td class="events-place-ruting table-routing">Japan</td>
-                            <td>
-                                <a href="#" class="btn events-place-book">Book Now</a>
-                            </td>
-                        </tr>
-                        <tr class="events-body">
-                            <td class="events-place-ruting">4</td>
-                            <td class="bob">
-                                <img src="images/iplace-4.jpg" alt="" class="img-fluid events-place-img">
-                                <a href="#" class="events-place-name">TOUR DE ROMANDIE, Switzerland</a>
-                            </td>
-                            <td class="events-place-ruting table-routing">16.12.2016</td>
-                            <td class="events-place-ruting table-routing">10.00 PM</td>
-                            <td class="events-place-ruting table-routing">Switzerland</td>
-                            <td>
-                                <a href="#" class="btn events-place-book">Book Now</a>
-                            </td>
-                        </tr>
-                        <tr class="events-body">
-                            <td class="events-place-ruting">5</td>
-                            <td class="bob">
-                                <img src="images/iplace-5.jpg" alt="" class="img-fluid events-place-img">
-                                <a href="#" class="events-place-name">TOUR DE POLOGNE, Poland</a>
-                            </td>
-                            <td class="events-place-ruting table-routing">16.12.2016</td>
-                            <td class="events-place-ruting table-routing">10.00 PM</td>
-                            <td class="events-place-ruting table-routing">Poland</td>
-                            <td>
-                                <a href="#" class="btn events-place-book">Book Now</a>
-                            </td>
-                        </tr>
-                        <tr class="events-body">
-                            <td class="events-place-ruting">6</td>
-                            <td class="bob">
-                                <img src="images/iplace-6.jpg" alt="" class="img-fluid events-place-img">
-                                <a href="#" class="events-place-name">Future of Marketing,Sydney, Australia</a>
-                            </td>
-                            <td class="events-place-ruting table-routing">16.12.2016</td>
-                            <td class="events-place-ruting table-routing">10.00 PM</td>
-                            <td class="events-place-ruting table-routing">Australia</td>
-                            <td>
-                                <a href="#" class="btn events-place-book">Book Now</a>
-                            </td>
-                        </tr>
-                        <tr class="events-body">
-                            <td class="events-place-ruting">7</td>
-                            <td class="bob">
-                                <img src="images/iplace-7.jpg" alt="" class="img-fluid events-place-img">
-                                <a href="#" class="events-place-name">Eiffel Tower, Paris</a>
-                            </td>
-                            <td class="events-place-ruting table-routing">16.12.2016</td>
-                            <td class="events-place-ruting table-routing">10.00 PM</td>
-                            <td class="events-place-ruting table-routing">France</td>
-                            <td>
-                                <a href="#" class="btn events-place-book">Book Now</a>
-                            </td>
-                        </tr>
-                        <tr class="events-body">
-                            <td class="events-place-ruting">8</td>
-                            <td class="bob">
-                                <img src="images/iplace-8.jpg" alt="" class="img-fluid events-place-img">
-                                <a href="#" class="events-place-name">PARIS - ROUBAIX, England</a>
-                            </td>
-                            <td class="events-place-ruting table-routing">16.12.2016</td>
-                            <td class="events-place-ruting table-routing">10.00 PM</td>
-                            <td class="events-place-ruting table-routing">England</td>
-                            <td>
-                                <a href="#" class="btn events-place-book">Book Now</a>
-                            </td>
-                        </tr>
-                        <tr class="events-body">
-                            <td class="events-place-ruting">9</td>
-                            <td class="bob">
-                                <img src="images/iplace-9.jpg" alt="" class="img-fluid events-place-img">
-                                <a href="#" class="events-place-name">Dubai Beach Resort, Dubai</a>
-                            </td>
-                            <td class="events-place-ruting table-routing">16.12.2016</td>
-                            <td class="events-place-ruting table-routing">10.00 PM</td>
-                            <td class="events-place-ruting table-routing">Dubai</td>
-                            <td>
-                                <a href="#" class="btn events-place-book">Book Now</a>
-                            </td>
-                        </tr>
-                        <tr class="events-body">
-                            <td class="events-place-ruting">10</td>
-                            <td class="bob">
-                                <img src="images/iplace-4.jpg" alt="" class="img-fluid events-place-img">
-                                <a href="#" class="events-place-name">TOUR DE POLOGNE, Poland</a>
-                            </td>
-                            <td class="events-place-ruting table-routing">16.12.2016</td>
-                            <td class="events-place-ruting table-routing">10.00 PM</td>
-                            <td class="events-place-ruting table-routing">Poland</td>
-                            <td>
-                                <a href="#" class="btn events-place-book">Book Now</a>
-                            </td>
-                        </tr>
+
+                        <?php
+                        $count = 1;
+                        foreach ($Apipackage as $package) {
+
+                            $package_name = $package->package_name;
+
+                            $package_fname = str_replace(' ', '_', $package_name);
+
+                            $file_name = 'package_tours/' . $package_fname . '-' . $package->package_id . '.php';
+                        ?>
+                            <tr class="events-body">
+                                <td class="events-place-ruting"><?= $count++ ?></td>
+                                <td class="bob">
+                                    <img src="<?= $package->main_img_url ?>" alt="" class="img-fluid events-place-img">
+                                    <a href="<?= $file_name ?>" class="events-place-name"><?= $package->package_name ?></a>
+                                </td>
+                                <td class="events-place-ruting table-routing"><?= $package->total_days ?></td>
+                                <td class="events-place-ruting table-routing"><?= $package->total_nights ?></td>
+                                <td class="events-place-ruting table-routing"> <?= $package->destination->dest_name ?></td>
+                                <td>
+                                    <a href="<?= $file_name ?>" class="btn events-place-book">Book Now</a>
+                                </td>
+                            </tr>
+
+                        <?php } ?>
+
                     </tbody>
                 </table>
             </div>
@@ -998,86 +685,34 @@ $date1 = str_replace('-', '/', $date);
                     <div class="t-package-style-line"></div>
                     <div class="t-package-style"></div>
                 </div>
-                <p class="t-package-discription section-discription">Find best deals of sightseeing you should explore in your life.</p>
+                <p class="t-package-discription section-discription"> Find Find best deals of sightseeing you should explore in your life.</p>
             </div>
         </div>
         <div class="row">
-            <div class="col col-12 col-md-6">
-                <div class="sight-card">
-                    <div class="row">
-                        <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="sight-card-img">
-                                <img src="images/honeymoon.jpg" alt="" class="img-fluid w-100">
+            <?php foreach ($Apiactivity as $activity) { ?>
+                <div class="col col-12 col-md-6">
+                    <div class="sight-card">
+                        <div class="row">
+                            <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
+                                <div class="sight-card-img">
+                                    <img src="crm/<?= substr($activity->images[0]->image_url, 6) ?>" alt="" class="img-fluid w-100">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col col-12 col-md-12 col-lg-6 col-xl-6 pl-0">
-                            <div class="sight-card-body">
-                                <h6 class="sight-body-subtitle">Honeymoon Package</h6>
-                                <h5 class="sight-body-title"> 7 Days / 6 Nights</h5>
-                                <p class="sight-body-discription">lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p>
-                                <a href="#" class="btn sight-card-btn">MORE INFO</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-12 col-md-6">
-                <div class="sight-card">
-                    <div class="row">
-                        <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="sight-card-img">
-                                <img src="images/family.jpg" alt="" class="img-fluid w-100">
-                            </div>
-                        </div>
-                        <div class="col col-12 col-md-12 col-lg-6 col-xl-6 pl-0">
-                            <div class="sight-card-body">
-                                <h6 class="sight-body-subtitle">Family package</h6>
-                                <h5 class="sight-body-title">14 Days / 13 Nights</h5>
-                                <p class="sight-body-discription">lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p>
-                                <a href="#" class="btn sight-card-btn">MORE INFO</a>
+                            <div class="col col-12 col-md-12 col-lg-6 col-xl-6 pl-0">
+                                <div class="sight-card-body">
+                                    <h6 class="sight-body-subtitle"><?= $activity->depature_point ?></h6>
+                                    <h5 class="sight-body-title"> <?= $activity->excursion_name ?></h5>
+                                    <p class="sight-body-discription"><?= substr($activity->note, 0, 100) ?></p>
+                                    <a href="#" onclick="get_tours_data('<?= $activity->city_id ?>','4','<?= $activity->entry_id ?>')" class="btn sight-card-btn">MORE INFO</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col col-12 col-md-6">
-                <div class="sight-card">
-                    <div class="row">
-                        <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="sight-card-img">
-                                <img src="images/weekend.jpg" alt="" class="img-fluid w-100">
-                            </div>
-                        </div>
-                        <div class="col col-12 col-md-12 col-lg-6 col-xl-6 pl-0">
-                            <div class="sight-card-body">
-                                <h6 class="sight-body-subtitle">Weekend Package </h6>
-                                <h5 class="sight-body-title"> 3 Days / 2 Nights</h5>
-                                <p class="sight-body-discription">lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p>
-                                <a href="#" class="btn sight-card-btn">MORE INFO</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-12 col-md-6">
-                <div class="sight-card">
-                    <div class="row">
-                        <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="sight-card-img">
-                                <img src="images/group.jpg" alt="" class="img-fluid w-100">
-                            </div>
-                        </div>
-                        <div class="col col-12 col-md-12 col-lg-6 col-xl-6 pl-0">
-                            <div class="sight-card-body">
-                                <h6 class="sight-body-subtitle">Group Package</h6>
-                                <h5 class="sight-body-title"> 10 Days / 9 Nights</h5>
-                                <p class="sight-body-discription">lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p>
-                                <a href="#" class="btn sight-card-btn">MORE INFO</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
+
+
+
         </div>
     </div>
 </section>
@@ -1097,14 +732,17 @@ $date1 = str_replace('-', '/', $date);
                 <p class="t-package-discription section-discription">We explore the world and write our experiences so customer have better experience in their tours.</p>
             </div>
             <div class="row">
-                <div class="col col-12 col-md-12 col-lg-4 col-xl-4">
-                    <div class="branding-list">
-                        <div class="branding-header">
-                            <h5 class="branding-header-title">Top Branding <span>Hotels</span></h5>
-                        </div>
-                        <div class="branding-body">
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
+                <?php foreach ($Apiblog as $blog) { ?>
+                    <div class="col col-12 col-md-12 col-lg-4 col-xl-4">
+                        <div class="branding-list">
+                            <div class="branding-header">
+                                <img src="crm/<?= substr($blog->image, 9) ?>" alt="" class="img-fluid">
+                                <h5 class="branding-header-title"><?= $blog->title ?></h5>
+                            </div>
+                            <div class="branding-body">
+                                <div class="branding-item border-bottom">
+                                    <article> <?= substr($blog->description, 0, 200) ?>... <a href="single-blog.php?blog_id=<?= $blog->entry_id ?>" target="_blank">Read More</a> </article>
+                                    <!-- <div class="branding-img">
                                     <a href="#"><img src="images/branding_1.jpg" alt="" class="img-fluid"></a>
                                 </div>
                                 <div class="branding-item-title">
@@ -1115,227 +753,15 @@ $date1 = str_replace('-', '/', $date);
                                 </div>
                                 <div class="branding-reting">
                                     <a href="#">4.5</a>
+                                </div> -->
                                 </div>
-                            </div>
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_2.jpg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Universal luxury Grand Hotel</h6>
-                                        <span>City: Rio,Brazil</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <a href="#">4.2</a>
-                                </div>
-                            </div>
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_3.jpg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Barcelona Grand Pales</h6>
-                                        <span>City: Chennai,India</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <a href="#">5.0</a>
-                                </div>
-                            </div>
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_4.jpg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Lake Palace view Hotel</h6>
-                                        <span>City: Beijing,China</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <a href="#">2.5</a>
-                                </div>
-                            </div>
-                            <div class="branding-item">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_5.jpg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">First Class Grandd Hotel</h6>
-                                        <span>City: Berlin,Germany</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <a href="#">4.0</a>
-                                </div>
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-md-12 col-lg-4 col-xl-4">
-                    <div class="branding-list">
-                        <div class="branding-header">
-                            <h5 class="branding-header-title">Top Branding <span>Packages</span></h5>
-                        </div>
-                        <div class="branding-body">
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_6.jpg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Family Package Luxury</h6>
-                                        <span>Duration: 7 Days and 6 Nights</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <a href="#">4.1</a>
-                                </div>
-                            </div>
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_7.jpg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Honeymoon Package Luxury</h6>
-                                        <span>Duration: 14 Days and 13 Nights</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <a href="#">4.4</a>
-                                </div>
-                            </div>
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_8.jpg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Group Package Luxury</h6>
-                                        <span>Duration: 28 Days and 29 Nights</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <a href="#">3.0</a>
-                                </div>
-                            </div>
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_9.jpg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Regular Package Luxury</h6>
-                                        <span>Duration: 12 Days and 11 Nights</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <a href="#">3.5</a>
-                                </div>
-                            </div>
-                            <div class="branding-item">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_10.jpg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Custom Package Luxury</h6>
-                                        <span>Duration: 10 Days and 10 Nights</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <a href="#">5.0</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-md-12 col-lg-4 col-xl-4">
-                    <div class="branding-list">
-                        <div class="branding-header">
-                            <h5 class="branding-header-title">Top Branding <span>Reviewers</span></h5>
-                        </div>
-                        <div class="branding-body">
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_11.jpg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Christopher</h6>
-                                        <span>No of Reviews: 620, City: illunois</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_12.png" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Matthew</h6>
-                                        <span>No of Reviews: 48, City: Rio</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_13.jpeg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Stephanie</h6>
-                                        <span>No of Reviews: 560, City: Chennai</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="branding-item border-bottom">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_14.jpeg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Robert</h6>
-                                        <span>No of Reviews: 920, City: Beijing</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="branding-item">
-                                <div class="branding-img">
-                                    <a href="#"><img src="images/branding_15.jpeg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Danielle</h6>
-                                        <span>No of Reviews: 768, City: Berlin</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-                                </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
+
             </div>
         </div>
     </div>
@@ -1427,7 +853,7 @@ $date1 = str_replace('-', '/', $date);
                                     <img src="images/tips2.png" alt="" class="img-fluid w-100">
                                 </div>
                                 <div class="tips-points-details">
-                                    <h5 class="tips-details-title">knowledge of destination</h5>
+                                    <h5 class="tips-details-title">Basic knowledge of destination</h5>
                                     <p class="tips-detalis-discription mb-0">Be prepare about the dstination, distance, route</p>
                                 </div>
                             </div>
@@ -1448,54 +874,21 @@ $date1 = str_replace('-', '/', $date);
                     <div class="tips-customer">
                         <h5 class="tips-points-title">Customer Testimonials</h5>
                         <div class="it-coustomer-slider owl-carousel">
-                            <div class="item">
-                                <div class="tips-points-item">
-                                    <div class="tips-points-img tips-customer-img">
-                                        <img src="images/testi_img.png" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="tips-points-details">
-                                        <h5 class="tips-details-title">John William</h5>
-                                        <p class="tips-detalis-discription tips-customer-discription">Ut sed sem quis magna ultricies lacinia et sed tortor. Ut non tincidunt nisi, non elementum lorem. Aliquam gravida sodales</p>
-                                        <address class="tips-detalis-discription mb-0">Illinois, United States of America</address>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="tips-points-item">
-                                    <div class="tips-points-img tips-customer-img">
-                                        <img src="images/testi_img.png" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="tips-points-details">
-                                        <h5 class="tips-details-title">John William</h5>
-                                        <p class="tips-detalis-discription tips-customer-discription">Ut sed sem quis magna ultricies lacinia et sed tortor. Ut non tincidunt nisi, non elementum lorem. Aliquam gravida sodales</p>
-                                        <address class="tips-detalis-discription mb-0">Illinois, United States of America</address>
+                            <?php foreach ($Apitestimonial as $testimonial) { ?>
+                                <div class="item">
+                                    <div class="tips-points-item">
+                                        <div class="tips-points-img ">
+                                            <img src="crm/<?= substr($testimonial->image, 9) ?>" alt="" class="img-fluid w-100">
+                                        </div>
+                                        <div class="tips-points-details">
+                                            <h5 class="tips-details-title"><?= $testimonial->name ?></h5>
+                                            <p class="tips-detalis-discription tips-customer-discription"><?= substr($testimonial->testm, 0, 200) ?> ...</p>
+                                            <address class="tips-detalis-discription mb-0"><?= $testimonial->designation ?></address>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="tips-points-item">
-                                    <div class="tips-points-img tips-customer-img">
-                                        <img src="images/testi_img.png" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="tips-points-details">
-                                        <h5 class="tips-details-title">John William</h5>
-                                        <p class="tips-detalis-discription tips-customer-discription">Ut sed sem quis magna ultricies lacinia et sed tortor. Ut non tincidunt nisi, non elementum lorem. Aliquam gravida sodales</p>
-                                        <address class="tips-detalis-discription mb-0">Illinois, United States of America</address>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="tips-points-item">
-                                    <div class="tips-points-img tips-customer-img">
-                                        <img src="images/testi_img.png" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="tips-points-details">
-                                        <h5 class="tips-details-title">John William</h5>
-                                        <p class="tips-detalis-discription tips-customer-discription">Ut sed sem quis magna ultricies lacinia et sed tortor. Ut non tincidunt nisi, non elementum lorem. Aliquam gravida sodales</p>
-                                        <address class="tips-detalis-discription mb-0">Illinois, United States of America</address>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php } ?>
+
                         </div>
                         <div class="tips-helps-imgs">
                             <h5 class="tips-points-title tips-helps-title">Secure Payment Gateway</h5>
@@ -1650,4 +1043,28 @@ include 'layouts/footer.php';
         }
 
     });
+</script>
+
+<script>
+    function filterSearch() {
+        var input, filter, found, table, tr, td, i, j;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td");
+            for (j = 0; j < td.length; j++) {
+                if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    found = true;
+                }
+            }
+            if (found) {
+                tr[i].style.display = "";
+                found = false;
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
 </script>
