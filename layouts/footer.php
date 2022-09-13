@@ -224,7 +224,7 @@
     </div>
 </footer>
 <div class="copiright-content">
-    <p class="copiright-discription">Copyrights © 2022 <?= $Apigeneral->app_name ?>. All Rights Reserved</p>
+    <p class="copiright-discription">Copyrights © 2022 <a href="#" style="text-decoration: none; color: inherit;"> <?= $Apigeneral->app_name ?></a> .All Rights Reserved</p>
 </div>
 <!-- Footer End -->
 
