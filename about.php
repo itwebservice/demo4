@@ -249,7 +249,7 @@ include 'layouts/header.php';
                     <p class="ts-section-description">Our Well Experienced tourism professionals serve tourists better as per their convenience. You Can Contact us any time 24*7. We Provides efficient, reliable & Cost effective Services anywhere in the world.</p>
 
                     <div class="abt-btn">
-                    <a href="#" class="btn btn-primary">Read More</a>
+                    <a href="contact.php" class="btn btn-primary">Contact Us</a>
                     </div>
 
                 </div>
