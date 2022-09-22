@@ -216,6 +216,46 @@ $date1 = str_replace('-', '/', $date);
     </div>
 </section>
 <!-- Main Booking Section End -->
+<!--Social Media icon sticky-->
+
+<div class="s-icons">
+    <ul>
+        <?php
+
+            if ($social_media[0]->fb != '') { ?>
+        <a target="_blank" href="<?= $social_media[0]->fb ?>"><li class="fb">
+            <i class="fa fa-facebook"></i>
+        </li></a>
+        <?php }
+        if ($social_media[0]->tw != '') { ?>
+            <a target="_blank" href="<?= $social_media[0]->tw ?>"><li class="twit">
+                <i class="fa fa-twitter"></i>
+            </li></a>
+            <?php }
+        if ($social_media[0]->wa != '') { ?>
+        <a target="_blank" href="<?= $social_media[0]->wa ?>"><li class="wapp">
+            <i class="fa fa-whatsapp"></i>
+        </li></a>
+        <?php }
+        if ($social_media[0]->inst != '') { ?>
+            <a target="_blank" href="<?= $social_media[0]->inst ?>"><li class="insta">
+                <i class="fa fa-instagram"></i>
+            </li></a>
+            <?php }
+        if ($social_media[0]->li != '') { ?>
+            <a target="_blank" href="<?= $social_media[0]->li ?>"><li class="link">
+                <i class="fa fa-linkedin"></i>
+            </li></a>
+            <?php }
+        if ($social_media[0]->yu != '') { ?>
+            <a target="_blank" href="<?= $social_media[0]->yu ?>"><li class="yt">
+                <i class="fa fa-youtube"></i>
+            </li></a>
+            <?php } ?>
+    </ul>
+</div>
+
+<!--End social Media icon sticky-->
 
 <!-- Main Booking Section End -->
 <!-- <section class="main-booking-section">
