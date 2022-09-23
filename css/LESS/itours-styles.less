@@ -23,6 +23,17 @@
   zoom: 1;
 }
 
+/* preloader */
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+    url("https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif")
+    no-repeat center center;
+  z-index: 999;
+}
+
 html {
   font-size: 16px;
   min-height: 100%;
@@ -237,8 +248,6 @@ select option {
   vertical-align: middle;
 }
 
-
-
 /* 2.1.3. Checkbox and Radio */
 .checkbox,
 .radio {
@@ -409,7 +418,8 @@ ul.tabs a,
   right: 0;
   width: 30px;
   height: 100%;
-  background: url(../../images/icon/icon-check.png) no-repeat center center #7db921;
+  background: url(../../images/icon/icon-check.png) no-repeat center center
+    #7db921;
 }
 
 .icon-check:hover:after {
@@ -467,7 +477,7 @@ ul.tabs a,
   font-size: 1.1667em;
 }
 
-.info-box>*:last-child {
+.info-box > *:last-child {
   margin-bottom: 0;
 }
 
@@ -1045,22 +1055,29 @@ button.ui-button::-moz-focus-inner {
   background: #2d3e52;
 }
 
-.ui-datepicker.dark-blue .ui-datepicker-calendar td.ui-datepicker-today a:before {
+.ui-datepicker.dark-blue
+  .ui-datepicker-calendar
+  td.ui-datepicker-today
+  a:before {
   border-right-color: #2d3e52;
 }
 
 input.input-text,
 textarea,
-.selector select+.c-custom-select {
+.selector select + .c-custom-select {
   -o-transition: border-color 0.15s ease-in-out 0s,
     box-shadow 0.15s ease-in-out 0s;
   -webkit-transition: border-color 0.15s ease-in-out 0s,
     box-shadow 0.15s ease-in-out 0s;
-  -webkit-transition: border-color 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
-  transition: border-color 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
-  -o-transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  -webkit-transition: border-color 0.15s ease-in-out 0s,
+    -webkit-box-shadow 0.15s ease-in-out 0s;
+  transition: border-color 0.15s ease-in-out 0s,
+    -webkit-box-shadow 0.15s ease-in-out 0s;
+  -o-transition: border-color 0.15s ease-in-out 0s,
+    box-shadow 0.15s ease-in-out 0s;
   transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s,
+    -webkit-box-shadow 0.15s ease-in-out 0s;
   border: 1px solid transparent;
   cursor: text;
   border-radius: 0;
@@ -1068,14 +1085,14 @@ textarea,
 
 input.input-text:focus,
 textarea:focus,
-.selector select:focus+.c-custom-select {
+.selector select:focus + .c-custom-select {
   outline: none;
   border: 1px solid var(--primary-color);
   -webkit-box-shadow: 0 0 8px rgba(1, 183, 242, 0.6);
   box-shadow: 0 0 8px rgba(1, 183, 242, 0.6);
 }
 
-.column-5-no-margin>* {
+.column-5-no-margin > * {
   float: left;
 }
 
@@ -1085,24 +1102,24 @@ textarea:focus,
   display: table;
 }
 
-.column-5-no-margin>*:nth-child(5n + 1) {
+.column-5-no-margin > *:nth-child(5n + 1) {
   clear: both;
 }
 
-.column-5-no-margin>* {
+.column-5-no-margin > * {
   width: 20%;
 }
 
 @media (max-width: 768px) {
-  .column-5-no-margin>* {
+  .column-5-no-margin > * {
     width: 50%;
   }
 
-  .column-5-no-margin>*:nth-child(5n + 1) {
+  .column-5-no-margin > *:nth-child(5n + 1) {
     clear: none;
   }
 
-  .column-5-no-margin>*:nth-child(2n + 1) {
+  .column-5-no-margin > *:nth-child(2n + 1) {
     clear: both;
   }
 }
@@ -1152,18 +1169,21 @@ h4.modal-title {
   display: "inline-block";
 }
 
-#currency_dropdown .select2-container--default .select2-selection--single .select2-selection__arrow {
+#currency_dropdown
+  .select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
   right: 20px;
 }
 
 /************************* Style By Harshad Ambaliya Start  ***********************/
 /***************** Home Page Start *******************/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 // body,
 .ts-font-poppins {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 form label {
@@ -1187,7 +1207,7 @@ a:hover {
 .ts-who-are-section {
   padding: 100px 0;
   background-color: #f5f5f5;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .ts-section-subtitle {
@@ -1303,7 +1323,6 @@ a:hover {
   margin-bottom: 35px;
 }
 
-
 .ts-adventure-section {
   padding: 100px 0;
   text-align: center;
@@ -1329,7 +1348,7 @@ a:hover {
 
 .ts-destinations-section {
   padding: 100px 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-image: url(../../images/desitination-back.jpg);
   background-size: cover;
   background-position: center;
@@ -1455,11 +1474,10 @@ a:hover {
 
 .ts-destinations-section .ts-section-title {
   margin-bottom: 50px;
-
 }
 
 .ts-rate-section {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 100px 0;
   background-image: url(../../images/rate-back.jpg);
   background-size: cover;
@@ -1529,7 +1547,7 @@ a:hover {
 
 .ts-testimonial-section {
   padding: 100px 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-image: url(../../images/desitination-back.jpg);
   background-size: cover;
   background-position: center;
@@ -1626,7 +1644,7 @@ a:hover {
 }
 
 .ts-update-section {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 100px 0;
   background-color: #f8f8f8;
 }
@@ -1729,7 +1747,7 @@ a:hover {
 
 .ts-contact-section {
   padding: 50px 0 !important;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-image: url(../../images/desitination-back.jpg);
   background-size: cover;
   background-position: center;
@@ -1853,7 +1871,7 @@ form label {
 }
 
 /***************** Sticky social media *******************/
-.s-icons{
+.s-icons {
   top: 30%;
   left: 0;
   transform: translateY(50%);
@@ -1861,12 +1879,11 @@ form label {
   z-index: 100;
 }
 
-.s-icons ul{
+.s-icons ul {
   padding: initial;
-
 }
 
-.s-icons ul li{
+.s-icons ul li {
   height: 40px;
   width: 40px;
   list-style: none;
@@ -1875,23 +1892,23 @@ form label {
   margin-top: 5px;
   color: #fff;
 }
-.fb{
-  background: #4267B2;
+.fb {
+  background: #4267b2;
 }
-.twit{
-  background: #1DA1F2;
+.twit {
+  background: #1da1f2;
 }
-.wapp{
-  background: #25D366;
+.wapp {
+  background: #25d366;
 }
-.insta{
+.insta {
   background: rgb(225, 48, 108);
 }
-.link{
+.link {
   background: #0e76a8;
 }
-.yt{
-  background: #FF0000;
+.yt {
+  background: #ff0000;
 }
 /***************** End Sticky social media *******************/
 /***************** Home Page End *******************/
@@ -2064,11 +2081,10 @@ form label {
   margin-bottom: 30px;
 }
 
-.abt-btn{
+.abt-btn {
   justify-content: center;
-    align-items: center;
-    display: flex;
-
+  align-items: center;
+  display: flex;
 }
 
 /***************** About Page End *******************/
@@ -2111,7 +2127,6 @@ form label {
   width: 100%;
   text-align: left;
   position: relative;
-
 }
 
 .ts-accordion .btn:after,
@@ -2292,7 +2307,7 @@ form label {
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
+.nav-pills .show > .nav-link {
   background-color: #f68c34;
 }
 
@@ -2404,7 +2419,7 @@ form label {
   background-color: #f68c34;
 }
 
-.ts-best-place-landing-section>img {
+.ts-best-place-landing-section > img {
   height: 240px;
   width: 100%;
   -o-object-fit: cover;
@@ -2551,7 +2566,6 @@ button.owl-prev {
   background-color: #2d3e52;
 }
 
-
 .foot-social ul {
   padding: 0px;
 }
@@ -2607,9 +2621,9 @@ button.owl-prev {
   border-radius: 5px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  -webkit-transition: all ease-in-out .3s;
-  -o-transition: all ease-in-out .3s;
-  transition: all ease-in-out .3s;
+  -webkit-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
 }
 
 .ts-service-card:hover {
@@ -2651,7 +2665,6 @@ h4.ts-service-title {
   border-radius: 10px;
 }
 
-
 .light-gallery-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2691,7 +2704,6 @@ h4.ts-service-title {
 
 /***************** Service Page End *******************/
 
-
 /**********************  Top Header Start ****************/
 .c-pageHeaderTop .pageHeader_top .header-mail-link,
 .c-pageHeaderTop .pageHeader_top .staticText,
@@ -2699,13 +2711,14 @@ h4.ts-service-title {
   font-size: 14px;
 }
 
-.c-select2DD.st-clear .select2-container--default .select2-selection--single .select2-selection__rendered {
+.c-select2DD.st-clear
+  .select2-container--default
+  .select2-selection--single
+  .select2-selection__rendered {
   font-size: 14px;
   min-width: 100px;
   text-align: left;
 }
-
-
 
 .main-menu ul {
   display: -webkit-box;
@@ -2716,7 +2729,7 @@ h4.ts-service-title {
   align-items: baseline;
 }
 
-.top-header .main-menu>ul>li>a {
+.top-header .main-menu > ul > li > a {
   font-size: 14px;
   color: #555555;
   font-weight: 500;
@@ -2724,7 +2737,13 @@ h4.ts-service-title {
 
 .top-header .header-btn .header-offer-btn {
   display: block;
-  background: -webkit-gradient(linear, left top, right top, from(#fbdb24), to(#ff5300));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#fbdb24),
+    to(#ff5300)
+  );
   background: -o-linear-gradient(left, #fbdb24, #ff5300);
   background: #6aafff;
   font-size: 15px;
@@ -2773,7 +2792,7 @@ section.dataContainer {
   padding: 15px 0;
 }
 
-.top-header .main-menu>ul>li>a .icon {
+.top-header .main-menu > ul > li > a .icon {
   left: 3px;
 }
 
@@ -2856,10 +2875,18 @@ ul.c-search-tabs .nav-link {
 }
 
 .main-booking-section::before {
-  content: '';
-  background: #141E30;
-  background: linear-gradient(to right, rgba(36, 59, 85, 0.55), rgba(20, 30, 48, 0.82));
-  background: linear-gradient(to right, rgba(25, 42, 103, 0.8), rgba(20, 30, 48, 0));
+  content: "";
+  background: #141e30;
+  background: linear-gradient(
+    to right,
+    rgba(36, 59, 85, 0.55),
+    rgba(20, 30, 48, 0.82)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(25, 42, 103, 0.8),
+    rgba(20, 30, 48, 0)
+  );
   position: absolute;
   bottom: 0px;
   top: 0px;
@@ -2886,7 +2913,7 @@ ul.c-search-tabs .nav-link {
 .main-booking-subtitle {
   color: #fff;
   text-transform: uppercase;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 10px;
   letter-spacing: 4px;
   font-weight: 100;
@@ -2899,17 +2926,16 @@ ul.c-search-tabs .nav-link {
   color: #fff;
   font-size: 48px;
   margin-bottom: 20px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
 }
-
 
 .main-booking-discription {
   color: #fff;
   font-size: 16px;
   margin-bottom: 0px;
   font-weight: 100;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   line-height: 30px;
 }
 
@@ -2935,7 +2961,7 @@ ul.c-search-tabs .nav-link {
   text-align: center;
   color: #fff;
   border-radius: 5px;
-  font-family: 'Arimo', sans-serif;
+  font-family: "Arimo", sans-serif;
   line-height: 24px;
   border: 1px solid #8e8e8e;
   transition: all 0.5s;
@@ -2964,7 +2990,8 @@ ul.c-search-tabs .nav-link {
   background: linear-gradient(to bottom, #f4364f, #dc2039);
   border: 1px solid #d41e36;
   color: #fff;
-  box-shadow: 0 3px 3px 0 rgb(0 0 0 / 14%), 0 1px 7px 0 rgb(0 0 0 / 12%), 0 3px 1px -1px rgb(0 0 0 / 20%)
+  box-shadow: 0 3px 3px 0 rgb(0 0 0 / 14%), 0 1px 7px 0 rgb(0 0 0 / 12%),
+    0 3px 1px -1px rgb(0 0 0 / 20%);
 }
 
 .main-booking-form {
@@ -2996,7 +3023,7 @@ ul.c-search-tabs .nav-link {
 .booking-form-input .form-control::placeholder {
   color: #6b7a88;
   font-weight: 500;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .booking-form-input {
@@ -3016,20 +3043,25 @@ ul.c-search-tabs .nav-link {
   font-size: 14px;
   display: flex;
   align-items: center;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__placeholder {
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__placeholder {
   color: #000;
   font-weight: 500;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
   height: 45px;
   top: 0;
 }
 
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
+.select2-container--default
+  .select2-results__option--highlighted[aria-selected] {
   background-color: transparent;
   color: #000;
   transition: all 0.5s;
@@ -3040,7 +3072,8 @@ ul.c-search-tabs .nav-link {
   color: #ffffff;
 }
 
-.select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
+.select2-container--default
+  .select2-results__option--highlighted[aria-selected]:hover {
   padding-left: 22px;
   transition: all 0.5s;
 }
@@ -3051,7 +3084,7 @@ ul.c-search-tabs .nav-link {
 
 .select2-results__option {
   padding: 10px 15px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: #000;
   font-weight: 500;
 }
@@ -3060,11 +3093,13 @@ ul.c-search-tabs .nav-link {
   padding-left: 22px;
 }
 
-.select2-container--default .select2-results>.select2-results__options {
+.select2-container--default .select2-results > .select2-results__options {
   box-shadow: 0px 5px 20px 0px rgb(0 0 0 / 16%);
 }
 
-.select2-container--default .select2-selection--single .select2-selection__rendered {
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__rendered {
   color: #000;
   font-weight: 500;
 }
@@ -3079,7 +3114,7 @@ ul.c-search-tabs .nav-link {
   color: #fff;
   font-weight: 600;
   border-radius: 3px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   text-transform: uppercase;
 }
 
@@ -3091,14 +3126,12 @@ ul.c-search-tabs .nav-link {
 
 //**************** main Booking Section End ******************/
 
-
-
 /************** Tour Package Section Start ***************/
 .section-title {
   font-size: 44px;
   color: #253d52;
   margin-bottom: 10px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
   text-align: center;
   line-height: 1.1;
@@ -3111,7 +3144,7 @@ ul.c-search-tabs .nav-link {
   text-align: center;
   color: #888;
   line-height: 24px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .t-package-section {
@@ -3175,7 +3208,7 @@ ul.c-search-tabs .nav-link {
   font-size: 14.5px;
   line-height: 24px;
   text-decoration: none;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 600;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -3195,7 +3228,7 @@ ul.c-search-tabs .nav-link {
 }
 
 .t-package-card-title span {
-  color: #6C6C6C;
+  color: #6c6c6c;
   font-weight: 500;
   text-transform: capitalize;
   padding-left: 5px;
@@ -3223,7 +3256,6 @@ ul.c-search-tabs .nav-link {
   left: 0;
   top: -6px;
 }
-
 
 .t-package-card-btn {
   position: absolute;
@@ -3277,7 +3309,11 @@ ul.c-search-tabs .nav-link {
 .t-cities-img::before {
   content: "";
   position: absolute;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 10%, rgba(84, 84, 84, 0.35) 80%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 10%,
+    rgba(84, 84, 84, 0.35) 80%
+  );
   top: 0;
   left: 0;
   width: 100%;
@@ -3326,7 +3362,7 @@ ul.c-search-tabs .nav-link {
   white-space: nowrap;
   text-overflow: ellipsis;
   margin-bottom: 2px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
   line-height: 1.1;
 }
@@ -3335,14 +3371,14 @@ ul.c-search-tabs .nav-link {
   font-size: 20px;
   color: #eee;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
 .t-cities-subtitle span {
   font-size: 14.5px;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: #c1c1c1;
 }
@@ -3379,7 +3415,7 @@ ul.c-search-tabs .nav-link {
   color: #fff;
   border-radius: 25px;
   border: 1px solid #253747;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .t-hotels-img {
@@ -3387,9 +3423,13 @@ ul.c-search-tabs .nav-link {
 }
 
 .t-hotels-img:before {
-  content: '';
+  content: "";
   position: absolute;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 14%, rgba(0, 0, 0, 0.08) 35%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 14%,
+    rgba(0, 0, 0, 0.08) 35%
+  );
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -3403,7 +3443,7 @@ ul.c-search-tabs .nav-link {
 .t-hotels-title {
   margin-bottom: 10px;
   font-size: 18px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
   line-height: 1.1;
   color: #333333;
@@ -3413,12 +3453,12 @@ ul.c-search-tabs .nav-link {
   color: #888;
   font-size: 14.5px;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
 .t-hotels-reviw-rating i {
-  color: #FF9800;
+  color: #ff9800;
   margin-right: 2px;
   font-size: 14px;
 }
@@ -3438,11 +3478,10 @@ ul.c-search-tabs .nav-link {
   font-weight: 600;
   color: #f4364f;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /************ Tour Hotels Section End ***************/
-
 
 /*********** Deals Section Start *************/
 .deals-section {
@@ -3456,7 +3495,7 @@ ul.c-search-tabs .nav-link {
 }
 
 .deals-section::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -3473,7 +3512,7 @@ ul.c-search-tabs .nav-link {
   padding: 5px 8px;
   font-size: 14.5px;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: inline-block;
   margin-bottom: 25px;
 }
@@ -3483,7 +3522,7 @@ ul.c-search-tabs .nav-link {
   text-transform: uppercase;
   font-size: 42px;
   margin-bottom: 0px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   line-height: 1.1;
 }
@@ -3499,7 +3538,7 @@ ul.c-search-tabs .nav-link {
   padding-bottom: 20px;
   margin-bottom: 25px;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .deals-helpline {
@@ -3514,7 +3553,7 @@ ul.c-search-tabs .nav-link {
   display: inline-block;
   background: #1aa5d8;
   background: linear-gradient(to bottom, #2e9da2, #13b194);
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   line-height: 24px;
 }
 
@@ -3527,7 +3566,7 @@ ul.c-search-tabs .nav-link {
   display: inline-block;
   background: #1aa5d8;
   background: linear-gradient(to bottom, #1aa5d8, #1386b1);
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: #fff;
   font-size: 13px;
 }
@@ -3552,7 +3591,7 @@ ul.c-search-tabs .nav-link {
 }
 
 .events-table-input .form-control {
-  background-image: url('../../images/event-search.png');
+  background-image: url("../../images/event-search.png");
   background-position: 10px 10px;
   background-repeat: no-repeat;
   width: 100%;
@@ -3582,12 +3621,12 @@ ul.c-search-tabs .nav-link {
 .table thead th {
   vertical-align: bottom;
   border-bottom: none;
-  color: #4A505D;
+  color: #4a505d;
   font-size: 18px;
   line-height: 40px;
   font-weight: 600;
   padding: 0 12px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .table thead tr {
@@ -3613,7 +3652,7 @@ ul.c-search-tabs .nav-link {
   border-radius: 2px;
   margin-bottom: 30px;
   display: inline-block;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .events-place-name:hover {
@@ -3624,7 +3663,7 @@ ul.c-search-tabs .nav-link {
   color: #727070;
   font-size: 15px;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
@@ -3638,7 +3677,7 @@ ul.c-search-tabs .nav-link {
   line-height: 24px;
   display: inline-block;
   background: linear-gradient(to bottom, #f4364f, #dc2039);
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .events-body:hover {
@@ -3654,7 +3693,6 @@ ul.c-search-tabs .nav-link {
   padding: 100px 0 70px;
   background-color: #eff5fb;
   position: relative;
-
 }
 
 .sight-section::before {
@@ -3687,7 +3725,7 @@ ul.c-search-tabs .nav-link {
   font-size: 14.5px;
   line-height: 24px;
   font-weight: bold;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   text-transform: capitalize;
   margin-bottom: 0;
 }
@@ -3698,7 +3736,7 @@ ul.c-search-tabs .nav-link {
   text-transform: uppercase;
   line-height: 34px;
   margin-bottom: 10px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: bold;
 }
 
@@ -3708,13 +3746,13 @@ ul.c-search-tabs .nav-link {
   font-size: 14px;
   margin-bottom: 20px;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
 .sight-card-btn {
   font-weight: 700;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   text-decoration: none;
   color: #fff;
   font-size: 13px;
@@ -3774,7 +3812,7 @@ ul.c-search-tabs .nav-link {
   font-size: 18px;
   margin: 10px 0;
   line-height: 1.1;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
 }
 
@@ -3783,7 +3821,7 @@ ul.c-search-tabs .nav-link {
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .branding-body {
@@ -3812,7 +3850,7 @@ ul.c-search-tabs .nav-link {
   color: #343c42;
   font-size: 16px;
   line-height: 1.1;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   transition: all 0.5s ease;
 }
@@ -3826,7 +3864,7 @@ ul.c-search-tabs .nav-link {
   font-size: 13px;
   color: #999;
   line-height: 23px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
@@ -3843,7 +3881,7 @@ ul.c-search-tabs .nav-link {
   color: #253d52;
   font-weight: 600;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-shadow: 0px -1px 0 rgb(0 0 0 / 28%);
 }
 
@@ -3861,7 +3899,7 @@ ul.c-search-tabs .nav-link {
 
 /*********** Mobile Section Start ***********/
 .mobile-section {
-  background-image: url('https://demo4.itourscloud.com/images/cloud.png');
+  background-image: url("https://demo4.itourscloud.com/images/cloud.png");
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
@@ -3870,9 +3908,13 @@ ul.c-search-tabs .nav-link {
 }
 
 .mobile-section::before {
-  content: '';
+  content: "";
   position: absolute;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.55) 0%, rgba(240, 240, 240, 0.8) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(240, 240, 240, 0.8) 100%
+  );
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -3885,7 +3927,7 @@ ul.c-search-tabs .nav-link {
   line-height: 1.1;
   font-weight: 700;
   margin-bottom: 10px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .mobile-app-discription {
@@ -3894,7 +3936,7 @@ ul.c-search-tabs .nav-link {
   font-weight: 400;
   line-height: 24px;
   margin-bottom: 34px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .mobile-details-item i {
@@ -3915,7 +3957,7 @@ ul.c-search-tabs .nav-link {
   line-height: 38px;
   font-size: 18px;
   font-weight: 400;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .mobile-details-list {
@@ -3932,7 +3974,7 @@ ul.c-search-tabs .nav-link {
 
 /************* Tips Section Start ***************/
 .tips-section {
-  background-image: url('../../images/tips_bg.jpg');
+  background-image: url("../../images/tips_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px 0;
@@ -3949,7 +3991,7 @@ ul.c-search-tabs .nav-link {
   font-size: 20px;
   line-height: 1.1;
   margin-bottom: 35px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .tips-points-img {
@@ -3973,14 +4015,14 @@ ul.c-search-tabs .nav-link {
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 3px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .tips-detalis-discription {
   line-height: 25px;
   color: #1e2021;
   font-size: 14.5px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
@@ -4040,12 +4082,12 @@ ul.c-search-tabs .nav-link {
 }
 
 .t-footer-card-title {
-  color: #FFEB3B;
+  color: #ffeb3b;
   font-size: 38px;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 10px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .t-footer-card-img img {
@@ -4057,14 +4099,14 @@ ul.c-search-tabs .nav-link {
   color: #fff;
   font-size: 14.5px;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
 .t-footer-card-subtitle {
   color: #fff;
   font-size: 18px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
   margin-bottom: 10px;
   line-height: 1.1;
@@ -4073,7 +4115,7 @@ ul.c-search-tabs .nav-link {
 .t-footer-card-date {
   font-size: 14.5px;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: #fff;
   margin-bottom: 10px;
@@ -4089,13 +4131,12 @@ ul.c-search-tabs .nav-link {
   transition: all 0.5s ease;
   display: inline-block;
   background: linear-gradient(to bottom, #f4364f, #dc2039);
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .t-footer-card-btn:hover {
-  background: #D46600;
+  background: #d46600;
   color: #fff;
-
 }
 
 .footer-vactions-item {
@@ -4111,7 +4152,7 @@ ul.c-search-tabs .nav-link {
   padding: 5px;
   font-size: 14.5px;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
@@ -4125,7 +4166,7 @@ ul.c-search-tabs .nav-link {
   color: #acadaf;
   text-transform: uppercase;
   font-size: 18px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 25px;
@@ -4139,7 +4180,7 @@ ul.c-search-tabs .nav-link {
   color: #acadaf;
   text-transform: uppercase;
   font-size: 18px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 25px;
@@ -4149,7 +4190,7 @@ ul.c-search-tabs .nav-link {
   color: #616161;
   font-size: 14.5px;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   margin-bottom: 0;
 }
@@ -4202,7 +4243,7 @@ ul.c-search-tabs .nav-link {
   font-size: 13px;
   color: #000000;
   line-height: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
@@ -4451,7 +4492,7 @@ ul.c-search-tabs .nav-link {
     display: none !important;
   }
 
-  .main-menu .submenu:hover>ul {
+  .main-menu .submenu:hover > ul {
     display: block;
     padding: 0;
     visibility: visible;
@@ -4474,7 +4515,7 @@ ul.c-search-tabs .nav-link {
     position: relative;
   }
 
-  .third-level>a:after {
+  .third-level > a:after {
     content: "\64";
     font-family: "itours" !important;
     font-style: normal !important;
@@ -4488,7 +4529,7 @@ ul.c-search-tabs .nav-link {
     margin-left: 10px;
   }
 
-  .third-level:hover>ul {
+  .third-level:hover > ul {
     display: block;
   }
 
@@ -4500,7 +4541,6 @@ ul.c-search-tabs .nav-link {
     min-height: 820px;
     object-fit: cover;
   }
-
 }
 
 @media (max-width: 767px) {
@@ -4529,8 +4569,6 @@ ul.c-search-tabs .nav-link {
   .main-booking-place-list {
     display: inherit;
   }
-
-
 
   .select2-container {
     width: 100% !important;
@@ -4843,7 +4881,6 @@ ul.c-search-tabs .nav-link {
   .ts-testimonial-section button.owl-prev {
     left: -15px;
     width: 12px;
-
   }
 
   .ts-update-section button.owl-next,
@@ -5020,7 +5057,7 @@ ul.c-search-tabs .nav-link {
 }
 
 /*First level styles */
-.main-menu>ul>li>a {
+.main-menu > ul > li > a {
   color: #0a0a0a;
   padding: 0 10px 15px;
   font-size: 16px;
@@ -5035,25 +5072,25 @@ ul.c-search-tabs .nav-link {
   }
 }
 
-.sticky .main-menu>ul>li>a {
+.sticky .main-menu > ul > li > a {
   color: #333;
 }
 
-.sticky .main-menu>ul>li:hover>a {
+.sticky .main-menu > ul > li:hover > a {
   color: @primary-color;
 }
 
 /*First level styles header plain */
-header#plain .main-menu>ul>li>a {
+header#plain .main-menu > ul > li > a {
   color: #333;
 }
 
-header#plain .main-menu>ul>li:hover>a {
+header#plain .main-menu > ul > li:hover > a {
   color: @primary-color;
 }
 
 /*First level styles header colored */
-header#colored.sticky .main-menu>ul>li>a {
+header#colored.sticky .main-menu > ul > li > a {
   color: @white;
 }
 
@@ -5073,10 +5110,10 @@ header#colored.sticky .main-menu>ul>li>a {
     visibility 0s ease 0.3s;
   -o-transition: transform 0.3s ease 0s, opacity 0.3s ease 0s,
     visibility 0s ease 0.3s;
-  -webkit-transition: opacity 0.3s ease 0s,
-    visibility 0s ease 0.3s, -webkit-transform 0.3s ease 0s;
-  transition: opacity 0.3s ease 0s,
-    visibility 0s ease 0.3s, -webkit-transform 0.3s ease 0s;
+  -webkit-transition: opacity 0.3s ease 0s, visibility 0s ease 0.3s,
+    -webkit-transform 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s, visibility 0s ease 0.3s,
+    -webkit-transform 0.3s ease 0s;
   transition: transform 0.3s ease 0s, opacity 0.3s ease 0s,
     visibility 0s ease 0.3s;
   transition: transform 0.3s ease 0s, opacity 0.3s ease 0s,
@@ -5093,7 +5130,8 @@ header#colored.sticky .main-menu>ul>li>a {
   -webkit-transition: opacity 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
   transition: opacity 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
   transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
-  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s,
+    -webkit-transform 0.3s ease 0s;
 }
 
 #close_in,
@@ -5117,9 +5155,8 @@ a.dropdown-toggle.icon-search {
 /* All styles for screen size between 992px and 1200px
 ================================================== */
 @media (min-width: 992px) and (max-width: 1200px) {
-
   /*First level styles */
-  .main-menu>ul>li>a {
+  .main-menu > ul > li > a {
     padding: 0 5px 15px 5px;
   }
 }
@@ -5139,8 +5176,8 @@ a.dropdown-toggle.icon-search {
     display: inline-block;
   }
 
-  .main-menu ul li.submenu:hover>a:before,
-  .main-menu ul li.submenu:hover>a:after {
+  .main-menu ul li.submenu:hover > a:before,
+  .main-menu ul li.submenu:hover > a:after {
     bottom: -20px;
     opacity: 0;
     cursor: pointer;
@@ -5178,7 +5215,7 @@ a.dropdown-toggle.icon-search {
     box-sizing: border-box;
   }
 
-  .main-menu ul li:hover>ul,
+  .main-menu ul li:hover > ul,
   .main-menu ul li:hover .menu-wrapper {
     padding: 0;
     visibility: visible;
@@ -5217,7 +5254,7 @@ a.dropdown-toggle.icon-search {
     text-align: left !important;
   }
 
-  .main-menu ul ul li:hover>a {
+  .main-menu ul ul li:hover > a {
     color: @primary-color;
     padding-left: 15px;
   }
@@ -5289,13 +5326,13 @@ a.dropdown-toggle.icon-search {
     margin-left: 0;
   }
 
-  .main-menu ul ul li.third-level>a:hover {
+  .main-menu ul ul li.third-level > a:hover {
     color: @primary-color;
     padding-left: 18px;
     opacity: 1;
   }
 
-  .main-menu ul ul li.third-level>a:after {
+  .main-menu ul ul li.third-level > a:after {
     font-family: "itours";
     content: "\66";
     float: right;
@@ -5318,7 +5355,7 @@ a.dropdown-toggle.icon-search {
   a.show-submenu:focus,
   a.show-submenu-mega:hover,
   a.show-submenu-mega:focus {
-    color: @primary-color  !important;
+    color: @primary-color !important;
     background-color: #f9f9f9;
   }
 
@@ -5342,7 +5379,7 @@ a.dropdown-toggle.icon-search {
     text-transform: uppercase;
   }
 
-  .megamenu .menu-wrapper>div {
+  .megamenu .menu-wrapper > div {
     padding: 0;
   }
 
@@ -5357,14 +5394,14 @@ a.dropdown-toggle.icon-search {
   }
 
   .main-menu a:hover {
-    color: @primary-color  !important;
+    color: @primary-color !important;
   }
 
-  .main-menu ul>li {
+  .main-menu ul > li {
     padding-bottom: 0;
   }
 
-  .main-menu ul>li i {
+  .main-menu ul > li i {
     float: right;
     font-size: 16px;
   }
@@ -5413,14 +5450,14 @@ a.dropdown-toggle.icon-search {
     transform: translateX(0);
   }
 
-  .main-menu .show-submenu+ul,
-  a.show-submenu-mega+.menu-wrapper {
+  .main-menu .show-submenu + ul,
+  a.show-submenu-mega + .menu-wrapper {
     display: none;
     visibility: hidden;
   }
 
-  a.show-submenu-mega+.menu-wrapper.show_mega,
-  .main-menu a.show-submenu+ul.show_normal {
+  a.show-submenu-mega + .menu-wrapper.show_mega,
+  .main-menu a.show-submenu + ul.show_normal {
     display: block;
     visibility: visible;
   }
@@ -5585,8 +5622,8 @@ a.dropdown-toggle.icon-search {
   color: #454242;
 }
 
-.custom_texteditor>span,
-.custom_texteditor ul li>span {
+.custom_texteditor > span,
+.custom_texteditor ul li > span {
   font-size: 16px !important;
   line-height: 22px !important;
   color: #838383 !important;
@@ -5612,7 +5649,7 @@ a.dropdown-toggle.icon-search {
   list-style-type: disc !important;
 }
 
-.custom_texteditor ul li>span {
+.custom_texteditor ul li > span {
   margin-bottom: 0 !important;
 }
 
