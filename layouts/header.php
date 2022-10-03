@@ -9,11 +9,11 @@ include "array_column.php";
 
 // LIVE Cache file reading
 
-//$cached_array = json_decode(file_get_contents('https://' . $_SERVER['SERVER_NAME'] . '/crm/view/b2c_cache.php'));
+$cached_array = json_decode(file_get_contents('https://' . $_SERVER['SERVER_NAME'] . '/crm/view/b2c_cache.php'));
 
 // LOCAL Cache file readingc
 
-$cached_array = json_decode(file_get_contents('http://'.$_SERVER['SERVER_NAME'] . '/demo4/crm/view/b2c_cache.php'));
+//$cached_array = json_decode(file_get_contents('http://'.$_SERVER['SERVER_NAME'] . '/demo4/crm/view/b2c_cache.php'));
 
  
 
@@ -218,6 +218,10 @@ foreach ($int_dest_id_arr as $int_id) {
     <link rel="stylesheet" href="<?php echo BASE_URL_B2C; ?>css/lightgallery.css">
 
     <link rel="stylesheet" href="<?php echo BASE_URL_B2C; ?>css/lightgallery-bundle.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
 
 
 
