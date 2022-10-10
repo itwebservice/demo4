@@ -1,6 +1,6 @@
 <?php
 
-include "api.php";
+include "config.php";
 
 $service = $_GET['service'];
 
@@ -962,7 +962,7 @@ $date1 = str_replace('-', '/', $date);
                                 </div>
                                 <div class="tips-points-details">
                                     <h5 class="tips-details-title">Basic knowledge of destination</h5>
-                                    <p class="tips-detalis-discription mb-0">Be prepare about the dstination, distance,
+                                    <p class="tips-detalis-discription mb-0">Be prepare about the destination, distance,
                                         route</p>
                                 </div>
                             </div>

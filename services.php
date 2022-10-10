@@ -1,6 +1,6 @@
 <?php
 
-include 'api.php';
+include 'config.php';
 
 //Include header
 
@@ -9,57 +9,57 @@ include 'layouts/header.php';
 ?>
 
 
- <!-- ********** Component :: Page Title ********** -->
+<!-- ********** Component :: Page Title ********** -->
 
- <div class="c-pageTitleSect ts-pageTitleSect">
+<div class="c-pageTitleSect ts-pageTitleSect">
 
-<div class="container">
+    <div class="container">
 
-  <div class="row">
+        <div class="row">
 
-    <div class="col-md-7 col-12">
+            <div class="col-md-7 col-12">
 
 
 
-      <!-- *** Search Head **** -->
+                <!-- *** Search Head **** -->
 
-      <div class="searchHeading">
+                <div class="searchHeading">
 
-        <span class="pageTitle mb-0">Services</span>
+                    <span class="pageTitle mb-0">Services</span>
 
-      </div>
+                </div>
 
-      <!-- *** Search Head End **** -->
+                <!-- *** Search Head End **** -->
+
+            </div>
+
+
+
+            <div class="col-md-5 col-12 c-breadcrumbs">
+
+                <ul>
+
+                    <li>
+
+                        <a href="<?= BASE_URL_B2C ?>">Home</a>
+
+                    </li>
+
+                    <li class="st-active">
+
+                        <a href="javascript:void(0)">Services</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+        </div>
 
     </div>
-
-
-
-    <div class="col-md-5 col-12 c-breadcrumbs">
-
-      <ul>
-
-        <li>
-
-          <a href="<?= BASE_URL_B2C ?>">Home</a>
-
-        </li>
-
-        <li class="st-active">
-
-          <a href="javascript:void(0)">Services</a>
-
-        </li>
-
-      </ul>
-
-    </div>
-
-
-
-  </div>
-
-</div>
 
 </div>
 
@@ -99,7 +99,8 @@ include 'layouts/header.php';
 
             <h2 class="ts-section-subtitle">OUR SERVICES</h2>
 
-            <span class="ts-section-subtitle-icon"><img src="images/traveler.png" alt="traveler" classimg-fluid=""></span>
+            <span class="ts-section-subtitle-icon"><img src="images/traveler.png" alt="traveler"
+                    classimg-fluid=""></span>
 
         </div>
 
@@ -125,7 +126,8 @@ include 'layouts/header.php';
 
                         <h4 class="ts-service-title">Visa</h4>
 
-                        <p class="ts-service-description">Visa is a part of our complete suite of travel solutions apart from air ticketing and Forex services. </p>
+                        <p class="ts-service-description">Visa is a part of our complete suite of travel solutions apart
+                            from air ticketing and Forex services. </p>
 
                     </div>
 
@@ -151,7 +153,8 @@ include 'layouts/header.php';
 
                         <h4 class="ts-service-title">Passport</h4>
 
-                        <p class="ts-service-description">Our team of extremely efficient and experienced of professionals to handle all the requisite visa services.</p>
+                        <p class="ts-service-description">Our team of extremely efficient and experienced of
+                            professionals to handle all the requisite visa services.</p>
 
                     </div>
 
@@ -177,7 +180,8 @@ include 'layouts/header.php';
 
                         <h4 class="ts-service-title">MICE</h4>
 
-                        <p class="ts-service-description">We value the concept of MICE tours i.e. Meetings,Incentive tours,Conferences & Exibitions to motivate employees. </p>
+                        <p class="ts-service-description">We value the concept of MICE tours i.e. Meetings,Incentive
+                            tours,Conferences & Exibitions to motivate employees. </p>
 
                     </div>
 
@@ -203,7 +207,8 @@ include 'layouts/header.php';
 
                         <h4 class="ts-service-title">Insurance</h4>
 
-                        <p class="ts-service-description">Whether you travel for business or pleasure, travel involves risk. We provide the travel insurance services. </p>
+                        <p class="ts-service-description">Whether you travel for business or pleasure, travel involves
+                            risk. We provide the travel insurance services. </p>
 
                     </div>
 
@@ -229,7 +234,8 @@ include 'layouts/header.php';
 
                         <h4 class="ts-service-title">SIM Card</h4>
 
-                        <p class="ts-service-description">Local SIM card is most important whilte traveling abroad for communicate from overseas. </p>
+                        <p class="ts-service-description">Local SIM card is most important while traveling abroad for
+                            communicate from overseas. </p>
 
                     </div>
 
@@ -255,7 +261,8 @@ include 'layouts/header.php';
 
                         <h4 class="ts-service-title">Forex Assistance</h4>
 
-                        <p class="ts-service-description">Local country wise currencies are required to handle expenses paid joy. And we guide you.</p>
+                        <p class="ts-service-description">Local country wise currencies are required to handle expenses
+                            paid joy. And we guide you.</p>
 
                     </div>
 
@@ -280,47 +287,45 @@ include 'layouts/header.php';
 <script type="text/javascript" src="js/scripts.js"></script>
 
 <script>
+$(document).ready(function() {
 
-$( document ).ready(function() {
 
-    
 
     var service = '<?php echo $service; ?>';
 
-    if(service && (service !== '' || service !== undefined)){
+    if (service && (service !== '' || service !== undefined)) {
 
-    var checkLink = $('.c-searchContainer .c-search-tabs li');
+        var checkLink = $('.c-searchContainer .c-search-tabs li');
 
-    var checkTab = $('.c-searchContainer .search-tab-content .tab-pane');
+        var checkTab = $('.c-searchContainer .search-tab-content .tab-pane');
 
-    checkLink.each(function(){
+        checkLink.each(function() {
 
-        var child = $(this).children('.nav-link');
+            var child = $(this).children('.nav-link');
 
-        if(child.data('service') === service){
+            if (child.data('service') === service) {
 
-        $(this).siblings().children('.nav-link').removeClass('active');
+                $(this).siblings().children('.nav-link').removeClass('active');
 
-        child.addClass('active');
+                child.addClass('active');
 
-        }
+            }
 
-    });
+        });
 
-    checkTab.each(function(){
+        checkTab.each(function() {
 
-        if($(this).data('service') === service){
+            if ($(this).data('service') === service) {
 
-        $(this).addClass('active show').siblings().removeClass('active show');
+                $(this).addClass('active show').siblings().removeClass('active show');
 
-        }
+            }
 
-    })
+        })
 
     }
 
-    
+
 
 });
-
 </script>
