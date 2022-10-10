@@ -62,8 +62,8 @@ $row_tariff = mysqli_fetch_assoc($sq_tariff);
 
 ?>
 
-<!-- Landing Section Start -->
-<!-- 
+    <!-- Landing Section Start -->
+    <!-- 
 <section class="ts-inner-landing-section ts-best-place-landing-section ts-font-poppins" style="background-image: url(../images/title-background.jpg);">
 
     <div class="ts-inner-landing-content">
@@ -112,59 +112,59 @@ $row_tariff = mysqli_fetch_assoc($sq_tariff);
 
 </section> -->
 
-<!-- Landing Section End -->
+    <!-- Landing Section End -->
 
-<!-- ********** Component :: Page Title ********** -->
+    <!-- ********** Component :: Page Title ********** -->
 
-<div class="c-pageTitleSect ts-pageTitleSect pb-0">
+    <div class="c-pageTitleSect ts-pageTitleSect pb-0">
 
-<div class="container">
+        <div class="container">
 
-  <div class="row align-items-center">
+            <div class="row align-items-center">
 
-    <div class="col col-12 col-md-12 col-lg-8 col-xl-9">
+                <div class="col col-12 col-md-12 col-lg-8 col-xl-9">
 
 
 
-      <!-- *** Search Head **** -->
+                    <!-- *** Search Head **** -->
 
-      <div class="searchHeading">
+                    <div class="searchHeading">
 
-        <span class="pageTitle"><?= $sq_package['package_name'] ?></span>
+                        <span class="pageTitle"><?= $sq_package['package_name'] ?></span>
 
-      </div>
+                    </div>
 
-      <!-- *** Search Head End **** -->
+                    <!-- *** Search Head End **** -->
 
-    </div>
+                </div>
 
-    <div class="col col-12 col-md-12 col-lg-4 col-xl-3">
+                <div class="col col-12 col-md-12 col-lg-4 col-xl-3">
 
-        <div class="ts-best-place-price-content">
+                    <div class="ts-best-place-price-content">
 
-            <div class="ts-best-place-price-header">
+                        <div class="ts-best-place-price-header">
 
-                <label>Start Price *</label>
+                            <label>Start Price *</label>
 
-            </div>
+                        </div>
 
-            <div class="ts-best-place-price-body">
+                        <div class="ts-best-place-price-body">
 
-                    <span class="p_currency currency-icon"></span>
+                            <span class="p_currency currency-icon"></span>
 
-                    <span class="best-currency-price"><?= $total_cost1 ?></span>
+                            <span class="best-currency-price"><?= $total_cost1 ?></span>
 
-                    <span class="c-hide best-currency-id"><?= $h_currency_id ?></span>(PP)
+                            <span class="c-hide best-currency-id"><?= $h_currency_id ?></span>(PP)
 
-                </p>
+                            </p>
 
-            </div>
+                        </div>
 
-        </div>
+                    </div>
 
-        </div>
+                </div>
 
-    <!-- <div class="col-md-5 col-12 c-breadcrumbs">
+                <!-- <div class="col-md-5 col-12 c-breadcrumbs">
 
        <ul>
 
@@ -186,48 +186,49 @@ $row_tariff = mysqli_fetch_assoc($sq_tariff);
 
 
 
-  </div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<!-- ********** Component :: Page Title End ********** -->
+    <!-- ********** Component :: Page Title End ********** -->
 
 
-<!-- Reason Section End -->
+    <!-- Reason Section End -->
 
-<section class="ts-reason-section ts-font-poppins ts-best-place-section">
+    <section class="ts-reason-section ts-font-poppins ts-best-place-section">
 
-    <div class="container">
+        <div class="container">
 
-        <div class="row">
+            <div class="row">
 
-            <div class="col col-12 col-md-12 col-lg-8 col-xl-9">
+                <div class="col col-12 col-md-12 col-lg-8 col-xl-9">
 
-                <div class="ts-blog-info">
+                    <div class="ts-blog-info">
 
-                    <p class="ts-blog-time">
+                        <p class="ts-blog-time">
 
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
 
-                        <a href="#"><?= $sq_package['total_nights'] ?> Nights, <?= $sq_package['total_days'] ?> Days</a>
+                            <a href="#"><?= $sq_package['total_nights'] ?> Nights, <?= $sq_package['total_days'] ?>
+                                Days</a>
 
-                    </p>
+                        </p>
 
-                    <p class="ts-blog-time ml-auto">
+                        <p class="ts-blog-time ml-auto">
 
-                        <i class="fa fa-bookmark" aria-hidden="true"></i>
+                            <i class="fa fa-bookmark" aria-hidden="true"></i>
 
-                        <a href="#"><?= $sq_destination['dest_name'] ?></a>
+                            <a href="#"><?= $sq_destination['dest_name'] ?></a>
 
-                    </p>
+                        </p>
 
-                </div>
+                    </div>
 
-                <div class="ts-best-place-slider owl-carousel owl-theme">
+                    <div class="ts-best-place-slider owl-carousel owl-theme">
 
-                    <?php
+                        <?php
 
                     if($sq_package['dest_image']!= 0){
 
@@ -259,7 +260,7 @@ $row_tariff = mysqli_fetch_assoc($sq_tariff);
 
                         </div>
 
-                    <?php
+                        <?php
 
                     }
 
@@ -307,59 +308,66 @@ $row_tariff = mysqli_fetch_assoc($sq_tariff);
 
                         } ?>
 
-                </div>
+                    </div>
 
-                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
 
-                    <li class="nav-item">
+                        <li class="nav-item">
 
-                        <a class="nav-link active" id="pills-overview-tab" data-toggle="pill" href="#pills-overview" role="tab" aria-controls="pills-overview" aria-selected="true">OVERVIEW</a>
+                            <a class="nav-link active" id="pills-overview-tab" data-toggle="pill" href="#pills-overview"
+                                role="tab" aria-controls="pills-overview" aria-selected="true">OVERVIEW</a>
 
-                    </li>
+                        </li>
 
-                    <li class="nav-item">
+                        <li class="nav-item">
 
-                        <a class="nav-link" id="pills-travel-tab" data-toggle="pill" href="#pills-travel" role="tab" aria-controls="pills-travel" aria-selected="false">Travel & Stay</a>
+                            <a class="nav-link" id="pills-travel-tab" data-toggle="pill" href="#pills-travel" role="tab"
+                                aria-controls="pills-travel" aria-selected="false">Travel & Stay</a>
 
-                    </li>
+                        </li>
 
-                    <li class="nav-item">
+                        <li class="nav-item">
 
-                        <a class="nav-link" id="pills-inclusion-tab" data-toggle="pill" href="#pills-inclusion" role="tab" aria-controls="pills-inclusion" aria-selected="false">Inclusion</a>
+                            <a class="nav-link" id="pills-inclusion-tab" data-toggle="pill" href="#pills-inclusion"
+                                role="tab" aria-controls="pills-inclusion" aria-selected="false">Inclusion</a>
 
-                    </li>
+                        </li>
 
-                    <li class="nav-item">
+                        <li class="nav-item">
 
-                        <a class="nav-link" id="pills-exclusion-tab" data-toggle="pill" href="#pills-exclusion" role="tab" aria-controls="pills-exclusion" aria-selected="false">Exclusion</a>
+                            <a class="nav-link" id="pills-exclusion-tab" data-toggle="pill" href="#pills-exclusion"
+                                role="tab" aria-controls="pills-exclusion" aria-selected="false">Exclusion</a>
 
-                    </li>
+                        </li>
 
-                    <li class="nav-item">
+                        <li class="nav-item">
 
-                        <a class="nav-link" id="pills-terms-tab" data-toggle="pill" href="#pills-terms" role="tab" aria-controls="pills-terms" aria-selected="false">Terms & Conditions</a>
+                            <a class="nav-link" id="pills-terms-tab" data-toggle="pill" href="#pills-terms" role="tab"
+                                aria-controls="pills-terms" aria-selected="false">Terms & Conditions</a>
 
-                    </li>
+                        </li>
 
-                    <li class="nav-item">
+                        <li class="nav-item">
 
-                        <a class="nav-link" id="pills-covid-tab" data-toggle="pill" href="#pills-covid" role="tab" aria-controls="pills-covid" aria-selected="false">Covid 19</a>
+                            <a class="nav-link" id="pills-covid-tab" data-toggle="pill" href="#pills-covid" role="tab"
+                                aria-controls="pills-covid" aria-selected="false">Covid 19</a>
 
-                    </li>
+                        </li>
 
-                </ul>
+                    </ul>
 
-                <div class="tab-content ts-tab-content" id="pills-tabContent">
+                    <div class="tab-content ts-tab-content" id="pills-tabContent">
 
-                    <div class="tab-pane fade show active" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab">
+                        <div class="tab-pane fade show active" id="pills-overview" role="tabpanel"
+                            aria-labelledby="pills-overview-tab">
 
-                        <div class="ts-tab-content__inner">
+                            <div class="ts-tab-content__inner">
 
-                            <p><?= $sq_package['note'] ?></p>
+                                <p><?= $sq_package['note'] ?></p>
 
-                            <div id="OverviewAccordion">
+                                <div id="OverviewAccordion">
 
-                                <?php
+                                    <?php
 
                                 $count=1;
 
@@ -373,89 +381,95 @@ $row_tariff = mysqli_fetch_assoc($sq_tariff);
 
                                 ?>
 
-                                <div class="card">
+                                    <div class="card">
 
-                                    <div class="card-header" id="OverviewheadingOne<?=$count?>">
+                                        <div class="card-header" id="OverviewheadingOne<?=$count?>">
 
-                                    <h5 class="mb-0">
+                                            <h5 class="mb-0">
 
-                                        <button class="btn btn-link" data-toggle="collapse" data-target="#OverviewcollapseOne<?=$count?>" aria-expanded="true" aria-controls="OverviewcollapseOne<?=$count?>">
+                                                <button class="btn btn-link" data-toggle="collapse"
+                                                    data-target="#OverviewcollapseOne<?=$count?>" aria-expanded="true"
+                                                    aria-controls="OverviewcollapseOne<?=$count?>">
 
-                                            <span class="ts-accordian-icon"></span><span> Day-<?=$count.'  '?><?= $row_program['attraction'] ?></span>
+                                                    <span class="ts-accordian-icon"></span><span>
+                                                        Day-<?=$count.'  '?><?= $row_program['attraction'] ?></span>
 
-                                        </button>
+                                                </button>
 
-                                    </h5>
+                                            </h5>
 
-                                </div>
+                                        </div>
 
 
 
-                                <div id="OverviewcollapseOne<?=$count?>" class="collapse <?= $show_class ?>" aria-labelledby="OverviewheadingOne<?=$count?>" data-parent="#OverviewAccordion">
+                                        <div id="OverviewcollapseOne<?=$count?>" class="collapse <?= $show_class ?>"
+                                            aria-labelledby="OverviewheadingOne<?=$count?>"
+                                            data-parent="#OverviewAccordion">
 
-                                    <div class="card-body">
+                                            <div class="card-body">
 
-                                        <?= $row_program['day_wise_program'] ?>
+                                                <?= $row_program['day_wise_program'] ?>
 
-                                        <ul  class="ts-tours-night-list">
+                                                <ul class="ts-tours-night-list">
 
-                                            <li class="ts-tours-night-item">
+                                                    <li class="ts-tours-night-item">
 
-                                                <span>Overnight Stay</span>
+                                                        <span>Overnight Stay</span>
 
-                                            </li>
+                                                    </li>
 
-                                            <li class="ts-tours-night-item ts-tours-night-name-item">
+                                                    <li class="ts-tours-night-item ts-tours-night-name-item">
 
-                                                <span><?= $row_program['stay'] ?></span>
+                                                        <span><?= $row_program['stay'] ?></span>
 
-                                            </li>
+                                                    </li>
 
-                                        </ul>
+                                                </ul>
 
-                                        <?php
+                                                <?php
 
                                         if($row_program['meal_plan']!=''){ ?>
 
-                                        <ul  class="ts-tours-night-list">
+                                                <ul class="ts-tours-night-list">
 
-                                            <li class="ts-tours-night-item">
+                                                    <li class="ts-tours-night-item">
 
-                                                <span>Meals</span>
+                                                        <span>Meals</span>
 
-                                            </li>
+                                                    </li>
 
-                                            <li class="ts-tours-night-item ts-tours-night-name-item">
+                                                    <li class="ts-tours-night-item ts-tours-night-name-item">
 
-                                                <span><i class="fa fa-spoon" aria-hidden="true"></i> <?= $row_program['meal_plan'] ?></span>
+                                                        <span><i class="fa fa-spoon" aria-hidden="true"></i>
+                                                            <?= $row_program['meal_plan'] ?></span>
 
-                                            </li>
+                                                    </li>
 
-                                        </ul>
+                                                </ul>
 
-                                        <?php } ?>
+                                                <?php } ?>
+
+                                            </div>
+
+                                        </div>
 
                                     </div>
 
-                                    </div>
-
-                                </div>
-
-                                <?php
+                                    <?php
 
                                 $count++;} ?>
+
+                                </div>
 
                             </div>
 
                         </div>
 
-                    </div>
+                        <div class="tab-pane fade" id="pills-travel" role="tabpanel" aria-labelledby="pills-travel-tab">
 
-                    <div class="tab-pane fade" id="pills-travel" role="tabpanel" aria-labelledby="pills-travel-tab">
+                            <div class="ts-tab-content__inner">
 
-                        <div class="ts-tab-content__inner">
-
-                            <?php
+                                <?php
 
                             $sq_h_count = mysqli_num_rows(mysqlQuery("select * from custom_package_hotels where package_id = '$package_id'"));
 
@@ -497,19 +511,19 @@ $row_tariff = mysqli_fetch_assoc($sq_tariff);
 
                                                 ?>
 
-                                                <tr>
+                                            <tr>
 
-                                                    <td><?= $sq_hcity['city_name'] ?></td>
+                                                <td><?= $sq_hcity['city_name'] ?></td>
 
-                                                    <td><?= $sq_hhotel['hotel_name'] ?></td>
+                                                <td><?= $sq_hhotel['hotel_name'] ?></td>
 
-                                                    <td><?= $row_hotel['hotel_type'] ?></td>
-de
-                                                    <td><?= $row_hotel['total_days'] ?></td>
+                                                <td><?= $row_hotel['hotel_type'] ?></td>
 
-                                                </tr>
+                                                <td><?= $row_hotel['total_days'] ?></td>
 
-                                                <?php
+                                            </tr>
+
+                                            <?php
 
                                             }
 
@@ -521,11 +535,11 @@ de
 
                                 </div>
 
-                            <?php } ?>
+                                <?php } ?>
 
-                            <!-- Package Transport -->
+                                <!-- Package Transport -->
 
-                            <?php
+                                <?php
 
                             $sq_tr_count = mysqli_num_rows(mysqlQuery("select * from custom_package_transport where package_id = '$package_id'"));
 
@@ -627,17 +641,17 @@ de
 
                                                 ?>
 
-                                                <tr>
+                                            <tr>
 
-                                                    <td><?= $sq_vehicle['vehicle_name'] ?></td>
+                                                <td><?= $sq_vehicle['vehicle_name'] ?></td>
 
-                                                    <td><?= $pickup ?></td>
+                                                <td><?= $pickup ?></td>
 
-                                                    <td><?= $drop ?></td>
+                                                <td><?= $drop ?></td>
 
-                                                </tr>
+                                            </tr>
 
-                                                <?php
+                                            <?php
 
                                             }
 
@@ -649,59 +663,63 @@ de
 
                                 </div>
 
-                            <?php } ?>
-
-                        </div>
-
-                    </div>
-
-                    <div class="tab-pane fade" id="pills-inclusion" role="tabpanel" aria-labelledby="pills-inclusion-tab">
-
-                        <div class="ts-tab-content__inner">
-
-                            <div class="custom_texteditor">
-
-                                <p><?= $sq_package['inclusions'] ?></p>
+                                <?php } ?>
 
                             </div>
 
                         </div>
 
-                    </div>
+                        <div class="tab-pane fade" id="pills-inclusion" role="tabpanel"
+                            aria-labelledby="pills-inclusion-tab">
 
-                    <div class="tab-pane fade" id="pills-exclusion" role="tabpanel" aria-labelledby="pills-exclusion-tab">
+                            <div class="ts-tab-content__inner">
 
-                        <div class="ts-tab-content__inner">
+                                <div class="custom_texteditor">
 
-                            <div class="custom_texteditor">
+                                    <p><?= $sq_package['inclusions'] ?></p>
 
-                                <p><?= $sq_package['exclusions'] ?></p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="tab-pane fade" id="pills-terms" role="tabpanel" aria-labelledby="pills-terms-tab">
-
-                        <div class="ts-tab-content__inner">
-
-                            <div class="custom_texteditor">
-
-                                <p><?= $sq_terms_cond['terms_and_conditions'] ?></p>
+                                </div>
 
                             </div>
 
                         </div>
 
-                    </div>
+                        <div class="tab-pane fade" id="pills-exclusion" role="tabpanel"
+                            aria-labelledby="pills-exclusion-tab">
 
-                    <div class="tab-pane fade" id="pills-covid" role="tabpanel" aria-labelledby="pills-covid-tab">
+                            <div class="ts-tab-content__inner">
 
-                        <div class="ts-tab-content__inner">
+                                <div class="custom_texteditor">
 
-                            <p>Static Content..</p>
+                                    <p><?= $sq_package['exclusions'] ?></p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-terms" role="tabpanel" aria-labelledby="pills-terms-tab">
+
+                            <div class="ts-tab-content__inner">
+
+                                <div class="custom_texteditor">
+
+                                    <p><?= $sq_terms_cond['terms_and_conditions'] ?></p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-covid" role="tabpanel" aria-labelledby="pills-covid-tab">
+
+                            <div class="ts-tab-content__inner">
+
+                                <p>Static Content..</p>
+
+                            </div>
 
                         </div>
 
@@ -709,61 +727,88 @@ de
 
                 </div>
 
-            </div>
+                <div class="col col-12 col-md-12 col-lg-4 col-xl-3">
 
-            <div class="col col-12 col-md-12 col-lg-4 col-xl-3">
+                    <div class="ts-best-place-enquiry-content">
 
-                <div class="ts-best-place-enquiry-content">
+                        <div class="ts-contact-form">
 
-                <div class="ts-contact-form">
+                            <h3 class="ts-contact-form-title">Get In Touch</h3>
 
-                    <h3 class="ts-contact-form-title">Get In Touch</h3>
+                            <form id="getInTouch_form" class="needs-validation" novalidate>
 
-                    <form id="getInTouch_form" class="needs-validation" novalidate>
+                                <input type="hidden" id="package_name" value="<?=$sq_package['package_name']?>" />
 
-                        <input type="hidden" id="package_name" value="<?=$sq_package['package_name']?>"/>
+                                <!-- <input type="hidden" id="travel_date" value="<?= $tom_date ?>"/> -->
 
-                        <!-- <input type="hidden" id="travel_date" value="<?= $tom_date ?>"/> -->
+                                <div class="form-row">
 
-                        <div class="form-row">
+                                    <div class="form-group col-md-12">
 
-                            <div class="form-group col-md-12">
+                                        <input type="text" class="form-control" id="inputNamep" name="inputNamep"
+                                            placeholder="*Name" onkeypress="return blockSpecialChar(event)" required>
 
-                                <input type="text" class="form-control" id="inputNamep" name="inputNamep" placeholder="*Name" onkeypress="return blockSpecialChar(event)" required>
+                                    </div>
 
-                            </div>
+                                    <div class="form-group col-md-12">
 
-                            <div class="form-group col-md-12">
+                                        <input type="email" class="form-control" id="inputEmailp" name="inputEmailp"
+                                            placeholder="*Email" required>
 
-                                <input type="email" class="form-control" id="inputEmailp" name="inputEmailp" placeholder="*Email" required>
+                                    </div>
 
-                            </div>
+                                    <div class="form-group col-md-12">
 
-                            <div class="form-group col-md-12">
+                                        <input type="number" class="form-control" id="inputPhonep" name="inputPhonep"
+                                            placeholder="*Phone" required>
 
-                                <input type="number" class="form-control" id="inputPhonep" name="inputPhonep" placeholder="*Phone" required>
+                                    </div>
 
-                            </div>
+                                </div>
 
-                        </div>
+                                <div class="form-group">
 
-                        <div class="form-group">
+                                    <textarea id="inputMessagep" name="inputMessagep" rows="8" class="form-control"
+                                        placeholder="*Your Enquiry" required></textarea>
 
-                            <textarea id="inputMessagep" name="inputMessagep" rows="8" class="form-control" placeholder="*Your Enquiry" required></textarea>
+                                </div>
 
-                        </div>
+                                <button type="submit" id="getInTouch_btn" class="btn btn-primary">Send Message</button>
 
-                        <button type="submit" id="getInTouch_btn" class="btn btn-primary">Send Message</button>
-
-                    </form>
-                    <div class="ts-video-content mt-5">
-                        <h2 class="ts-video-title">Destination video guide..</h2>
-                        <?php
+                            </form>
+                            <div class="ts-video-content mt-5">
+                                <h2 class="ts-video-title">Destination video guide..</h2>
+                                <?php
                         $sq_dest = mysqli_fetch_assoc(mysqlQuery("select link from video_itinerary_master where dest_id = '$sq_package[dest_id]'"));
                         ?>
-                        <iframe width="100%" src="<?=$sq_dest['link']?>" title="Destination video guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="100%" src="<?=$sq_dest['link']?>" title="Destination video guide"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
+
+            </div>
+
+            <div class="row text-center">
+
+                <div class="col col-12 col-md-12 col-lg-4 col-xl-8">
+
+                    <div class="clearfix">
+
+                        <button class="c-button md" id='<?=$tours_result_array[$i]['package_id']?>'
+                            onclick="redirect_to_action_page('<?= $package_id ?>','1','','','','','','','<?=$tom_date?>');"><i
+                                class="fa fa-phone-square" aria-hidden="true"></i> Enquiry</button>
+
+                        <button class="c-button g-button md" id='<?=$tours_result_array[$i]['package_id']?>'
+                            onclick="redirect_to_action_page('<?= $package_id ?>','1','','','','','','','<?=$tom_date?>');"><i
+                                class="fa fa-address-book" aria-hidden="true"></i> Book</button>
+
+                    </div>
 
                 </div>
 
@@ -771,31 +816,13 @@ de
 
         </div>
 
-        <div class="row text-center">
+    </section>
 
-            <div class="col col-12 col-md-12 col-lg-4 col-xl-8">
-
-                <div class="clearfix">
-
-                    <button class="c-button md" id='<?=$tours_result_array[$i]['package_id']?>' onclick="redirect_to_action_page('<?= $package_id ?>','1','','','','','','','<?=$tom_date?>');"><i class="fa fa-phone-square" aria-hidden="true"></i>  Enquiry</button>
-
-                    <button class="c-button g-button md" id='<?=$tours_result_array[$i]['package_id']?>' onclick="redirect_to_action_page('<?= $package_id ?>','1','','','','','','','<?=$tom_date?>');"><i class="fa fa-address-book" aria-hidden="true"></i>  Book</button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- Reason Section End -->
+    <!-- Reason Section End -->
 
 
 
-<?php
+    <?php
 
 $sq_count = mysqli_num_rows(mysqlQuery("select * from custom_package_master where dest_id = '$sq_package[dest_id]' and package_id!='$sq_package[package_id]'"));
 
@@ -813,13 +840,14 @@ if($sq_count>0){
 
                 <h2 class="ts-section-subtitle">PACK AND GO</h2>
 
-                <span class="ts-section-subtitle-icon"><img src="<?=BASE_URL_B2C?>images/traveler.png" alt="traveler" classimg-fluid></span>
+                <span class="ts-section-subtitle-icon"><img src="<?=BASE_URL_B2C?>images/traveler.png" alt="traveler"
+                        classimg-fluid></span>
 
             </div>
 
             <h2 class="ts-section-title">Related Packages</h2>
 
-    
+
 
             <div class="ts-blog-content">
 
@@ -871,47 +899,56 @@ if($sq_count>0){
 
                         ?>
 
-                        <div class="col col-12 col-md-6 col-lg-4">
+                    <div class="col col-12 col-md-6 col-lg-4">
 
-                            <div class="ts-blog-card">
+                        <div class="ts-blog-card">
 
-                                <div class="ts-blog-card-img">
+                            <div class="ts-blog-card-img">
 
-                                    <a href="#" class="ts-blog-card-img-link">
+                                <a href="#" class="ts-blog-card-img-link">
 
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7c-12.23-91.55-87.28-166-178.9-177.6c-136.2-17.24-250.7 97.28-233.4 233.4c11.6 91.64 86.07 166.7 177.6 178.9c53.81 7.191 104.3-6.235 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 .0003C515.9 484.7 515.9 459.3 500.3 443.7zM288 232H231.1V288c0 13.26-10.74 24-23.1 24C194.7 312 184 301.3 184 288V232H127.1C114.7 232 104 221.3 104 208s10.74-24 23.1-24H184V128c0-13.26 10.74-24 23.1-24S231.1 114.7 231.1 128v56h56C301.3 184 312 194.7 312 208S301.3 232 288 232z" fill="#ffffff"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path
+                                            d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7c-12.23-91.55-87.28-166-178.9-177.6c-136.2-17.24-250.7 97.28-233.4 233.4c11.6 91.64 86.07 166.7 177.6 178.9c53.81 7.191 104.3-6.235 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 .0003C515.9 484.7 515.9 459.3 500.3 443.7zM288 232H231.1V288c0 13.26-10.74 24-23.1 24C194.7 312 184 301.3 184 288V232H127.1C114.7 232 104 221.3 104 208s10.74-24 23.1-24H184V128c0-13.26 10.74-24 23.1-24S231.1 114.7 231.1 128v56h56C301.3 184 312 194.7 312 208S301.3 232 288 232z"
+                                            fill="#ffffff" />
+                                    </svg>
 
-                                    </a>
+                                </a>
 
-                                    <img src="<?= $newUrl1 ?>" alt="Package Image" class="img-fluid">
+                                <img src="<?= $newUrl1 ?>" alt="Package Image" class="img-fluid">
 
-                                </div>
+                            </div>
 
-                                <div class="ts-blog-card-body">
+                            <div class="ts-blog-card-body">
 
-                                    <a href="<?= $file_name ?>" class="ts-blog-card-title"><?= $package_name1 ?></a>
+                                <a href="<?= $file_name ?>" class="ts-blog-card-title"><?= $package_name1 ?></a>
 
-                                    <p class="ts-blog-time">
+                                <p class="ts-blog-time">
 
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" fill="#f68c34"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path
+                                            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"
+                                            fill="#f68c34" />
+                                    </svg>
 
-                                        <span><?= $row_package['total_nights'] ?> Nights, <?= $row_package['total_days'] ?> Days</span>
+                                    <span><?= $row_package['total_nights'] ?> Nights, <?= $row_package['total_days'] ?>
+                                        Days</span>
 
-                                    </p>
+                                </p>
 
-                                    <p class="ts-blog-card-description"><?= $row_package['note'] ?> </p>
+                                <p class="ts-blog-card-description"><?= $row_package['note'] ?> </p>
 
-                                </div>
+                            </div>
 
-                                <div class="ts-blog-card-footer">
+                            <div class="ts-blog-card-footer">
 
-                                    <a href="<?= $file_name ?>" target="_blank" class="ts-blog-card-link"> READ MORE</a>
-
-                                </div>
+                                <a href="<?= $file_name ?>" target="_blank" class="ts-blog-card-link"> READ MORE</a>
 
                             </div>
 
                         </div>
+
+                    </div>
 
                     <?php } ?>
 
@@ -925,14 +962,13 @@ if($sq_count>0){
 
     <!-- Destinations Section End -->
 
-<?php } ?>
+    <?php } ?>
 
-<a href="#" class="scrollup">Scroll</a>
+    <a href="#" class="scrollup">Scroll</a>
 
 
 
-<script>
-
+    <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 
 (function() {
@@ -949,51 +985,49 @@ if($sq_count>0){
 
         var validation = Array.prototype.filter.call(forms, function(form) {
 
-        form.addEventListener('submit', function(event) {
+            form.addEventListener('submit', function(event) {
 
-            if (form.checkValidity() === false) {
+                if (form.checkValidity() === false) {
 
-            event.preventDefault();
+                    event.preventDefault();
 
-            event.stopPropagation();
+                    event.stopPropagation();
 
-            }
+                }
 
-            form.classList.add('was-validated');
+                form.classList.add('was-validated');
 
-        }, false);
+            }, false);
 
         });
 
     }, false);
 
 })();
+    </script>
 
-</script>
+    <?php include 'layouts/footer.php';?>
 
-<?php include 'layouts/footer.php';?>
+    <script type="text/javascript" src="<?= BASE_URL_B2C ?>js/scripts.js"></script>
 
-<script type="text/javascript" src="<?= BASE_URL_B2C ?>js/scripts.js"></script>
+    <script>
+$(document).ready(function() {
 
-<script>
 
-    $( document ).ready(function() {
 
-    
+    var service = '<?php echo $service; ?>';
 
-        var service = '<?php echo $service; ?>';
+    if (service && (service !== '' || service !== undefined)) {
 
-        if(service && (service !== '' || service !== undefined)){
+        var checkLink = $('.c-searchContainer .c-search-tabs li');
 
-            var checkLink = $('.c-searchContainer .c-search-tabs li');
+        var checkTab = $('.c-searchContainer .search-tab-content .tab-pane');
 
-            var checkTab = $('.c-searchContainer .search-tab-content .tab-pane');
-
-            checkLink.each(function(){
+        checkLink.each(function() {
 
             var child = $(this).children('.nav-link');
 
-            if(child.data('service') === service){
+            if (child.data('service') === service) {
 
                 $(this).siblings().children('.nav-link').removeClass('active');
 
@@ -1001,54 +1035,54 @@ if($sq_count>0){
 
             }
 
-            });
+        });
 
-            checkTab.each(function(){
+        checkTab.each(function() {
 
-            if($(this).data('service') === service){
+            if ($(this).data('service') === service) {
 
                 $(this).addClass('active show').siblings().removeClass('active show');
 
             }
 
-            })
+        })
 
-        }
+    }
 
-        
 
-        
 
-        var amount_list1 = document.querySelectorAll(".best-currency-price");
 
-        var amount_id1 = document.querySelectorAll(".best-currency-id");
 
-        
+    var amount_list1 = document.querySelectorAll(".best-currency-price");
 
-        //Tours Best Cost
+    var amount_id1 = document.querySelectorAll(".best-currency-id");
 
-        var amount_arr1 = [];
 
-        for(var i=0;i<amount_list1.length;i++){
 
-            amount_arr1.push({
+    //Tours Best Cost
 
-                'amount':amount_list1[i].innerHTML,
+    var amount_arr1 = [];
 
-                'id':amount_id1[i].innerHTML});
+    for (var i = 0; i < amount_list1.length; i++) {
 
-        }
+        amount_arr1.push({
 
-        sessionStorage.setItem('tours_best_amount_list',JSON.stringify(amount_arr1));
+            'amount': amount_list1[i].innerHTML,
 
-        
-
-        setTimeout(() => {
-
-            tours_page_currencies();
-
-        },500);
-
+            'id': amount_id1[i].innerHTML
         });
 
-</script>
+    }
+
+    sessionStorage.setItem('tours_best_amount_list', JSON.stringify(amount_arr1));
+
+
+
+    setTimeout(() => {
+
+        tours_page_currencies();
+
+    }, 500);
+
+});
+    </script>
