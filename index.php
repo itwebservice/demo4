@@ -79,34 +79,36 @@ $date1 = str_replace('-', '/', $date);
                         <div class="row">
                             <div class="col col-12">
                                 <div class="booking-form-input">
-                                    <input type="text" class="form-control w-100" placeholder="Enter your name">
+                                    <input type="text" class="form-control w-100" placeholder="Enter your name"
+                                        required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-6">
                                 <div class="booking-form-input">
                                     <input type="number" class="form-control w-100 quantity" step="1" min="1"
-                                        placeholder="Enter your phone">
+                                        placeholder="Enter your phone" required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-6">
                                 <div class="booking-form-input">
-                                    <input type="email" class="form-control w-100" placeholder="Enter your email">
+                                    <input type="email" class="form-control w-100" placeholder="Enter your email"
+                                        required>
                                 </div>
                             </div>
                             <div class="col col-12">
                                 <div class="booking-form-input">
                                     <input type="text" class="form-control w-100"
-                                        placeholder="City, Destination and Hotel Name">
+                                        placeholder="City, Destination and Hotel Name" required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-6">
                                 <div class="booking-form-input">
-                                    <input type="date" class="form-control w-100" placeholder="Enter Your Name">
+                                    <input type="date" class="form-control w-100" placeholder="Enter Date" required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-6">
                                 <div class="booking-form-input">
-                                    <input type="date" class="form-control w-100" placeholder="Enter Your Name">
+                                    <input type="date" class="form-control w-100" placeholder="Enter Date" required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-12">
@@ -120,7 +122,7 @@ $date1 = str_replace('-', '/', $date);
                                         <option>Flight</option>
                                         <option>Hotel</option>
                                         <option>Activities</option>
-                                        <option>Vhicle</option>
+                                        <option>Vehicle</option>
                                     </select>
                                 </div>
                             </div>
@@ -209,7 +211,7 @@ $date1 = str_replace('-', '/', $date);
                             </div> -->
                             <div class="col col-12">
                                 <div class="booking-form-input mb-0">
-                                    <a href="#" class="btn booking-form-btn">ENQUIRE NOW</a>
+                                    <a href="" type="submit" class="btn booking-form-btn">ENQUIRE NOW</a>
                                 </div>
                             </div>
                         </div>
@@ -668,8 +670,8 @@ $date1 = str_replace('-', '/', $date);
                             Experienced tourism professionals serve tourists better as per their convenience.</p>
                         <!--<h5 class="deals-helpline">Help line: +001 21745 12345</h5>-->
                         <div class="deals-book-btns">
-                            <a href="about.php" class="btn">ABOUT US</a>
-                            <a href="contact.php" class="btn">CONTACT NOW</a>
+                            <a href="about.php" target="_blank" class="btn">ABOUT US</a>
+                            <a href="contact.php" target="_blank" class="btn">CONTACT US</a>
                         </div>
                     </div>
                 </div>
