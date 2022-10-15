@@ -1,6 +1,6 @@
   <?php
-include('config.php');
-$base_url = BASE_URL_API;
+//include('config.php');
+$base_url = "http://localhost/demo4/frontendAPI/public/api";
 
 $Apipackage = json_decode(file_get_contents($base_url.'/package/popular'));
 $Apiactivity = json_decode(file_get_contents($base_url.'/activity/popular'));

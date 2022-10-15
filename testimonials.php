@@ -1,6 +1,6 @@
 <?php
 
-include 'api.php';
+include 'config.php';
 
 //Include header
 
@@ -14,53 +14,53 @@ $b2c_testm = $cached_array[0]->cms_data[4];
 
 <div class="c-pageTitleSect ts-pageTitleSect">
 
-<div class="container">
+    <div class="container">
 
-  <div class="row">
+        <div class="row">
 
-    <div class="col-md-7 col-12">
+            <div class="col-md-7 col-12">
 
 
 
-      <!-- *** Search Head **** -->
+                <!-- *** Search Head **** -->
 
-      <div class="searchHeading">
+                <div class="searchHeading">
 
-        <span class="pageTitle mb-0">Testimonials</span>
+                    <span class="pageTitle mb-0">Testimonials</span>
 
-      </div>
+                </div>
 
-      <!-- *** Search Head End **** -->
+                <!-- *** Search Head End **** -->
+
+            </div>
+
+
+
+            <div class="col-md-5 col-12 c-breadcrumbs">
+
+                <ul>
+
+                    <li>
+
+                        <a href="<?= BASE_URL_B2C ?>">Home</a>
+
+                    </li>
+
+                    <li class="st-active">
+
+                        <a href="javascript:void(0)">Testimonials</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+        </div>
 
     </div>
-
-
-
-    <div class="col-md-5 col-12 c-breadcrumbs">
-
-      <ul>
-
-        <li>
-
-          <a href="<?= BASE_URL_B2C ?>">Home</a>
-
-        </li>
-
-        <li class="st-active">
-
-          <a href="javascript:void(0)">Testimonials</a>
-
-        </li>
-
-      </ul>
-
-    </div>
-
-
-
-  </div>
-
-</div>
 
 </div>
 
@@ -99,19 +99,20 @@ $b2c_testm = $cached_array[0]->cms_data[4];
 
             <h2 class="ts-section-subtitle">RELAX AND ENJOY</h2>
 
-            <span class="ts-section-subtitle-icon"><img src="images/traveler.png" alt="traveler" classimg-fluid=""></span>
+            <span class="ts-section-subtitle-icon"><img src="images/traveler.png" alt="traveler"
+                    classimg-fluid=""></span>
 
         </div>
 
         <h2 class="ts-section-title">HAPPY CUSTOMERS</h2>
 
-            <?php
+        <?php
 
             if(sizeof($b2c_testm->customer_testimonials) != 0){
 
                 ?>
 
-            <div class="row">
+        <div class="row">
 
             <?php
 
@@ -149,21 +150,21 @@ $b2c_testm = $cached_array[0]->cms_data[4];
 
                         ?>
 
-                        <div class="col col-12 col-md-6 col-lg-12">
+            <div class="col col-12 col-md-6 col-lg-12">
 
-                            <div class="ts-customer-testimonial-card">
+                <div class="ts-customer-testimonial-card">
 
-                                <div class="ts-customer-testimonial-img">
+                    <div class="ts-customer-testimonial-img">
 
-                                    <img src="<?= $newUrl1 ?>" alt="Customer Image" class="img-fluid">
+                        <img src="<?= $newUrl1 ?>" alt="Customer Image" class="img-fluid">
 
-                                    <h3 class="ts-customer-testimonial-name"><?= $name ?></h3>
+                        <h3 class="ts-customer-testimonial-name"><?= $name ?></h3>
 
-                                </div>
+                    </div>
 
-                                <p class="ts-customer-testimonial-description"><?=$testm[$testm_count]->testm ?></p>
+                    <p class="ts-customer-testimonial-description"><?=$testm[$testm_count]->testm ?></p>
 
-                                <!-- <ul class="ts-rating-list">
+                    <!-- <ul class="ts-rating-list">
 
                                     <li class="ts-rating-item">
 
@@ -197,11 +198,11 @@ $b2c_testm = $cached_array[0]->cms_data[4];
 
                                 </ul> -->
 
-                            </div>
+                </div>
 
-                        </div>
+            </div>
 
-                        <?php
+            <?php
 
                     }
 
@@ -209,7 +210,7 @@ $b2c_testm = $cached_array[0]->cms_data[4];
 
             ?>
 
-            </div>
+        </div>
 
         <?php } ?>
 
@@ -228,45 +229,43 @@ $b2c_testm = $cached_array[0]->cms_data[4];
 <script type="text/javascript" src="js/scripts.js"></script>
 
 <script>
+$(document).ready(function() {
 
-$( document ).ready(function() {   
 
-    
 
     var service = '<?php echo $service; ?>';
 
-    if(service && (service !== '' || service !== undefined)){
+    if (service && (service !== '' || service !== undefined)) {
 
-    var checkLink = $('.c-searchContainer .c-search-tabs li');
+        var checkLink = $('.c-searchContainer .c-search-tabs li');
 
-    var checkTab = $('.c-searchContainer .search-tab-content .tab-pane');
+        var checkTab = $('.c-searchContainer .search-tab-content .tab-pane');
 
-    checkLink.each(function(){
+        checkLink.each(function() {
 
-        var child = $(this).children('.nav-link');
+            var child = $(this).children('.nav-link');
 
-        if(child.data('service') === service){
+            if (child.data('service') === service) {
 
-        $(this).siblings().children('.nav-link').removeClass('active');
+                $(this).siblings().children('.nav-link').removeClass('active');
 
-        child.addClass('active');
+                child.addClass('active');
 
-        }
+            }
 
-    });
+        });
 
-    checkTab.each(function(){
+        checkTab.each(function() {
 
-        if($(this).data('service') === service){
+            if ($(this).data('service') === service) {
 
-        $(this).addClass('active show').siblings().removeClass('active show');
+                $(this).addClass('active show').siblings().removeClass('active show');
 
-        }
+            }
 
-    })
+        })
 
     }
 
 });
-
 </script>

@@ -61,6 +61,7 @@ $currency_logo_d = mysqli_fetch_assoc(mysqli_query($connection, "SELECT `default
 $currency_code = $currency_logo_d['currency_code'];
 $currency_logo = ($currency_logo_d['default_currency']);
 
+include 'api.php';
 include 'crm/model/app_settings/dropdown_master.php';
 
 $encrypt_decrypt = new encrypt_decrypt;

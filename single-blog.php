@@ -1,6 +1,6 @@
 <?php
 
-include 'api.php';
+include 'config.php';
 
 include BASE_URL.'model/model.php';
 
@@ -59,53 +59,53 @@ foreach($b2c_blogs as $blog){
 
 <div class="c-pageTitleSect ts-pageTitleSect">
 
-<div class="container">
+    <div class="container">
 
-  <div class="row">
+        <div class="row">
 
-    <div class="col-md-7 col-12">
+            <div class="col-md-7 col-12">
 
 
 
-      <!-- *** Search Head **** -->
+                <!-- *** Search Head **** -->
 
-      <div class="searchHeading">
+                <div class="searchHeading">
 
-        <span class="pageTitle mb-0">BLOGS DETAILS</span>
+                    <span class="pageTitle mb-0">BLOGS DETAILS</span>
 
-      </div>
+                </div>
 
-      <!-- *** Search Head End **** -->
+                <!-- *** Search Head End **** -->
+
+            </div>
+
+
+
+            <div class="col-md-5 col-12 c-breadcrumbs">
+
+                <ul>
+
+                    <li>
+
+                        <a href="<?= BASE_URL_B2C ?>">Home</a>
+
+                    </li>
+
+                    <li class="st-active">
+
+                        <a href="javascript:void(0)">BLOGS DETAILS</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+        </div>
 
     </div>
-
-
-
-    <div class="col-md-5 col-12 c-breadcrumbs">
-
-      <ul>
-
-        <li>
-
-          <a href="<?= BASE_URL_B2C ?>">Home</a>
-
-        </li>
-
-        <li class="st-active">
-
-          <a href="javascript:void(0)">BLOGS DETAILS</a>
-
-        </li>
-
-      </ul>
-
-    </div>
-
-
-
-  </div>
-
-</div>
 
 </div>
 
@@ -185,7 +185,9 @@ foreach($b2c_blogs as $blog){
 
                             <h3 class="ts-blog-card-title"><?= $title ?></h3>
 
-                            <p class="ts-blog-card-description"><div class="custom_texteditor"><?= $description ?></div></p>
+                            <p class="ts-blog-card-description">
+                            <div class="custom_texteditor"><?= $description ?></div>
+                            </p>
 
                         </div>
 
