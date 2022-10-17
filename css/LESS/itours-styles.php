@@ -1442,7 +1442,7 @@ line-height: 26px;
 text-align: center;
 display: block;
 padding: 15px 30px;
-border-top: 1px solid #f68c34;
+border-top: 1px solid <?= $btnColor ?>;
 color: #666666;
 text-transform: uppercase;
 -webkit-transition: all ease-in-out 0.3s;
@@ -1450,11 +1450,14 @@ text-transform: uppercase;
 transition: all ease-in-out 0.3s;
 }
 
-.ts-blog-card-link,
-.ts-blog-card-link:hover {
+.ts-blog-card-link{
 background-color: <?= $btnColor ?>;
 color: #ffffff;
 text-decoration: none;
+}
+
+.ts-blog-card-link:hover{
+background-color: #212529;
 }
 
 .ts-blog-card-img-link {
@@ -3610,6 +3613,7 @@ line-height: 24px;
 }
 
 .deals-book-btns a {
+margin: 5px;
 text-transform: uppercase;
 font-weight: 700;
 text-decoration: none;
