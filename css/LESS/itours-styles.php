@@ -1,16 +1,13 @@
-<?php  
-  include '../../crm/model/model.php';
-  $data = mysqli_fetch_array(mysqlQuery('SELECT * FROM `b2c_color_scheme`'));
-  if(!empty($data))
-  {
-    $btnColor = $data['button_color'];
-    $primaryColor = $data['text_primary_color'];
-  }
-  else
-  {
-    $btnColor = '#ff5300'; 
-    $primaryColor = '#f68c34'; 
-  }
+<?php
+include '../../crm/model/model.php';
+$data = mysqli_fetch_array(mysqlQuery('SELECT * FROM `b2c_color_scheme`'));
+if (!empty($data)) {
+  $btnColor = $data['button_color'];
+  $primaryColor = $data['text_primary_color'];
+} else {
+  $btnColor = '#ff5300';
+  $primaryColor = '#f68c34';
+}
 ?>
 
 
@@ -5682,7 +5679,7 @@ color: #454242;
 .custom_texteditor ul li > span {
 font-size: 16px !important;
 line-height: 22px !important;
-color: #838383 !important;
+color: #333 !important;
 margin-bottom: 7px !important;
 }
 
