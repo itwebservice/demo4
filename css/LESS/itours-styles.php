@@ -180,7 +180,7 @@ position: absolute;
 right: 0;
 top: 0;
 content: "";
-background: <?= $btnColor ?>;
+background: var(--main-bg-color);
 width: 24px;
 height: 100%;
 }
@@ -834,7 +834,7 @@ width: 30px;
 height: 33px;
 text-align: center;
 line-height: 34px;
-background: <?= $btnColor ?>;
+background: var(--main-bg-color);
 }
 
 .datepicker-wrap.yellow:after {
@@ -1261,7 +1261,7 @@ margin-left: 65px;
 content: "";
 width: 55px;
 height: 2px;
-background-color: <?= $primaryColor ?>;
+background-color: var(--main-primary-color);
 display: inline-block;
 position: absolute;
 right: 100%;
@@ -1439,7 +1439,7 @@ line-height: 26px;
 text-align: center;
 display: block;
 padding: 15px 30px;
-border-top: 1px solid <?= $btnColor ?>;
+border-top: 1px solid var(--main-bg-color);
 color: #666666;
 text-transform: uppercase;
 -webkit-transition: all ease-in-out 0.3s;
@@ -1448,7 +1448,7 @@ transition: all ease-in-out 0.3s;
 }
 
 .ts-blog-card-link{
-background-color: <?= $btnColor ?>;
+background-color: var(--main-bg-color);
 color: #ffffff;
 text-decoration: none;
 }
@@ -1470,7 +1470,7 @@ align-items: center;
 -webkit-box-pack: center;
 -ms-flex-pack: center;
 justify-content: center;
-background-color: <?= $btnColor ?>;
+background-color: var(--main-bg-color);
 opacity: 0;
 -webkit-transition: all ease-in-out 0.3s;
 -o-transition: all ease-in-out 0.3s;
@@ -1734,7 +1734,7 @@ transition: all ease-in-out 0.3s;
 }
 
 .btn-primary {
-background: <?= $btnColor ?>;
+background: var(--main-bg-color);
 color: #ffffff;
 }
 
@@ -1772,7 +1772,7 @@ background-position: center;
 
 .ts-contact-info-icon {
 background: #ffffff;
-color: <?= $primaryColor ?>;
+color: var(--main-primary-color);
 width: 50px;
 height: 50px;
 border-radius: 50%;
@@ -1998,7 +1998,7 @@ height: 100%;
 }
 
 .ts-reason-icon__inner {
-background-color: <?= $primaryColor ?>;
+background-color: var(--main-primary-color);
 width: 60px;
 height: 60px;
 border-radius: 50%;
@@ -2616,7 +2616,7 @@ color: white !important;
 text-decoration: none;
 font-size: 14px;
 padding: 8px 15px;
-background-color: <?= $btnColor ?>;
+background-color: var(--main-bg-color);
 }
 
 .foot-social ul {
@@ -2688,7 +2688,7 @@ box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 width: 50px;
 height: 50px;
 margin: auto;
-background-color: <?= $primaryColor ?>;
+background-color: var(--main-primary-color);
 display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
@@ -2798,7 +2798,7 @@ from(#fbdb24),
 to(#ff5300)
 );
 background: -o-linear-gradient(left, #fbdb24, #ff5300);
-background: <?= $btnColor ?>;
+background: var(--main-bg-color);
 font-size: 15px;
 font-weight: 500;
 text-transform: capitalize;
@@ -3160,7 +3160,7 @@ font-weight: 500;
 .booking-form-btn {
 height: 45px;
 background: #f4364f;
-background: <?= $btnColor ?>;
+background: var(--main-bg-color);
 outline: none;
 font-size: 14px;
 display: block !important;
@@ -3557,7 +3557,7 @@ background: rgba(19, 40, 58, 0.87);
 }
 
 .deals-subtitle {
-background: <?= $primaryColor ?>;
+background: var(--main-primary-color);
 color: #000;
 font-weight: 600;
 text-transform: uppercase;
@@ -3618,7 +3618,7 @@ padding: 8.3px 15px;
 border-radius: 2px;
 display: inline-block;
 background: #1aa5d8;
-background: <?= $btnColor ?>;
+background: var(--main-bg-color);
 font-family: "Quicksand", sans-serif;
 color: #fff;
 font-size: 13px;
@@ -3729,7 +3729,7 @@ padding: 6px 15px;
 border-radius: 2px;
 line-height: 24px;
 display: inline-block;
-background: <?= $btnColor ?>;
+background: var(--main-bg-color);
 font-family: "Quicksand", sans-serif;
 }
 
@@ -3813,7 +3813,7 @@ border-radius: 2px;
 transition: all 0.5s ease;
 line-height: 24px;
 padding: 6px 15px;
-background: <?= $btnColor ?>;
+background: var(--main-bg-color);
 }
 
 .sight-card-btn:hover {
@@ -3996,7 +3996,7 @@ font-family: "Poppins", sans-serif;
 color: #fff;
 width: 18px;
 height: 18px;
-background: <?= $primaryColor ?>;
+background: var(--main-primary-color);
 border-radius: 3px;
 text-align: center;
 padding: 3px;
@@ -5020,13 +5020,13 @@ object-fit: cover;
 .div-upload {
 padding: 4px 13px 4px 17px;
 background: #fff;
-color: <?= $btnColor ?>;
+color: var(--main-bg-color);
 display: inline-block;
 position: relative;
 font-size: 12px;
 line-height: 24px;
 border-radius: 25px;
-border: 1px solid <?= $btnColor ?>;
+border: 1px solid var(--main-bg-color);
 cursor: pointer;
 -webkit-box-shadow: none;
 box-shadow: none;
