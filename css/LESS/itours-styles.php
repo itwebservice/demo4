@@ -2908,7 +2908,7 @@ margin-left: 0 !important;
 margin: 0;
 padding: 0;
 border: 0;
-margin-top: -20px;
+margin-top: -10px;
 }
 
 .cardList-info .dividerSection .divider.s1 {
@@ -3411,7 +3411,7 @@ justify-content: end;
 font-size: 26px;
 color: #fff;
 padding-bottom: 0px;
-white-space: nowrap;
+//white-space: nowrap;
 text-overflow: ellipsis;
 margin-bottom: 2px;
 font-family: "Quicksand", sans-serif;
