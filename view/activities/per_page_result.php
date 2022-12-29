@@ -39,7 +39,7 @@ if(sizeof($activity_result_array)>0){
 
           <!-- *** Activity Card Info *** -->
           <div class="cardList-info" role="button">
-            <button class="expandSect">Read More...</button>
+            <button class="expandSect">VIEW DETAILS...</button>
             <div class="dividerSection type-1 noborder">
               <div class="divider s1">
                 <h4 class="cardTitle" id="act_name-<?= $activity_result_array[$i]['exc_id'] ?>"><?php echo $activity_result_array[$i]['excursion_name'].' ('.$activity_result_array[$i]['city_name'].')' ?></h4>
@@ -186,7 +186,7 @@ if(sizeof($activity_result_array)>0){
                         <?= $activity_result_array[$i]['terms_condition']?>
                     </div>
                     <h3 class="c-heading">
-                      Usefull Information
+                      Useful Information
                     </h3>
                     <div class="custom_texteditor">
                     <?= $activity_result_array[$i]['useful_info']?>
