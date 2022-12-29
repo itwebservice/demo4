@@ -109,99 +109,16 @@ $date1 = str_replace('-', '/', $date);
                                     <select class="booking-form-select form-control w-100">
                                         <option></option>
                                         <option disabled>Select Service Name</option>
-                                        <option>Group Tour</option>
-                                        <option>Costomize Tour</option>
-                                        <option>Visa</option>
-                                        <option>Flight</option>
-                                        <option>Hotel</option>
-                                        <option>Activities</option>
-                                        <option>Vehicle</option>
+                                        <option value="Group Tour">Group Tour</option>
+                                        <option value="Customize Tour">Customize Tour</option>
+                                        <option value="Visa">Visa</option>
+                                        <option value="Flight">Flight</option>
+                                        <option value="Hotel">Hotel</option>
+                                        <option value="Activities">Activities</option>
+                                        <option value="Vehicle">Vehicle</option>
                                     </select>
                                 </div>
                             </div>
-                            <!-- <div class="col col-12 col-md-6">
-                                <div class="booking-form-input">
-                                    <select class="booking-form-select form-control w-100">
-                                        <option></option>
-                                        <option disabled>No Of Rooms</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                    </select>
-                                </div>
-                            </div> -->
-                            <!-- <div class="col col-12 col-md-6">
-                                <div class="booking-form-input">
-                                    <select class="booking-form-select form-control booking-room-type w-100">
-                                        <option></option>
-                                        <option disabled>Rooms Type</option>
-                                        <option>Ultra Premium</option>
-                                        <option>Ultra Deluxe</option>
-                                        <option>Premium</option>
-                                        <option>Deluxe</option>
-                                        <option>Normal</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-6">
-                                <div class="booking-form-input">
-                                    <select class="booking-form-select form-control booking-adults w-100">
-                                        <option></option>
-                                        <option disabled>No of adults</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-6">
-                                <div class="booking-form-input">
-                                    <select class="booking-form-select form-control booking-childrens w-100">
-                                        <option></option>
-                                        <option disabled>No of childrens</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-6">
-                                <div class="booking-form-input">
-                                    <select class="booking-form-select form-control booking-min-price w-100">
-                                        <option></option>
-                                        <option disabled>Min Price</option>
-                                        <option>$200</option>
-                                        <option>$500</option>
-                                        <option>$1000</option>
-                                        <option>$5000</option>
-                                        <option>$10,000</option>
-                                        <option>$50,0000</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-6">
-                                <div class="booking-form-input">
-                                    <select class="booking-form-select form-control booking-max-price w-100">
-                                        <option></option>
-                                        <option disabled>Max Price</option>
-                                        <option>$200</option>
-                                        <option>$500</option>
-                                        <option>$1000</option>
-                                        <option>$5000</option>
-                                        <option>$10,000</option>
-                                        <option>$50,0000</option>
-                                    </select>
-                                </div>
-                            </div> -->
                             <div class="col col-12">
                                 <div class="booking-form-input mb-0">
                                     <a href="" type="submit" class="btn booking-form-btn">ENQUIRE NOW</a>
@@ -268,122 +185,12 @@ $date1 = str_replace('-', '/', $date);
 
 <!--End social Media icon sticky-->
 
-<!-- Main Booking Section End -->
-<!-- <section class="main-booking-section">
-    <div class="main-booking-content">
-        <div class="container">
-            <div class="row">
-                <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                    <div class="main-booking-counter">
-                        <h6 class="main-booking-subtitle">World's leading tour and travels template</h6>
-                        <h1 class="main-booking-title">Tour Package booking now!</h1>
-                        <p class="main-booking-discription">Experience the various exciting tour and travel packages and Make hotel reservations, find vacation packages, search cheap hotels and events</p>
-                        <div class="main-booking-place">
-                            <ul class="main-booking-place-list">
-                                <div class="booking-place">
-                                    <li class="booking-place-item">
-                                        <a href="#" class="booking-place-link">
-                                            <img src="images/tour.png" alt="" class="img-fluid">
-                                            Tour
-                                        </a>
-                                    </li>
-                                    <li class="booking-place-item">
-                                        <a href="#" class="booking-place-link">
-                                            <img src="images/flight.png" alt="" class="img-fluid">
-                                            Flight
-                                        </a>
-                                    </li>
-                                </div>
-                                <div class="booking-place">
-                                    <li class="booking-place-item">
-                                        <a href="#" class="booking-place-link">
-                                            <img src="images/car.png" alt="" class="img-fluid">
-                                            Car
-                                        </a>
-                                    </li>
-                                    <li class="booking-place-item">
-                                        <a href="#" class="booking-place-link">
-                                            <img src="images/hotel.png" alt="" class="img-fluid">
-                                            Hotel
-                                        </a>
-                                    </li>
-                                </div>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                    <div class="main-booking-form bg-white">
-                        <div class="row">
-                            <div class="col col-12">
-                                <div class="booking-form-input">
-                                    <input type="text" class="form-control w-100" placeholder="Enter your name">
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-6">
-                                <div class="booking-form-input">
-                                    <input type="number" class="form-control w-100 quantity" step="1" min="1" placeholder="Enter your phone">
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-6">
-                                <div class="booking-form-input">
-                                    <input type="email" class="form-control w-100" placeholder="Enter your email">
-                                </div>
-                            </div>
-                            <div class="col col-12">
-                                <div class="booking-form-input">
-                                    <input type="text" class="form-control w-100" placeholder="City, Destination and Hotel Name">
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-6">
-                                <div class="booking-form-input">
-                                    <input type="date" class="form-control w-100" placeholder="Enter Your Name">
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-6">
-                                <div class="booking-form-input">
-                                    <input type="date" class="form-control w-100" placeholder="Enter Your Name">
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-12">
-                                <div class="booking-form-input">
-                                    <select class="booking-form-select form-control w-100">
-                                        <option></option>
-                                        <option disabled>Select Service Name</option>
-                                        <option>Group Tour</option>
-                                        <option>Costomize Tour</option>
-                                        <option>Visa</option>
-                                        <option>Flight</option>
-                                        <option>Hotel</option>
-                                        <option>Activities</option>
-                                        <option>Vhicle</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col col-12">
-                                <div class="booking-form-input mb-0">
-                                    <a href="#" class="btn booking-form-btn">ENQUIRE NOW</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-<!-- Main Booking Section End -->
-
-
-
-
-
 <!-- Tour Packages Section Start -->
 <section class="t-package-section">
     <div class="container">
         <div class="t-package-content">
             <div class="t-package-header">
-                <h2 class="t-package-title section-title">Top <span>Tour Packages</span></h2>
+                <h2 class="t-package-title section-title">TOP <span>TOUR PACKAGES</span></h2>
                 <div class="section-title-line text-center">
                     <div class="t-package-style"></div>
                     <div class="t-package-style-line"></div>
@@ -463,7 +270,7 @@ $date1 = str_replace('-', '/', $date);
     <div class="container">
         <div class="t-cities-content">
             <div class="t-package-header">
-                <h2 class="t-package-title section-title">Popular <span>Destinations</span></h2>
+                <h2 class="t-package-title section-title">POPULAR <span>DESTINATIONS</span></h2>
                 <div class="section-title-line text-center">
                     <div class="t-package-style"></div>
                     <div class="t-package-style-line"></div>
@@ -583,7 +390,7 @@ $date1 = str_replace('-', '/', $date);
     <div class="container">
         <div class="t-hotels-content">
             <div class="t-package-header">
-                <h2 class="t-package-title section-title">Explore <span>Popular Hotels</span></h2>
+                <h2 class="t-package-title section-title">EXPLORE <span>POPULAR HOTELS</span></h2>
                 <div class="section-title-line text-center">
                     <div class="t-package-style"></div>
                     <div class="t-package-style-line"></div>
@@ -676,7 +483,7 @@ $date1 = str_replace('-', '/', $date);
     <div class="container">
         <div class="events-content">
             <div class="t-package-header">
-                <h2 class="t-package-title section-title">Explore all <span>Destination</span> Tours</h2>
+                <h2 class="t-package-title section-title">EXPLORE  ALL <span>DESTINATION</span> TOURS</h2>
                 <div class="section-title-line text-center">
                     <div class="t-package-style"></div>
                     <div class="t-package-style-line"></div>
@@ -716,13 +523,13 @@ $date1 = str_replace('-', '/', $date);
                                 <td class="events-place-ruting"><?= $count++ ?></td>
                                 <td class="bob">
                                     <img src="<?= $package->main_img_url ?>" alt="" class="img-fluid events-place-img">
-                                    <a href="<?= $file_name ?>" class="events-place-name"><?= $package->package_name ?></a>
+                                    <a target="_blank" href="<?= $file_name ?>" class="events-place-name"><?= $package->package_name ?></a>
                                 </td>
                                 <td class="events-place-ruting table-routing"><?= $package->total_days ?></td>
                                 <td class="events-place-ruting table-routing"><?= $package->total_nights ?></td>
                                 <td class="events-place-ruting table-routing"> <?= $package->destination->dest_name ?></td>
                                 <td>
-                                    <a href="<?= $file_name ?>" class="btn events-place-book">Book Now</a>
+                                    <a target="_blank" href="<?= $file_name ?>" class="btn events-place-book">Book Now</a>
                                 </td>
                             </tr>
 
@@ -742,7 +549,7 @@ $date1 = str_replace('-', '/', $date);
     <div class="container">
         <div class="sight-content">
             <div class="t-package-header">
-                <h2 class="t-package-title section-title">Best <span> Sight Seeings</span> experiences</h2>
+                <h2 class="t-package-title section-title">BEST <span> SIGHT SEEING</span> EXPERIENCES</h2>
                 <div class="section-title-line text-center">
                     <div class="t-package-style"></div>
                     <div class="t-package-style-line"></div>
@@ -787,7 +594,7 @@ $date1 = str_replace('-', '/', $date);
     <div class="container">
         <div class="branding-content">
             <div class="t-package-header">
-                <h2 class="t-package-title section-title">Our <span>Blog</span> </h2>
+                <h2 class="t-package-title section-title">OUR <span>BLOGS</span> </h2>
                 <div class="section-title-line text-center">
                     <div class="t-package-style"></div>
                     <div class="t-package-style-line"></div>
@@ -808,18 +615,6 @@ $date1 = str_replace('-', '/', $date);
                                 <div class="branding-item border-bottom">
                                     <article> <?= substr($blog->description, 0, 200) ?>... <a href="single-blog.php?blog_id=<?= $blog->entry_id ?>" target="_blank">Read
                                             More</a> </article>
-                                    <!-- <div class="branding-img">
-                                    <a href="#"><img src="images/branding_1.jpg" alt="" class="img-fluid"></a>
-                                </div>
-                                <div class="branding-item-title">
-                                    <a href="#">
-                                        <h6 class="mb-0">Taaj Club House</h6>
-                                        <span>City: illunois, United States</span>
-                                    </a>
-                                </div>
-                                <div class="branding-reting">
-                                    <a href="#">4.5</a>
-                                </div> -->
                                 </div>
 
 
@@ -836,7 +631,7 @@ $date1 = str_replace('-', '/', $date);
 
 <!-- Partner Slider Start -->
 <div class="container mt-2 mb-5 pt-3 pb-5">
-    <h1 class="section-title text-center mt-2 mb-5">Our <span>Partners</span>
+    <h1 class="section-title text-center mt-2 mb-5">OUR <span>PARTENERS</span>
 
         <?php
         $logos = json_decode($cached_array[0]->cms_data[0]->assoc_logos);
@@ -863,7 +658,7 @@ $date1 = str_replace('-', '/', $date);
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 col-xl-6">
                     <div class="mobile-app-details">
-                        <h2 class="mobile-app-title">Why Choose Us</h2>
+                        <h2 class="mobile-app-title">WHY CHOOSE US</h2>
                         <p class="mobile-app-discription">World's leading tour and travels Booking website,Over 30,000
                             packages worldwide. Book travel packages and enjoy your holidays with <br class="d-none d-lg-block"> distinctive experience</p>
                         <ul class="mobile-details-list">
@@ -919,7 +714,7 @@ $date1 = str_replace('-', '/', $date);
             <div class="row">
                 <div class="col col-12 col-md-6 col-lg-4 col-xl-4">
                     <div class="tips-points">
-                        <h5 class="tips-points-title">Tips Before Travel</h5>
+                        <h5 class="tips-points-title">TIPS BEFORE TRAVEL</h5>
                         <div class="tips-points-list">
 
                             <div class="tips-points-item">
@@ -957,7 +752,7 @@ $date1 = str_replace('-', '/', $date);
                 </div>
                 <div class="col col-12 col-md-6 col-lg-8 col-xl-8">
                     <div class="tips-customer">
-                        <h5 class="tips-points-title">Customer Testimonials</h5>
+                        <h5 class="tips-points-title">CUSTOMER TESTIMONIALS</h5>
                         <div class="it-coustomer-slider owl-carousel">
                             <?php foreach ($Apitestimonial as $testimonial) { ?>
                                 <div class="item">
@@ -978,7 +773,7 @@ $date1 = str_replace('-', '/', $date);
 
                         </div>
                         <div class="tips-helps-imgs">
-                            <h5 class="tips-points-title tips-helps-title">Secure Payment Gateway</h5>
+                            <h5 class="tips-points-title tips-helps-title">SECURE PAYMENT GATEWAY</h5>
                             <div class="tips-helps">
                                 <div class="tips-first-help">
                                     <img src="images/payment-gateway.png" alt="" class="img-fluid w-100">
@@ -1054,7 +849,6 @@ include 'layouts/footer.php';
 
 <script type="text/javascript" src="view/group_tours/js/index.js"></script>
 
-<!-- <script type="text/javascript" src="js/scripts.js"></script> -->
 <script type="text/javascript" src="js/select2.min.js"></script>
 
 
