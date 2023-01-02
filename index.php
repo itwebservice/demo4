@@ -47,7 +47,7 @@ $date1 = str_replace('-', '/', $date);
                                         </a>
                                     </li>
                                     <li class="booking-place-item">
-                                        <a href="#" class="booking-place-link">
+                                        <a target="_blank" href="#" class="booking-place-link">
                                             <img src="images/flight.png" alt="" class="img-fluid">
                                             Flight
                                         </a>
@@ -73,6 +73,7 @@ $date1 = str_replace('-', '/', $date);
                 </div>
                 <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
                     <div class="main-booking-form bg-white">
+                    <form id="enq_form" class="needs-validation" novalidate>
                         <div class="row">
                             <div class="col col-12">
                                 <div class="booking-form-input">
@@ -125,6 +126,7 @@ $date1 = str_replace('-', '/', $date);
                                 </div>
                             </div>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -201,25 +203,31 @@ $date1 = str_replace('-', '/', $date);
             </div>
             <div class="t-package-list">
                 <div class="row">
-                    <?php foreach ($Apipackage as $package) {
+                    <?php
+                    foreach ($Apipackage as $package) {
+
                         $package_name = $package->package_name;
+                        $currency_id = $package->currency_id;
+
+                        $currency_logo_d = mysqli_fetch_assoc(mysqli_query($connection, "SELECT `default_currency`,`currency_code` FROM `currency_name_master` WHERE id=" . $currency_id));
+                        $currency_code = $currency_logo_d['currency_code'];
 
                         $package_fname = str_replace(' ', '_', $package_name);
 
                         $file_name = 'package_tours/' . $package_fname . '-' . $package->package_id . '.php';
-                    ?>
+                        ?>
                         <div class="col col-12 col-md-6 col-lg-4 col-xl-4">
                             <div class="t-package-card">
-                                <a href="<?= $file_name ?>">
+                                <a target="_blank" href="<?= $file_name ?>">
                                     <div class="t-package-offer">
                                         <img src="images/band.png" alt="" class="img-fluid w-100">
                                     </div>
                                     <div class="t-package-img">
                                         <img src="<?= $package->main_img_url ?>" alt="" class="img-fluid">
                                         <div class="t-package-card-btn">
-                                            <span class="t-package-card-price btn"><?= !empty($package->tariff) ? $package->tariff->cadult : '0.00' ?>
+                                            <span class="t-package-card-price btn"><?= !empty($package->tariff) ? $currency_code.' '.$package->tariff->cadult : $currency_code.' '.'0.00' ?>
                                             </span>
-                                            <a href="<?= $file_name ?>" class="btn btn-primary">View More</a>
+                                            <a target="_blank" href="<?= $file_name ?>" class="btn btn-primary">View More</a>
                                         </div>
                                     </div>
                                 </a>
@@ -282,7 +290,7 @@ $date1 = str_replace('-', '/', $date);
             <div class="t-cities-list">
                 <div class="row">
                     <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                        <a href="#" onclick="get_tours_data('<?= $Apidestination[0]->dest_id ?>','1')">
+                        <a target="_blank" onclick="get_tours_data('<?= $Apidestination[0]->dest_id ?>','1')" style="cursor: pointer!important;">
                             <div class="t-cities-card">
                                 <div class="t-cities-img">
                                     <img src="<?= $Apidestination[0]->gallery_images[5]->image_url; ?>" alt="" class="img-fluid">
@@ -301,7 +309,7 @@ $date1 = str_replace('-', '/', $date);
                         <div class="row">
                             <?php if (!empty($Apidestination[1])) { ?>
                                 <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                                    <a href="#" onclick="get_tours_data('<?= $Apidestination[1]->dest_id ?>','1')">
+                                    <a target="_blank" onclick="get_tours_data('<?= $Apidestination[1]->dest_id ?>','1')" style="cursor: pointer!important;">
                                         <div class="t-cities-card t-cities-small-card">
                                             <div class="t-cities-img">
                                                 <img src="<?= $Apidestination[1]->gallery_images[5]->image_url; ?>" alt="" class="img-fluid w-100">
@@ -319,7 +327,7 @@ $date1 = str_replace('-', '/', $date);
                             <?php if (!empty($Apidestination[2])) { ?>
 
                                 <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                                    <a href="#" onclick="get_tours_data('<?= $Apidestination[2]->dest_id ?>','1')">
+                                    <a target="_blank" onclick="get_tours_data('<?= $Apidestination[2]->dest_id ?>','1')" style="cursor: pointer!important;">
                                         <div class="t-cities-card t-cities-small-card">
                                             <div class="t-cities-img">
                                                 <img src="<?= $Apidestination[2]->gallery_images[5]->image_url; ?>" alt="" class="img-fluid w-100">
@@ -337,7 +345,7 @@ $date1 = str_replace('-', '/', $date);
                             <?php if (!empty($Apidestination[3])) { ?>
 
                                 <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                                    <a href="#" onclick="get_tours_data('<?= $Apidestination[3]->dest_id ?>','1')">
+                                    <a target="_blank" onclick="get_tours_data('<?= $Apidestination[3]->dest_id ?>','1')" style="cursor: pointer!important;">
                                         <div class="t-cities-card t-cities-small-card">
                                             <div class="t-cities-img">
                                                 <img src="<?= $Apidestination[3]->gallery_images[5]->image_url; ?>" alt="" class="img-fluid w-100">
@@ -355,7 +363,7 @@ $date1 = str_replace('-', '/', $date);
                             <?php if (!empty($Apidestination[4])) { ?>
 
                                 <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
-                                    <a href="#" onclick="get_tours_data('<?= $Apidestination[4]->dest_id ?>','1')">
+                                    <a target="_blank" onclick="get_tours_data('<?= $Apidestination[4]->dest_id ?>','1')" style="cursor: pointer!important;">
                                         <div class="t-cities-card t-cities-small-card">
                                             <div class="t-cities-img">
                                                 <img src="<?= $Apidestination[4]->gallery_images[5]->image_url; ?>" alt="" class="img-fluid w-100">
@@ -400,19 +408,21 @@ $date1 = str_replace('-', '/', $date);
                 </p>
             </div>
             <div class="row">
-                <?php foreach ($Apihotel as $hotel) { ?>
+                <?php foreach ($Apihotel as $hotel) {
+                    $image = ($hotel->hotel_image->hotel_pic_url!='') ? 'crm/' . substr($hotel->hotel_image->hotel_pic_url, 11) : 'images/hotel_general.png';
+                    ?>
                     <div class="col col-12 col-md-12 col-lg-4 col-xl-4">
                         <div class="t-hotels-card">
-                            <a href="#" onclick="get_tours_data('<?= $hotel->city_id ?>','3','<?= $hotel->hotel_id ?>')">
+                            <a target="_blank" onclick="get_tours_data('<?= $hotel->city_id ?>','3','<?= $hotel->hotel_id ?>')" style="cursor:pointer!important;">
                                 <div class="t-hotels-img">
-                                    <img src="<?= file_exists('crm/' . substr($hotel->hotel_image->hotel_pic_url, 11)) ? 'crm/' . substr($hotel->hotel_image->hotel_pic_url, 11) : 'images/hotel_general.png' ?>" alt="" class="img-fluid w-100">
+                                    <img src="<?= $image ?>" alt="" class="img-fluid w-100">
                                     <div class="t-hotels-ticket">
                                         <?= $hotel->rating_star ?>
                                     </div>
                                 </div>
                             </a>
                             <div class="t-hotels-card-body">
-                                <a href="#" onclick="get_tours_data('<?= $hotel->city_id ?>','3','<?= $hotel->hotel_id ?>')">
+                                <a target="_blank" onclick="get_tours_data('<?= $hotel->city_id ?>','3','<?= $hotel->hotel_id ?>')" style="cursor:pointer!important;">
                                     <h5 class="t-hotels-title"><?= $hotel->hotel_name ?></h5>
                                 </a>
                                 <div class="t-hotels-reviw">
@@ -420,18 +430,7 @@ $date1 = str_replace('-', '/', $date);
                                         <li class="t-hotels-reviw-item">
                                             <?= substr($hotel->amenities, 0, 200) ?> <br>
                                             <b> <?= $hotel->hotel_city->city_name ?>,<?= $hotel->country ?></b>
-                                            <!-- <div class="t-hotels-reviw-rating">
-                                            <span>Rating:</span>
-                                            <i class="fa fa-star ms-3" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        </div> -->
                                         </li>
-                                        <!-- <li class="t-hotels-price">
-                                        <span>$420</span>
-                                    </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -560,13 +559,15 @@ $date1 = str_replace('-', '/', $date);
             </div>
         </div>
         <div class="row">
-            <?php foreach ($Apiactivity as $activity) { ?>
+            <?php foreach ($Apiactivity as $activity) {
+
+                $url = ($activity->images[0]->image_url != '') ? "crm/".substr($activity->images[0]->image_url, 6) : 'images/activity_default.png';?>
                 <div class="col col-12 col-md-6">
                     <div class="sight-card">
                         <div class="row">
                             <div class="col col-12 col-md-12 col-lg-6 col-xl-6">
                                 <div class="sight-card-img">
-                                    <img src="crm/<?= substr($activity->images[0]->image_url, 6) ?>" alt="" class="img-fluid w-100">
+                                    <img src="<?= $url ?>" alt="" class="img-fluid w-100">
                                 </div>
                             </div>
                             <div class="col col-12 col-md-12 col-lg-6 col-xl-6 pl-0">
@@ -574,7 +575,7 @@ $date1 = str_replace('-', '/', $date);
                                     <h6 class="sight-body-subtitle"><?= $activity->depature_point ?></h6>
                                     <h5 class="sight-body-title"> <?= $activity->excursion_name ?></h5>
                                     <p class="sight-body-discription"><?= substr($activity->note, 0, 100) ?></p>
-                                    <a href="#" onclick="get_tours_data('<?= $activity->city_id ?>','4','<?= $activity->entry_id ?>')" class="btn sight-card-btn">MORE INFO</a>
+                                    <a target="_blank" onclick="get_tours_data('<?= $activity->city_id ?>','4','<?= $activity->entry_id ?>')" style="cursor:pointer!important;" class="btn sight-card-btn">VIEW MORE</a>
                                 </div>
                             </div>
                         </div>
@@ -831,6 +832,17 @@ $date1 = str_replace('-', '/', $date);
         }, false);
 
     })();
+$(function () {
+	$('#enq_form').validate({
+		rules : {
+        },
+		submitHandler : function (form) {
+            var base_url = $('#base_url').val();
+            var crm_base_url = $('#crm_base_url').val();
+        }
+    });
+});
+
 </script>
 
 <?php
@@ -917,7 +929,7 @@ include 'layouts/footer.php';
             minDate: new Date()
         });
 
-        document.getElementById('return_date').readOnly = true;
+        // document.getElementById('return_date').readOnly = true;
 
 
 

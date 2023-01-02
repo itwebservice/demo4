@@ -299,7 +299,7 @@ foreach ($int_dest_id_arr as $int_id) {
 
                             <div class="col-md-6 col-12 section-1">
 
-                                <span class="staticText d-inline"><span style="text-transform: lowercase;"> Helpline
+                                <span class="staticText d-inline"><span style="text-transform: capitalize;"> Helpline
                                         :</span> <?= $cached_array[0]->company_profile_data[0]->contact_no ?></span>
 
                                 <a href="mailto:<?= $cached_array[0]->company_profile_data[0]->email_id ?>" class="header-mail-link d-inline ml-2"><?= $cached_array[0]->company_profile_data[0]->email_id ?></a>

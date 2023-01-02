@@ -97,29 +97,16 @@ $gallary_array = ($cached_array[0]->cms_data[0]->gallery!='') ? json_decode($cac
         <div id="lightGalleryImage" class="light-gallery-list">
 
           <?php
-
-          for($i = 0; $i <sizeof($gallary_array);$i++){
-
-            
-
-            $url = $gallary_array[$i]->image_url;
-
-            $pos = strstr($url,'uploads');
-
-
-
-            if ($pos != false){
-
-                $newUrl1 = preg_replace('/(\/+)/','/',$url); 
-
-                $newUrl = BASE_URL.str_replace('../', '', $newUrl1);
-
-            }
-
-            else{
-
-                $newUrl =  $url; 
-
+        foreach ($gallary_array as $j) {
+          
+            $dest_id = $j->dest_id;
+            $url = $j->image_url;
+            $pos = strstr($url, 'uploads');
+            if ($pos != false) {
+              $newUrl1 = preg_replace('/(\/+)/', '/', $url);
+              $newUrl = BASE_URL . str_replace('../', '', $newUrl1);
+            } else {
+              $newUrl =  $url;
             }
 
             ?>
@@ -129,8 +116,8 @@ $gallary_array = ($cached_array[0]->cms_data[0]->gallery!='') ? json_decode($cac
                 <img alt="" src="<?= $newUrl ?>" class="img-fluid" />
 
             </a>
-
-          <?php } ?>
+          <?php
+          } ?>
 
         </div>
 

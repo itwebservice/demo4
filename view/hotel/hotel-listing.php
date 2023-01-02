@@ -566,7 +566,7 @@ for ($i_date=$check_in; $i_date<=$check_out; $i_date+=86400) {
 
               }else{
 
-                $newUrl = BASE_URL.'images/dummy-image.jpg';
+                $newUrl = 'images/hotel_general.png';
 
               }
 

@@ -475,7 +475,7 @@ else if($type == '7') {
 
                                     <label for="country_code">Country Code *</label>
 
-                                    <select  class="form-control" id="country_code" name="country_code" name="country_code" style="width:100%" required>
+                                    <select class="form-control" id="country_code" name="country_code" name="country_code" style="width:100%" required>
 
                                     <?= get_country_code() ?>
 
@@ -1091,6 +1091,7 @@ else if($type == '7') {
 
 <!-- Contact Section End -->
 
+<?php include 'layouts/footer.php';?>
 <script>
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -1133,9 +1134,7 @@ else if($type == '7') {
 
 
 
-<?php include 'layouts/footer.php';?>
 
-<script type="text/javascript" src="js/scripts.js"></script>
 
 <script>
 
@@ -1928,3 +1927,4 @@ $(function () {
 });
 
 </script>
+<script type="text/javascript" src="js/scripts.js"></script>
