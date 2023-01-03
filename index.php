@@ -77,39 +77,39 @@ $date1 = str_replace('-', '/', $date);
                         <div class="row">
                             <div class="col col-12">
                                 <div class="booking-form-input">
-                                    <input type="text" class="form-control w-100" placeholder="Enter your name" required>
+                                    <input type="text" class="form-control w-100" placeholder="Enter your name" id="name" required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-6">
                                 <div class="booking-form-input">
-                                    <input type="number" class="form-control w-100 quantity" step="1" min="1" placeholder="Enter your phone" required>
+                                    <input type="number" class="form-control w-100 quantity" step="1" min="1" placeholder="*Enter your phone" id="phone_no" required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-6">
                                 <div class="booking-form-input">
-                                    <input type="email" class="form-control w-100" placeholder="Enter your email" required>
+                                    <input type="email" class="form-control w-100" placeholder="*Enter your email" id="email" required>
                                 </div>
                             </div>
                             <div class="col col-12">
                                 <div class="booking-form-input">
-                                    <input type="text" class="form-control w-100" placeholder="City, Destination and Hotel Name" required>
+                                    <input type="text" class="form-control w-100" placeholder="*City, Destination and Hotel Name" id="city" required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-6">
                                 <div class="booking-form-input">
-                                    <input type="date" class="form-control w-100" placeholder="Enter Date" required>
+                                    <input type="text" class="form-control w-100" placeholder="*Enter From Date" id="from_date" onchange="get_to_date1(this.id,'to_date');" required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-6">
                                 <div class="booking-form-input">
-                                    <input type="date" class="form-control w-100" placeholder="Enter Date" required>
+                                    <input type="text" class="form-control w-100" placeholder="*Enter To Date" id="to_date" onchange="validate_validDate1('from_date','to_date');" required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-12">
                                 <div class="booking-form-input">
-                                    <select class="booking-form-select form-control w-100">
+                                    <select class="booking-form-select form-control w-100" id="service_name" title="*Select Service Name" style="width:100%" required>
                                         <option></option>
-                                        <option disabled>Select Service Name</option>
+                                        <option value="">*Select Service Name</option>
                                         <option value="Group Tour">Group Tour</option>
                                         <option value="Customize Tour">Customize Tour</option>
                                         <option value="Visa">Visa</option>
@@ -122,7 +122,7 @@ $date1 = str_replace('-', '/', $date);
                             </div>
                             <div class="col col-12">
                                 <div class="booking-form-input mb-0">
-                                    <a href="" type="submit" class="btn booking-form-btn">ENQUIRE NOW</a>
+                                    <button type="submit" id="enq_submit" class="btn booking-form-btn">ENQUIRE NOW</button>
                                 </div>
                             </div>
                         </div>
@@ -791,11 +791,6 @@ $date1 = str_replace('-', '/', $date);
 
 
 
-
-
-
-<!-- <a href="#" class="scrollup">Scroll</a> -->
-
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
 
@@ -832,16 +827,7 @@ $date1 = str_replace('-', '/', $date);
         }, false);
 
     })();
-$(function () {
-	$('#enq_form').validate({
-		rules : {
-        },
-		submitHandler : function (form) {
-            var base_url = $('#base_url').val();
-            var crm_base_url = $('#crm_base_url').val();
-        }
-    });
-});
+
 
 </script>
 
@@ -850,6 +836,7 @@ $(function () {
 include 'layouts/footer.php';
 
 ?>
+
 
 <script type="text/javascript" src="view/hotel/js/index.js"></script>
 
@@ -923,6 +910,11 @@ include 'layouts/footer.php';
             format: 'm/d/Y',
             minDate: new Date()
         });
+        $('#from_date, #to_date').datetimepicker({
+            timepicker: false,
+            format: 'd-m-Y',
+            minDate: new Date()
+        });
 
         $('#pickup_date').datetimepicker({
             format: 'm/d/Y H:i',
@@ -971,25 +963,72 @@ include 'layouts/footer.php';
 </script>
 
 <script>
-    function filterSearch() {
-        var input, filter, found, table, tr, td, i, j;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("myTable");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td");
-            for (j = 0; j < td.length; j++) {
-                if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    found = true;
-                }
-            }
-            if (found) {
-                tr[i].style.display = "";
-                found = false;
-            } else {
-                tr[i].style.display = "none";
+function filterSearch() {
+    var input, filter, found, table, tr, td, i, j;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                found = true;
             }
         }
+        if (found) {
+            tr[i].style.display = "";
+            found = false;
+        } else {
+            tr[i].style.display = "none";
+        }
     }
+}
+$(function () {
+	$('#enq_form').validate({
+		rules : {
+        },
+		submitHandler : function (form) {
+
+            $('#enq_submit').prop('disabled','true');
+            var base_url = $('#base_url').val();
+            var crm_base_url = $('#crm_base_url').val();
+            var name = $('#name').val();
+            var phone_no = $('#phone_no').val();
+            var email = $('#email').val();
+            var city = $('#city').val();
+            var from_date = $('#from_date').val();
+            var to_date = $('#to_date').val();
+            var service_name = $('#service_name').val();
+            document.getElementById('enq_submit').textContent = 'Loading';
+
+			$.ajax({
+                type  : 'post',
+                url   : crm_base_url + "controller/b2c_settings/b2c/homepage_enq.php",
+                data  : {
+                    name : name,
+                    phone_no : phone_no,
+                    email : email,
+                    city : city,
+                    from_date : from_date,
+                    to_date : to_date,
+                    service_name : service_name
+                },
+                success : function (result) {
+                    var msg = 'Thank you for enquiry with us. Our experts will contact you shortly.';
+                    $.alert({
+                        title: 'Notification!',
+                        content: msg,
+                    });
+
+                    document.getElementById('enq_submit').textContent = 'Enquire Now';
+                    setTimeout(() => {
+                        window.location.href= base_url;
+                    }, 2000);
+                }
+            });
+        }
+    });
+});
 </script>
+<script type="text/javascript" src="js/scripts.js"></script>

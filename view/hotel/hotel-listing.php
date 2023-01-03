@@ -566,7 +566,7 @@ for ($i_date=$check_in; $i_date<=$check_out; $i_date+=86400) {
 
               }else{
 
-                $newUrl = 'images/hotel_general.png';
+                $newUrl = BASE_URL_B2C.'images/hotel_general.png';
 
               }
 

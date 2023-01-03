@@ -592,7 +592,7 @@ if($activities_id!=''){
 
             }else{
 
-                $newUrl = BASE_URL.'images/dummy-image.jpg';
+                $newUrl = BASE_URL_B2C.'images/activity_default.png';
 
             }
 

@@ -17,7 +17,7 @@ $(document).ready(function() {
 
         //Lazy Load the cities
 
-        city_lzloading('#hotel_city_filter,#activities_city_filter,#city,#ffrom_city_filter,#fto_city_filter');
+        // city_lzloading('#hotel_city_filter,#activities_city_filter,#city,#ffrom_city_filter,#fto_city_filter');
 
     });
 
@@ -1863,7 +1863,7 @@ function validate_validDate1(from, to) {
 
 }
 
-function get_tours_data(dest_id, type,unique_id = null) {
+function get_tours_data(dest_id, type) {
 
 
 
@@ -2031,9 +2031,9 @@ function get_tours_data(dest_id, type,unique_id = null) {
 
         hotel_array.push({
 
-            'city_id': dest_id,
+            'city_id': '',
 
-            'hotel_id': unique_id,
+            'hotel_id': '',
 
             'check_indate': today_date,
 
@@ -2087,9 +2087,9 @@ function get_tours_data(dest_id, type,unique_id = null) {
 
         activity_array.push({
 
-            'activity_city_id': dest_id,
+            'activity_city_id': '',
 
-            'activities_id': unique_id,
+            'activities_id': '',
 
             'checkDate': today_date,
 

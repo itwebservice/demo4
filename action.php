@@ -953,7 +953,7 @@ else if($type == '7') {
 
                                     <label for="name">Name*</label>
 
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" onkeypress="return blockSpecialChar(event)" required>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="*Enter Name" onkeypress="return blockSpecialChar(event)" required>
 
                                 </div>
 
@@ -1917,8 +1917,6 @@ $(function () {
                 }
 
             });
-
-            
 
         }
 

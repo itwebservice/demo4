@@ -402,7 +402,7 @@ Component :: Headings
 font-weight: bold;
 display: block;
 color: #333;
-font-size: 30px;
+font-size: 25px;
 line-height: 23px;
 margin: 15px 0 15px;
 }
