@@ -74,7 +74,7 @@ $costing_desc = strip_tags($costing_desc);
                         <label> Travel Date: <?= $travel_from.' To '.$travel_to ?> </label>
                     </div>
                     <div class="form-group col-md-4">
-                        <label> Total Guests: <?= intval($adults)+intval($chwb)+intval($chwob)+intval($infant) ?> </label>
+                        <label> Total Guest(s): <?= intval($adults)+intval($chwb)+intval($chwob)+intval($infant) ?> </label>
                     </div>
                 </div>
                 <?php

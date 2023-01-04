@@ -77,7 +77,7 @@ $date1 = str_replace('-', '/', $date);
                         <div class="row">
                             <div class="col col-12">
                                 <div class="booking-form-input">
-                                    <input type="text" class="form-control w-100" placeholder="Enter your name" id="name" required>
+                                    <input type="text" class="form-control w-100" placeholder="*Enter your name" id="name" required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-6">
