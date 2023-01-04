@@ -6,7 +6,7 @@ include 'config.php';
 
 include 'layouts/header.php';
 
-$gallary_array = ($cached_array[0]->cms_data[0]->gallery!='') ? json_decode($cached_array[0]->cms_data[0]->gallery) : [];
+$gallary_array = ($cached_array[0]->cms_data[0]->gallery != '') ? json_decode($cached_array[0]->cms_data[0]->gallery) : [];
 
 ?>
 
@@ -16,53 +16,53 @@ $gallary_array = ($cached_array[0]->cms_data[0]->gallery!='') ? json_decode($cac
 
 <div class="c-pageTitleSect ts-pageTitleSect">
 
-<div class="container">
+  <div class="container">
 
-  <div class="row">
+    <div class="row">
 
-    <div class="col-md-7 col-12">
+      <div class="col-md-7 col-12">
 
 
 
-      <!-- *** Search Head **** -->
+        <!-- *** Search Head **** -->
 
-      <div class="searchHeading">
+        <div class="searchHeading">
 
-        <span class="pageTitle mb-0">Gallery</span>
+          <span class="pageTitle mb-0">Gallery</span>
+
+        </div>
+
+        <!-- *** Search Head End **** -->
 
       </div>
 
-      <!-- *** Search Head End **** -->
+
+
+      <div class="col-md-5 col-12 c-breadcrumbs">
+
+        <ul>
+
+          <li>
+
+            <a href="<?= BASE_URL_B2C ?>">Home</a>
+
+          </li>
+
+          <li class="st-active">
+
+            <a href="javascript:void(0)">Gallery</a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
 
     </div>
-
-
-
-    <div class="col-md-5 col-12 c-breadcrumbs">
-
-      <ul>
-
-        <li>
-
-          <a href="<?= BASE_URL_B2C ?>">Home</a>
-
-        </li>
-
-        <li class="st-active">
-
-          <a href="javascript:void(0)">Gallery</a>
-
-        </li>
-
-      </ul>
-
-    </div>
-
-
 
   </div>
-
-</div>
 
 </div>
 
@@ -92,153 +92,149 @@ $gallary_array = ($cached_array[0]->cms_data[0]->gallery!='') ? json_decode($cac
 
 <section class="ts-destinations-section">
 
-    <div class="container">
+  <div class="container">
 
-        <div id="lightGalleryImage" class="light-gallery-list">
+    <div id="lightGalleryImage" class="light-gallery-list">
 
-          <?php
-        foreach ($gallary_array as $j) {
-          
-            $dest_id = $j->dest_id;
-            $url = $j->image_url;
-            $pos = strstr($url, 'uploads');
-            if ($pos != false) {
-              $newUrl1 = preg_replace('/(\/+)/', '/', $url);
-              $newUrl = BASE_URL . str_replace('../', '', $newUrl1);
-            } else {
-              $newUrl =  $url;
-            }
+      <?php
+      foreach ($gallary_array as $j) {
 
-            ?>
+        $dest_id = $j->dest_id;
+        $url = $j->image_url;
+        $pos = strstr($url, 'uploads');
+        if ($pos != false) {
+          $newUrl1 = preg_replace('/(\/+)/', '/', $url);
+          $newUrl = BASE_URL . str_replace('../', '', $newUrl1);
+        } else {
+          $newUrl =  $url;
+        }
 
-            <a href="<?= $newUrl ?>" class="light-gallery-item">
+      ?>
 
-                <img alt="" src="<?= $newUrl ?>" class="img-fluid" />
+        <a href="<?= $newUrl ?>" class="light-gallery-item">
 
-            </a>
-          <?php
-          } ?>
+          <img alt="" src="<?= $newUrl ?>" class="img-fluid" style="height:165px;">
 
-        </div>
+        </a>
+      <?php
+      } ?>
 
     </div>
+
+  </div>
 
 </section>
 
 <script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
 
-(function() {
+    'use strict';
 
-  'use strict';
+    window.addEventListener('load', function() {
 
-  window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
 
-    var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
 
-    // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
 
-    var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
 
-      form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
 
-        if (form.checkValidity() === false) {
+            event.preventDefault();
 
-          event.preventDefault();
+            event.stopPropagation();
 
-          event.stopPropagation();
+          }
 
-        }
+          form.classList.add('was-validated');
 
-        form.classList.add('was-validated');
+        }, false);
 
-      }, false);
+      });
 
-    });
+    }, false);
 
-  }, false);
-
-})();
-
+  })();
 </script>
 
 
 
-<?php include 'layouts/footer.php';?>
+<?php include 'layouts/footer.php'; ?>
 
 
 
 <script type="text/javascript" src="js/scripts.js"></script>
 
 <script>
+  $(document).ready(function() {
 
-    $( document ).ready(function() {    
 
-    
 
-      lightGallery(document.getElementById('lightGalleryImage'), {
+    lightGallery(document.getElementById('lightGalleryImage'), {
 
-              plugins: [lgZoom, lgThumbnail],
+      plugins: [lgZoom, lgThumbnail],
 
-              speed: 500,
+      speed: 500,
 
-              download: true,
-
-          });
-
-          setTimeout(function() {
-
-            var width = $(".light-gallery-item img").width();
-
-            console.log(width);
-
-            $(".light-gallery-item img").height(width);
-
-          }, 1000);
-
-      
-
-      
-
-      var service = '<?php echo $service; ?>';
-
-      if(service && (service !== '' || service !== undefined)){
-
-        var checkLink = $('.c-searchContainer .c-search-tabs li');
-
-        var checkTab = $('.c-searchContainer .search-tab-content .tab-pane');
-
-        checkLink.each(function(){
-
-          var child = $(this).children('.nav-link');
-
-          if(child.data('service') === service){
-
-            $(this).siblings().children('.nav-link').removeClass('active');
-
-            child.addClass('active');
-
-          }
-
-        });
-
-        checkTab.each(function(){
-
-          if($(this).data('service') === service){
-
-            $(this).addClass('active show').siblings().removeClass('active show');
-
-          }
-
-        })
-
-      }
-
-    
+      download: true,
 
     });
 
+    setTimeout(function() {
+
+      var width = $(".light-gallery-item img").width();
+
+      console.log(width);
+
+      $(".light-gallery-item img").height(width);
+
+    }, 1000);
+
+
+
+
+
+    var service = '<?php echo $service; ?>';
+
+    if (service && (service !== '' || service !== undefined)) {
+
+      var checkLink = $('.c-searchContainer .c-search-tabs li');
+
+      var checkTab = $('.c-searchContainer .search-tab-content .tab-pane');
+
+      checkLink.each(function() {
+
+        var child = $(this).children('.nav-link');
+
+        if (child.data('service') === service) {
+
+          $(this).siblings().children('.nav-link').removeClass('active');
+
+          child.addClass('active');
+
+        }
+
+      });
+
+      checkTab.each(function() {
+
+        if ($(this).data('service') === service) {
+
+          $(this).addClass('active show').siblings().removeClass('active show');
+
+        }
+
+      })
+
+    }
+
+
+
+  });
 </script>
