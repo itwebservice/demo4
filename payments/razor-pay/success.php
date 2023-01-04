@@ -11,5 +11,6 @@ $payment_details = [
     'signature'=> $razorpay_signature
 ];
 $_SESSION['payment_details'] = $payment_details;
-header("Location: ".BASE_URL ."controller/b2c_settings/b2c/sale_payment_success.php");
+echo "<script>window.location.href='".BASE_URL."controller/b2c_settings/b2c/sale_payment_success.php'</script>";
+exit();
 ?>

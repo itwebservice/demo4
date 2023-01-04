@@ -77,7 +77,7 @@ $date1 = str_replace('-', '/', $date);
                         <div class="row">
                             <div class="col col-12">
                                 <div class="booking-form-input">
-                                    <input type="text" class="form-control w-100" placeholder="Enter your name" id="name" required>
+                                    <input type="text" class="form-control w-100" placeholder="*Enter your name" id="name" required>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-6">
@@ -575,7 +575,7 @@ $date1 = str_replace('-', '/', $date);
                                     <h6 class="sight-body-subtitle"><?= $activity->depature_point ?></h6>
                                     <h5 class="sight-body-title"> <?= $activity->excursion_name ?></h5>
                                     <p class="sight-body-discription"><?= substr($activity->note, 0, 100) ?></p>
-                                    <a target="_blank" onclick="get_tours_data('<?= $activity->city_id ?>','4','<?= $activity->entry_id ?>')" style="cursor:pointer!important;" class="btn sight-card-btn">VIEW MORE</a>
+                                    <a target="_blank" onclick="get_tours_data('<?= $activity->city_id ?>','4','<?= $activity->entry_id ?>')" style="cursor:pointer!important;color: white!important;" class="btn sight-card-btn">VIEW MORE</a>
                                 </div>
                             </div>
                         </div>
