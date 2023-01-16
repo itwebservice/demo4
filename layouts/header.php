@@ -9,11 +9,11 @@ include "array_column.php";
 
 // LIVE Cache file reading
 
-$cached_array = json_decode(file_get_contents('https://' . $_SERVER['SERVER_NAME'] . '/crm/view/b2c_cache.php'));
+//$cached_array = json_decode(file_get_contents('https://' . $_SERVER['SERVER_NAME'] . '/crm/view/b2c_cache.php'));
 
 // LOCAL Cache file readingc
 
-// $cached_array = json_decode(file_get_contents('http://' . $_SERVER['SERVER_NAME'] . '/demo4/crm/view/b2c_cache.php'));
+ $cached_array = json_decode(file_get_contents('http://localhost/tours/demo4/crm/view/b2c_cache.php'));
 
 
 

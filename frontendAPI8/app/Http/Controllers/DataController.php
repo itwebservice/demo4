@@ -40,9 +40,12 @@ class DataController extends Controller
     }
     public function testimonial()
     {
-        $testimonial = b2cTestimonial::all();
-
-        return response($testimonial, 200);
+        $testimonials = b2cTestimonial::all();
+        foreach($testimonials as $testimonial)
+        {
+            $testimonial->filter_img = $this->filterImgUrl($testimonial->image);
+        }
+        return response($testimonials, 200);
     }
     public function gallery()
     {
@@ -141,6 +144,9 @@ class DataController extends Controller
                     $images = ExcursionMasterImages::where('exc_id', $main->entry_id)->get();
                     $main->basics = $basic;
                     $main->images = $images;
+                    $imgUrl = (!empty($images)) ? $images[0]->image_url : 'images/activity_default.png';
+                    $main->main_img_url = $this->filterImgUrl($imgUrl);
+                    
                     array_push($selectedActivities, $main);
                 }
             }
@@ -177,7 +183,7 @@ class DataController extends Controller
     {
         $popularHotels = HotelMaster::with(['hotelImage', 'hotelCity'])->get();
         $b2chotels = json_decode(b2cSetting::first()->popular_hotels);
-
+          
         if (empty($b2chotels)) {
             return response([], 200);
         }
@@ -185,6 +191,7 @@ class DataController extends Controller
         foreach ($popularHotels as $hotel) {
             foreach ($b2chotels as $b2chotel) {
                 if ($b2chotel->hotel_id == $hotel->hotel_id) {
+                    $hotel->main_img = (!empty($hotel->hotelImage)) ? $this->filterImgUrl($hotel->hotelImage->hotel_pic_url) : 'images/hotel_general.png';
                     array_push($selectedHotel, $hotel);
                 }
             }
@@ -201,6 +208,25 @@ class DataController extends Controller
     public function blogs()
     {
         $blogs = B2cBlog::where('active_flag', 0)->get();
+        foreach($blogs as $blog)
+        {
+            $blog->img_filter = $this->filterImgUrl($blog->image);                
+        }
         return response($blogs, 200);
+    }
+    public function filterImgUrl($imgUrlMain)
+    {
+        if(empty($imgUrlMain))
+        {
+            return 0;        }
+        $url = $imgUrlMain;
+        $pos = strstr($url, 'uploads');
+        if ($pos != false) {
+            $newUrl1 = preg_replace('/(\/+)/', '/', $imgUrlMain);
+            $newUrl = str_replace('../', '', $newUrl1);
+        } else {
+            $newUrl =  $imgUrlMain;
+        }
+        return $newUrl;
     }
 }
