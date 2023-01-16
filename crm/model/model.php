@@ -30,11 +30,11 @@ $localIP = getHostByName(getHostName());
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db_name = "itourscloud_demo4";
+$db_name = "demo4";
 global $conn;
 $conn = new mysqli($servername, $username, $password, $db_name);
 
-define('BASE_URL', 'http://localhost/demo4/crm/');
+define('BASE_URL', 'http://localhost/tours/demo4/crm/');
 
 mysqli_query($conn, "SET SESSION sql_mode = ''");
 $b2b_index_url = BASE_URL . 'Tours_B2B/view/index.php';

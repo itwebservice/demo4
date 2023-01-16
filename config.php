@@ -22,13 +22,13 @@ $localIP = getHostByName(getHostName());
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db_name = "itourscloud_demo4";
+$db_name = "demo4";
 global $connection;
 $connection = new mysqli($servername, $username, $password, $db_name);
 
-define('BASE_URL', 'http://localhost/demo4/crm/');
-define('BASE_URL_API', 'http://localhost/demo4/frontendAPI/public/api');
-define('BASE_URL_B2C', 'http://localhost/demo4/');
+define('BASE_URL', 'http://localhost/tours/demo4/crm/');
+define('BASE_URL_API', 'http://localhost/tours/demo4/frontendAPI8/public/api/');
+define('BASE_URL_B2C', 'http://localhost/tours/demo4/');
 mysqli_query($connection,"SET SESSION sql_mode = ''");
 // mysqli_set_charset($connection,'utf8');
 //**********Global Variables start**************//
