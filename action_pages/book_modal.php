@@ -3,7 +3,7 @@ header('Content-type: text/plain');
 include "../config.php";
 global $currency_logo;
 $sq_cms = mysqli_fetch_assoc(mysqlQuery("SELECT coupon_codes FROM b2c_settings where 1"));
-$coupon_codes = ($sq_cms['coupon_codes'] != ''&&$sq_cms['coupon_codes'] != 'null') ? $sq_cms['coupon_codes'] : [];
+$coupon_codes = ($sq_cms['coupon_codes'] != ''&&$sq_cms['coupon_codes'] != 'null') ? ($sq_cms['coupon_codes']) : json_encode([]);
 $otp = $_POST['otp'];
 // Enquiry Details
 $type = $_POST['type'];
@@ -68,13 +68,13 @@ $costing_desc = strip_tags($costing_desc);
                 <input type="hidden" id="coupon_codes" value='<?= ($coupon_codes) ?>' />
                 <div class="form-row">
                     <div class="form-group col-md-4" style="border-right:2px solid gray;">
-                        <label> Package Name: <?= $package_name.'('.$package_typef.')' ?> </label>
+                        <label> Tour Name: <?= $package_name.'('.$package_typef.')' ?> </label>
                     </div>
                     <div class="form-group col-md-4" style="border-right:2px solid gray;">
                         <label> Travel Date: <?= $travel_from.' To '.$travel_to ?> </label>
                     </div>
                     <div class="form-group col-md-4">
-                        <label style="text-transform: inherit !important;"> Total Guest(s): <?= intval($adults)+intval($chwb)+intval($chwob)+intval($infant) ?> </label>
+                        <label> Total Guest(s): <?= intval($adults)+intval($chwb)+intval($chwob)+intval($infant) ?> </label>
                     </div>
                 </div>
                 <?php
@@ -239,7 +239,7 @@ $costing_desc = strip_tags($costing_desc);
                         <label>*Select State</label>
                         <?php
                         $service = ($type == '1') ? 'Package Tour' : 'Group Tour'; ?>
-                        <select name="state" id="state" title="Select State" style="width : 100%" onchange="get_tax(this.id,'total_cost','<?= $service ?>');">
+                        <select name="state" id="state" title="Select State/Country" style="width : 100%" onchange="get_tax(this.id,'total_cost','<?= $service ?>');">
                         <?php get_states_dropdown() ?>
                         </select>
                     </div>
@@ -462,22 +462,29 @@ function get_service_tax(result,cust_state) {
                 });
         });
     ////////////////////////////////////////
-    var applied_taxes = '';
-    var ledger_posting = '';
-    applied_rules && applied_rules.map((rule) => {
-        
-        var tax_data = taxes_result.find((entry_id_tax) => entry_id_tax['entry_id'] === rule['entry_id']);
-
-        var { rate_in, rate } = tax_data;
-        var { ledger_id, name } = rule;
-        if (applied_taxes != '') {
-            applied_taxes = applied_taxes + '+' + name + ':' + rate + ':' + rate_in;
-            ledger_posting = ledger_posting + '+' + ledger_id;
-        } else {
-            applied_taxes += name + ':' + rate + ':' + rate_in;
-            ledger_posting += ledger_id;
-        }
-    });
+		var applied_taxes = '';
+		var ledger_posting = '';
+		applied_rules && applied_rules.map((rule) => {
+			var tax_data = taxes_result.find((entry_id_tax) => entry_id_tax['entry_id'] === rule['entry_id']);
+			var {  ledger1,ledger2, name1,name2,amount1,amount2 } = tax_data;
+			var { name } = rule;
+			if (applied_taxes == '') {
+				applied_taxes = name1 + ':' + amount1 + ':' + 'Percentage';
+				ledger_posting = ledger1;
+				if (name2 != '') {
+					applied_taxes += '+' + name2 + ':' + amount2 + ':' + 'Percentage';
+					ledger_posting += '+' + ledger2;
+				}
+			}
+			else {
+				applied_taxes += name1 + ':' + amount1 + ':' + 'Percentage';
+				ledger_posting = ledger_posting + '+' + ledger1;
+				if (name2 != '') {
+					applied_taxes += '+' + name2 + ':' + amount2 + ':' + 'Percentage';
+					ledger_posting += '+' + ledger2;
+				}
+			}
+		});
     return applied_taxes + ',' + ledger_posting;
 }
 function costing_calc(){
@@ -681,9 +688,11 @@ $(function () {
                 costing_arr : costing_arr,
                 type:type
             }, function(data){
+                console.log(data);
+                $('#btn_quotg').prop('disabled',false);
                //RAZORPay
                 if(data == ''){
-                    error_msg_alert('Payment Gateway not selected.You can not proceed!');
+                    error_msg_alert('Payment Gateway not selected.You can not proceed!',base_url);
                     return false;
                 }
                 else{
