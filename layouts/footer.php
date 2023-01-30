@@ -284,7 +284,6 @@
 
  <!-- Javascript -->
 
- <script type="text/javascript" src="<?php echo BASE_URL_B2C ?>js/jquery-3.4.1.min.js"></script>
 
  <script type="text/javascript" src="<?php echo BASE_URL_B2C ?>js/jquery-ui.1.10.4.min.js"></script>
 

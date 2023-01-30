@@ -9,11 +9,11 @@ include "array_column.php";
 
 // LIVE Cache file reading
 
-$cached_array = json_decode(file_get_contents('https://' . $_SERVER['SERVER_NAME'] . '/crm/view/b2c_cache.php'));
+//$cached_array = json_decode(file_get_contents('https://' . $_SERVER['SERVER_NAME'] . '/crm/view/b2c_cache.php'));
 
 // LOCAL Cache file readingc
 
-// $cached_array = json_decode(file_get_contents('http://' . $_SERVER['SERVER_NAME'] . '/demo4/crm/view/b2c_cache.php'));
+ $cached_array = json_decode(file_get_contents('http://localhost/tours/demo4/crm/view/b2c_cache.php'));
 
 
 
@@ -246,6 +246,7 @@ foreach ($int_dest_id_arr as $int_id) {
     <link id="main-style" rel="stylesheet/less" type="text/css" href="<?php echo BASE_URL_B2C; ?>css/LESS/itours-styles.php" />
 
     <script src="<?php echo BASE_URL_B2C; ?>js/less.js"></script>
+    <script type="text/javascript" src="<?php echo BASE_URL_B2C ?>js/jquery-3.4.1.min.js"></script>
 
 
 
