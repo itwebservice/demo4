@@ -343,6 +343,7 @@ font-size: 11px;
 font-weight: 600;
 padding: 5px 20px 4px;
 line-height: 20px;
+border-radius: 15px;
 }
 .c-button.lg {
 line-height: 20px;
@@ -459,8 +460,14 @@ margin-bottom: 15px;
 color: #adadad;
 }
 .c-pageTitleSect {
-background-color: #2d3e52;
-display: block;
+background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../images/pagetitle-back.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+display: flex;
+align-items: center;
+height: 300px;
 padding: 20px 0;
 }
 .c-pageTitleSect .pageTitle {
@@ -473,7 +480,7 @@ text-align: left;
 }
 
 .searchHeading {
-font-family: @secondary-font-family;
+font-family: @third-font-family;
 }
 .searchHeading .pageTitle {
 color: @white;
@@ -1640,7 +1647,7 @@ position: relative;
 margin-bottom: 20px;
 }
 .c-cardListTable {
-background-color: @white;
+background-color: #ffffff;
 display: table;
 table-layout: fixed;
 width: 100%;
@@ -1648,6 +1655,10 @@ padding: 0;
 box-shadow: 0 0 4px #e6e6e6;
 -moz-box-shadow: 0 0 4px #e6e6e6;
 -webkit-box-shadow: 0 0 4px #e6e6e6;
+/* border: 1px solid gray; */
+border-radius: 20px;
+padding: 4px;
+box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
 .c-cardListTable .cardList-image {
 display: table-cell;
@@ -1655,11 +1666,17 @@ vertical-align: top;
 width: 270px;
 height: 160px;
 position: relative;
+max-height: 160px;
+max-width: 270px;
+overflow: hidden;
 }
 .c-cardListTable .cardList-image img {
-display: block;
-width: 270px;
-height: 160px;
+background-size: cover;
+background-position: center;
+width: 250px;
+height: 180px;
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
 }
 .c-cardListTable .cardList-image .flag span {
 display: block;
@@ -2114,9 +2131,11 @@ box-shadow: 0 1px 4px #e6e6e6;
 /* -- Car -- */
 @media (max-width: 990px) {
 .c-cardListTable .cardList-image,
-.c-cardListTable .cardList-image img,
 .c-cardListTable .cardList-image span {
 width: 170px;
+}
+.c-cardListTable .cardList-image img{
+width:auto;
 }
 .hotelInfo.cust {
 display: none;
@@ -2625,6 +2644,8 @@ font-family: @secondary-font-family;
 padding: 5px 15px;
 line-height: 18px;
 border-radius: 0;
+border-bottom-left-radius: 15px;
+border-top-right-radius: 15px;
 }
 .c-compTabs .nav-tabs .nav-item .nav-link.active {
 background-color: var(--secondary-color);

@@ -9984,7 +9984,7 @@ left: 0;
 
 position: static;
 
-margin: 10px 4px;
+margin: 25px 4px;
 
 }
 
