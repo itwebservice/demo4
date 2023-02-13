@@ -126,21 +126,21 @@
                              <h5 class="t-footer-contact-title mb-0">Phone: <?= $Apigeneral->app_contact_no ?></h5>
                          </div>
                      </div>
-                    <?php
-                    if(sizeof($Apifooter) > 0){
-                    ?>
-                     <div class="col col-12 col-md-6 col-lg-3 col-xl-3">
-                         <div class="t-footer-contact-list">
-                             <h5 class="t-footer-contact-title">Holiday Tour & Travels</h5>
-                             <ul class="t-footr-help-list">
-                                 <?php foreach ($Apifooter as $footer) { ?>
-                                     <li class="t-footer-help-item">
-                                         <a target="_blank" onclick="get_tours_data('<?= $footer->dest_id ?>','1')" class="t-footer-help-link t-footer-contact-discription" style="cursor:pointer!important;"><?= $footer->package_name ?></a>
-                                     </li>
-                                 <?php } ?>
-                             </ul>
+                     <?php
+                        if (!empty($Apifooter)) {
+                        ?>
+                         <div class="col col-12 col-md-6 col-lg-3 col-xl-3">
+                             <div class="t-footer-contact-list">
+                                 <h5 class="t-footer-contact-title">Holiday Tour & Travels</h5>
+                                 <ul class="t-footr-help-list">
+                                     <?php foreach ($Apifooter as $footer) { ?>
+                                         <li class="t-footer-help-item">
+                                             <a target="_blank" onclick="get_tours_data('<?= $footer->dest_id ?>','1')" class="t-footer-help-link t-footer-contact-discription" style="cursor:pointer!important;"><?= $footer->package_name ?></a>
+                                         </li>
+                                     <?php } ?>
+                                 </ul>
+                             </div>
                          </div>
-                     </div>
                      <?php } ?>
 
                      <div class="col col-12 col-md-6 col-lg-3 col-xl-3">
@@ -190,47 +190,47 @@
                              <h5 class="t-footer-contact-title">Follow with us</h5>
                              <p class="t-footer-contact-discription mb-2">Join our social media's and get more update of latest tours, sightseeing & attractions.</p>
                              <ul class="t-footer-social-list">
-                                 <?php if($Apisocial->fb != ''){ ?>
-                                 <li class="t-footer-social-item">
-                                     <a href="<?= $Apisocial->fb ?>" class="t-footer-social-link" target="_blank">
-                                         <i class="fa fa-facebook" aria-hidden="true"></i>
-                                     </a>
-                                 </li>
+                                 <?php if ($Apisocial->fb != '') { ?>
+                                     <li class="t-footer-social-item">
+                                         <a href="<?= $Apisocial->fb ?>" class="t-footer-social-link" target="_blank">
+                                             <i class="fa fa-facebook" aria-hidden="true"></i>
+                                         </a>
+                                     </li>
                                  <?php } ?>
-                                 <?php if($Apisocial->li != ''){ ?>
-                                 <li class="t-footer-social-item">
-                                     <a href="<?= $Apisocial->li ?>" class="t-footer-social-link" target="_blank">
-                                         <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                     </a>
-                                 </li>
+                                 <?php if ($Apisocial->li != '') { ?>
+                                     <li class="t-footer-social-item">
+                                         <a href="<?= $Apisocial->li ?>" class="t-footer-social-link" target="_blank">
+                                             <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                         </a>
+                                     </li>
                                  <?php } ?>
-                                 <?php if($Apisocial->tw != ''){ ?>
-                                 <li class="t-footer-social-item">
-                                     <a href="<?= $Apisocial->tw ?>" class="t-footer-social-link" target="_blank">
-                                         <i class="fa fa-twitter" aria-hidden="true"></i>
-                                     </a>
-                                 </li>
+                                 <?php if ($Apisocial->tw != '') { ?>
+                                     <li class="t-footer-social-item">
+                                         <a href="<?= $Apisocial->tw ?>" class="t-footer-social-link" target="_blank">
+                                             <i class="fa fa-twitter" aria-hidden="true"></i>
+                                         </a>
+                                     </li>
                                  <?php } ?>
-                                 <?php if($Apisocial->wa != ''){ ?>
-                                 <li class="t-footer-social-item">
-                                     <a href="<?= $Apisocial->wa ?>" class="t-footer-social-link" target="_blank">
-                                         <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                                     </a>
-                                 </li>
+                                 <?php if ($Apisocial->wa != '') { ?>
+                                     <li class="t-footer-social-item">
+                                         <a href="<?= $Apisocial->wa ?>" class="t-footer-social-link" target="_blank">
+                                             <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                         </a>
+                                     </li>
                                  <?php } ?>
-                                 <?php if($Apisocial->inst != ''){ ?>
-                                 <li class="t-footer-social-item">
-                                     <a href="<?= $Apisocial->inst ?>" class="t-footer-social-link" target="_blank">
-                                         <i class="fa fa-instagram" aria-hidden="true"></i>
-                                     </a>
-                                 </li>
+                                 <?php if ($Apisocial->inst != '') { ?>
+                                     <li class="t-footer-social-item">
+                                         <a href="<?= $Apisocial->inst ?>" class="t-footer-social-link" target="_blank">
+                                             <i class="fa fa-instagram" aria-hidden="true"></i>
+                                         </a>
+                                     </li>
                                  <?php } ?>
-                                 <?php if($Apisocial->yu != ''){ ?>
-                                 <li class="t-footer-social-item">
-                                     <a href="<?= $Apisocial->yu ?>" class="t-footer-social-link" target="_blank">
-                                         <i class="fa fa-youtube" aria-hidden="true"></i>
-                                     </a>
-                                 </li>
+                                 <?php if ($Apisocial->yu != '') { ?>
+                                     <li class="t-footer-social-item">
+                                         <a href="<?= $Apisocial->yu ?>" class="t-footer-social-link" target="_blank">
+                                             <i class="fa fa-youtube" aria-hidden="true"></i>
+                                         </a>
+                                     </li>
                                  <?php } ?>
                              </ul>
                          </div>
