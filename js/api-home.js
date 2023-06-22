@@ -59,7 +59,7 @@ function packages() {
                     <div class="t-package-img">
                         <img src=" `+ value.main_img_url + `" alt="" class="img-fluid">
                         <div class="t-package-card-btn">
-                            <span class="t-package-card-price btn"> `+ pricing + `
+                            <span class="t-package-card-price btn"> `+ value.currency.default_currency +` `+ value.tour_cost + `
                             </span>
                             <a target="_blank" href="`+ value.file_name_url + `" class="btn btn-primary">View More</a>
                         </div>
