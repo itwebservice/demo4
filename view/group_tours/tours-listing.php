@@ -63,7 +63,7 @@ $cwb_count = $tours_array[0]->child_wibed;
 $extra_bed_count = $tours_array[0]->extra_bed;
 
 $infant_count = $tours_array[0]->infant;
-
+$total_pax = intval($adults_count) + intval($child_wocount) + intval($cwb_count) + intval($extra_bed_count)  +intval($infant_count);
 ?>
 
 <!-- ********** Component :: Page Title ********** -->
@@ -922,55 +922,36 @@ $infant_count = $tours_array[0]->infant;
               //Group Costing
 
               $adult_cost = $row_query['adult_cost'];
-
               $child_without_cost = $row_query['child_without_cost'];
-
               $child_with_cost = $row_query['child_with_cost'];
-
               $with_bed_cost = $row_query['with_bed_cost'];
-
               $infant_cost = $row_query['infant_cost'];
-
-
+              $single_person_cost = $row_query['single_person_cost'];
 
               $adult_cost_total = 0;
-
               $child_without_cost_total = 0;
-
               $child_with_cost_total = 0;
-
               $with_bed_cost_total = 0;
-
               $infant_cost_total = 0;
+              $sp_cost_total = 0;
+              if($total_pax == 1){
+                $sp_cost_total = $single_person_cost;
+              }else{
+                $adult_cost_total = intval($adults_count) * floatval($adult_cost);
+                $child_without_cost_total = intval($child_wocount) * floatval($child_without_cost);
+                $child_with_cost_total = intval($cwb_count) * floatval($child_with_cost);
+                $with_bed_cost_total = intval($extra_bed_count) * floatval($with_bed_cost);
+                $infant_cost_total = intval($infant_count) * floatval($infant_cost);
+                $sp_cost_total = 0;
+              }
 
-              
-
-              $adult_cost_total = intval($adults_count) * floatval($adult_cost);
-
-              $child_without_cost_total = intval($child_wocount) * floatval($child_without_cost);
-
-              $child_with_cost_total = intval($cwb_count) * floatval($child_with_cost);
-
-              $with_bed_cost_total = intval($extra_bed_count) * floatval($with_bed_cost);
-
-              $infant_cost_total = intval($infant_count) * floatval($infant_cost);
-
-
-
-              $total_cost1 = $adult_cost_total + $child_without_cost_total + $child_with_cost_total + $with_bed_cost_total + $infant_cost_total;
-
+              $total_cost1 = floatval($adult_cost_total) + floatval($child_without_cost_total) + floatval($child_with_cost_total) + floatval($with_bed_cost_total) + floatval($infant_cost_total) + floatval($sp_cost_total);
               $total_cost1 = ceil($total_cost1);
-
               array_push($all_costs_array,array('amount' => $total_cost1,'id'=>$currency_id));
-
               $c_amount1 = ($to_currency_rate!=0) ? $from_currency_rate / $to_currency_rate * $total_cost1 : 0;
-
               array_push($actual_ccosts_array,$c_amount1);
 
-
-
               //Final cost push into array
-
               array_push($tours_result_array,array(
 
                 'image' => $newUrl,
@@ -994,6 +975,7 @@ $infant_count = $tours_array[0]->infant;
                 'infant_count'=>intval($infant_count),
 
                 'adult_cost'=>floatval($adult_cost_total),
+                'sp_cost_total'=>floatval($sp_cost_total),
 
                 'child_wo_cost'=>floatval($child_without_cost_total),
 

@@ -3,6 +3,8 @@ include '../../config.php';
 include BASE_URL.'model/model.php';
 include '../../layouts/header.php';
 
+$_SESSION['page_type'] = 'Car Rental';
+
 $currency = $_SESSION['session_currency_id'];
 $sq_to = mysqli_fetch_assoc(mysqlQuery("select * from roe_master where currency_id='$currency'"));
 $to_currency_rate = $sq_to['currency_rate'];
@@ -330,8 +332,8 @@ $passenger = ($pick_drop_array[0]->passengers == 1) ? 'Passenger' : 'Passengers'
         while(($row_query  = mysqli_fetch_assoc($sq_query))){
 
           $vehicle_data = json_decode($row_query['vehicle_data']);
-          $image = $row_query['image_url'];
-          if($image != ''){
+          if($row_query['image_url'] != ''){
+            $image = $row_query['image_url'];
             $newUrl1 = preg_replace('/(\/+)/','/',$image);
             $newUrl1 = explode('uploads', $newUrl1);
             $newUrl = BASE_URL.'uploads'.$newUrl1[1];

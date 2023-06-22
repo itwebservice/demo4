@@ -5,6 +5,8 @@ include '../../config.php';
 include BASE_URL.'model/model.php';
 
 include '../../layouts/header.php';
+$_SESSION['page_type'] = 'Cruise';
+   
 
 
 

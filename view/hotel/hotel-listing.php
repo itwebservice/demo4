@@ -6,6 +6,8 @@ include BASE_URL.'model/model.php';
 
 include '../../layouts/header.php';
 
+$_SESSION['page_type'] = 'hotels-list';
+   
 
 
 $hotel_array = json_decode($_SESSION['hotel_array']);
@@ -566,7 +568,7 @@ for ($i_date=$check_in; $i_date<=$check_out; $i_date+=86400) {
 
               }else{
 
-                $newUrl = BASE_URL_B2C.'images/hotel_general.png';
+                $newUrl = BASE_URL_B2C.'images/hotel_image.png';
 
               }
 
